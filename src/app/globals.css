@@ -18,6 +18,36 @@
     --foreground: #ededed;
   }
 }
+.clip-left {
+  /* triangle on left */
+  -webkit-clip-path: polygon(0 0, 60% 0, 50% 100%, 0% 100%);
+  clip-path: polygon(0 0, 60% 0, 50% 100%, 0% 100%);
+}
+
+.clip-right {
+  /* triangle on right */
+  -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 40% 100%);
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 40% 100%);
+}
+
+/* Mobile: stacks hero images so it still looks good */
+@media (max-width: 768px) {
+  .clip-left, .clip-right {
+    clip-path: none !important;
+    -webkit-clip-path: none !important;
+  }
+}
+
+
+
+.animate-shine {
+  animation: shine 2s linear infinite;
+  background-size: 200% auto;
+  mix-blend-mode: screen; /* ensures shimmer blends instead of blocking */
+}
+
+
+
 
 body {
   background: var(--background);
