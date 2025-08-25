@@ -31,10 +31,17 @@ export async function POST(req: Request) {
       currency: order.currency,
       key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
     });
-  } catch (e: any) {
+  } catch (e: unknown) {
     console.error("Razorpay Error:", e);
+
+    // Narrow the error type
+    let message = "Razorpay error";
+    if (e instanceof Error) {
+      message = e.message;
+    }
+
     return NextResponse.json(
-      { error: e.message || "Razorpay error" },
+      { error: message },
       { status: 400 }
     );
   }
