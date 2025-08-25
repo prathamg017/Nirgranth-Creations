@@ -88,7 +88,7 @@ export default function EventManagementPage() {
       </section>
 
       {/* SUCCESS STATS: animated gradient cards */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-pri-l text-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-6">
           {stats.map((s, i) => (
             <motion.div
@@ -97,7 +97,7 @@ export default function EventManagementPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.2 }}
-              className="bg-gradient-to-br from-pink-600 to-red-500 rounded-3xl p-10 shadow-2xl hover:scale-105 transition-transform text-center"
+              className="bg-gradient-to-br from-pink-200 to-red-300 rounded-3xl p-10 shadow-2xl hover:scale-105 transition-transform text-center"
             >
               <p className="text-5xl font-extrabold">{s.value}</p>
               <p className="mt-2 text-xl font-semibold">{s.label}</p>
@@ -165,7 +165,7 @@ export default function EventManagementPage() {
       {/* CONTACT CTA: Gradient hover, strong FOMO */}
       <section
         id="contact"
-        className="py-24 bg-gradient-to-r from-pink-600 to-red-500 text-white text-center"
+        className="py-24 bg-gradient-to-r bg-pri text-white text-center"
       >
         <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
           Let’s Create Your Legendary Event

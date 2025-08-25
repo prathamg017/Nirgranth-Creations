@@ -144,7 +144,7 @@ export default function Home() {
       )}
 
       {/* ✅ Footer */}
-<footer className="bg-[#ce3d5c] text-white py-12">
+<footer className="bg-pri text-white py-12">
   <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
     {/* Left Section: Logo + About + Address */}
     <div>

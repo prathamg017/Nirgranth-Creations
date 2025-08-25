@@ -4,16 +4,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-// Import your products file
+import { useRouter } from "next/navigation";
+import { useCart } from "@/app/context/CartContext"; // ✅ Use Cart Context
 import { products as allProducts, Product } from "../jainproducts/prod";
 
 export default function CustomGiftsPage() {
-  const [cart, setCart] = useState<number[]>([]);
-
-  const addToCart = (id: number) => {
-    setCart((prevCart) => [...prevCart, id]);
-  };
+  const { cart, addToCart } = useCart(); // ✅ from context
+  const router = useRouter();
 
   return (
     <main className="font-sans bg-gray-50 text-gray-900">
@@ -86,7 +83,15 @@ export default function CustomGiftsPage() {
                 </div>
                 <motion.button
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => addToCart(p.id)}
+                  onClick={() =>
+                    addToCart({
+                      id: p.id.toString(),
+                      name: p.name,
+                      price: p.price,
+                      quantity: 1,
+                      img: p.img,
+                    })
+                  }
                   className="w-full bg-gradient-to-r from-pink-600 to-yellow-500 text-white py-3 rounded-xl font-semibold shadow hover:shadow-lg transition"
                 >
                   Add to Cart 🛒
@@ -97,15 +102,14 @@ export default function CustomGiftsPage() {
         </div>
       </section>
 
-      {/* FLOATING CART */}
+      {/* FLOATING CART BUTTON (Checkout redirect) */}
       {cart.length > 0 && (
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          className="fixed bottom-6 right-6 bg-pink-600 text-white px-6 py-3 rounded-full shadow-xl cursor-pointer"
+        <button
+          onClick={() => router.push("/checkout")}
+          className="fixed bottom-6 right-6 bg-pink-600 text-white px-6 py-3 rounded-full shadow-xl hover:shadow-2xl transition"
         >
           🛒 {cart.length} Item{cart.length > 1 ? "s" : ""}
-        </motion.div>
+        </button>
       )}
 
       {/* WHY CHOOSE US */}
@@ -148,3 +152,4 @@ export default function CustomGiftsPage() {
     </main>
   );
 }
+  

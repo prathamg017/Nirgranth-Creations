@@ -10,30 +10,44 @@ export default function RecordingVoiceoverPage() {
       {/* ===== HERO (Split Banner with Glass Overlay) ===== */}
       <section className="relative h-[85vh] min-h-[560px] overflow-hidden bg-black">
         {/* Background */}
-        <div className="absolute inset-0 grid grid-cols-2">
-          {/* Left */}
-          <div className="relative clip-left">
-            <Image
-              src="https://i.pinimg.com/736x/60/3f/e6/603fe69b513d8f86d42dc3a669a8668d.jpg"
-              alt="Recording studio"
-              fill
-              priority
-              className="object-cover opacity-90"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
-          </div>
-          {/* Right */}
-          <div className="relative clip-right">
-            <Image
-              src="https://i.pinimg.com/1200x/d4/4f/79/d44f79ede005e73cc4ffc098b153f24e.jpg"
-              alt="Podcast setup"
-              fill
-              priority
-              className="object-cover opacity-90"
-            />
-            <div className="absolute inset-0 bg-gradient-to-l from-black/70 via-black/40 to-transparent" />
-          </div>
-        </div>
+        <div className="absolute inset-0 grid grid-cols-3">
+  {/* Left */}
+  <div className="relative">
+    <Image
+      src="/recording.jpg"
+      alt="Recording studio"
+      fill
+      priority
+      className="object-cover"
+    />
+    <div className="absolute inset-0 bg-black/30" />
+  </div>
+
+  {/* Center */}
+  <div className="relative">
+    <Image
+      src="/voice.jpg"
+      alt="Podcast setup"
+      fill
+      priority
+      className="object-cover"
+    />
+    <div className="absolute inset-0 bg-black/30" />
+  </div>
+
+  {/* Right */}
+  <div className="relative">
+    <Image
+      src="/sing.jpg"
+      alt="Studio setup"
+      fill
+      priority
+      className="object-cover"
+    />
+    <div className="absolute inset-0 bg-black/30" />
+  </div>
+</div>
+
 
         {/* Headline */}
         <div className="relative z-10 h-full flex items-center justify-center text-center px-6">
@@ -85,7 +99,7 @@ export default function RecordingVoiceoverPage() {
               {
                 title: "Voice Overs",
                 desc: "Ads, explainers, eLearning, IVR, characters & dubbing in multiple tones and languages.",
-                img: "https://i.pinimg.com/1200x/c6/60/52/c660525fbe345e7597117f625aa7b0b4.jpg",
+                img: "/sing.jpg",
               },
               {
                 title: "Podcast Production",
@@ -95,7 +109,7 @@ export default function RecordingVoiceoverPage() {
               {
                 title: "Music & Post",
                 desc: "Song recording, vocal comping, sound design, mixing & mastering.",
-                img: "https://i.pinimg.com/1200x/ca/8c/c1/ca8cc1d3cf4cf95d6460f3150f0cab8a.jpg",
+                img: "/music.jpg",
               },
             ].map((card, i) => (
               <motion.div
@@ -209,7 +223,7 @@ export default function RecordingVoiceoverPage() {
       {/* ===== BOOKING CTA ===== */}
       <section
         id="book"
-        className="py-24 px-6 bg-gradient-to-r from-pink-600 to-red-500 text-white"
+        className="py-24 px-6 bg-gradient-to-r bg-pri text-white"
       >
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div>

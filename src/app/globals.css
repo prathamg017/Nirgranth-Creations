@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -53,4 +55,42 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+/* === Light Theme (default) === */
+:root {
+  --color-bg: #ffffff;
+  --color-bg-alt: #f9fafb;
+  --color-text: #111827;
+  --color-text-muted: #4b5563;
+
+  --pri: #e7546b;     /* Brand primary */
+  --pri-light: #ffe9ed;
+  --pri-text: #ffffff;
+}
+
+/* === Dark Theme === */
+html.dark {
+  --color-bg: #111827;
+  --color-bg-alt: #1f2937;
+  --color-text: #f9fafb;
+  --color-text-muted: #9ca3af;
+
+  --pri: #e7546b;     /* keep same brand OR change if needed */
+  --pri-light: #1f2937;
+  --pri-text: #f9fafb;
+}
+
+/* === Utility Classes (usable anywhere) === */
+.bg-base      { background-color: var(--color-bg); }
+.bg-base-alt  { background-color: var(--color-bg-alt); }
+.text-base    { color: var(--color-text); }
+.text-muted   { color: var(--color-text-muted); }
+
+.bg-pri       { background-color: var(--pri); }
+.bg-pri-light { background-color: var(--pri-light); }
+.text-pri     { color: var(--pri-text); }
+
+/* Smooth transitions on theme change */
+html, body, .bg-base, .bg-base-alt, .bg-pri, .bg-pri-light {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
