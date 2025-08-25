@@ -40,7 +40,7 @@ export default function ContactPage() {
           transition={{ duration: 1 }}
           className="text-5xl md:text-7xl font-extrabold tracking-tight drop-shadow-2xl"
         >
-          Let's Build the Impossible
+  Let&apos;s Build the Impossible
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 10 }}

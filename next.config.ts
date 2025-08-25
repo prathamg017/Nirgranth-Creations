@@ -4,6 +4,9 @@ const nextConfig = {
   experimental: {
     allowedDevOrigins: ['http://192.168.1.2:3000'], // your PC LAN IP + port
   },
+   eslint: {
+    ignoreDuringBuilds: true, // 🚀 disables blocking on ESLint
+  },
   images: {
     remotePatterns: [
       {

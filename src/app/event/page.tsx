@@ -1,4 +1,3 @@
-// app/event-management/page.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -106,7 +105,7 @@ export default function EventManagementPage() {
         </div>
       </section>
 
-      {/* FEATURED EVENTS: show real moments, happy people */}
+      {/* FEATURED EVENTS */}
       <section className="py-24 bg-gradient-to-b from-gray-50 to-white text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-pink-700 mb-12">
           Featured Legendary Events
@@ -133,7 +132,7 @@ export default function EventManagementPage() {
         </div>
       </section>
 
-      {/* TESTIMONIALS: overlay happy clients */}
+      {/* TESTIMONIALS */}
       <section className="py-24 bg-pink-50 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-pink-700 mb-12">
           Happy Clients & Legendary Moments
@@ -155,20 +154,20 @@ export default function EventManagementPage() {
                 alt={c.name}
                 className="rounded-full mx-auto border-4 border-pink-600"
               />
-              <p className="mt-4 italic text-gray-800">"{c.quote}"</p>
+              <p className="mt-4 italic text-gray-800">&quot;{c.quote}&quot;</p>
               <p className="mt-4 font-bold text-pink-700">{c.name}</p>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* CONTACT CTA: Gradient hover, strong FOMO */}
+      {/* CONTACT CTA */}
       <section
         id="contact"
         className="py-24 bg-gradient-to-r bg-pri text-white text-center"
       >
         <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
-          Let’s Create Your Legendary Event
+          Let&apos;s Create Your Legendary Event
         </h2>
         <p className="max-w-2xl mx-auto text-lg md:text-xl mb-8">
           Be part of unforgettable experiences. Work with us to craft iconic moments.

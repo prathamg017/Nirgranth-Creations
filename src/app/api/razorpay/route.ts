@@ -15,7 +15,7 @@ export async function POST(req: Request) {
     });
 
     const order = await rzp.orders.create({
-      amount: amount * 100, // Razorpay wants paise
+      amount: amount * 100, // Razorpay expects paise
       currency: "INR",
       receipt: `rcpt_${Date.now()}`,
       notes: { email: email || "" },
@@ -26,10 +26,14 @@ export async function POST(req: Request) {
       amount: order.amount,
       currency: order.currency,
     });
-  } catch (e: any) {
+  } catch (e: unknown) {
     console.error("Razorpay error:", e);
+
+    const message =
+      e instanceof Error ? e.message : "Razorpay error";
+
     return NextResponse.json(
-      { error: e.message || "Razorpay error" },
+      { error: message },
       { status: 400 }
     );
   }

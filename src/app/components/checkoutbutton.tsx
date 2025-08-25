@@ -10,8 +10,33 @@ interface CheckoutButtonProps {
 
 declare global {
   interface Window {
-    Razorpay: any;
+    Razorpay?: any; // minimal typing for Razorpay SDK
   }
+}
+
+// Minimal Razorpay types for TypeScript
+interface RazorpayPaymentResponse {
+  razorpay_payment_id: string;
+  razorpay_order_id: string;
+  razorpay_signature: string;
+}
+
+interface RazorpayOptions {
+  key: string;
+  amount: number;
+  currency: string;
+  name: string;
+  description: string;
+  order_id: string;
+  handler: (response: RazorpayPaymentResponse) => void;
+  prefill: {
+    name: string;
+    email: string;
+    contact: string;
+  };
+  theme: {
+    color: string;
+  };
 }
 
 export default function CheckoutButton({ amount }: CheckoutButtonProps) {
@@ -46,17 +71,15 @@ export default function CheckoutButton({ amount }: CheckoutButtonProps) {
         return;
       }
 
-      const options = {
-        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID, // from .env.local
-        amount: data.amount, // in paise
+      const options: RazorpayOptions = {
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID!,
+        amount: data.amount,
         currency: "INR",
         name: "Nirgranth Creations",
         description: "Order Payment",
         order_id: data.id,
-        handler: function (response: any) {
-          alert(
-            `✅ Payment Successful!\nPayment ID: ${response.razorpay_payment_id}`
-          );
+        handler: (response: RazorpayPaymentResponse) => {
+          alert(`✅ Payment Successful!\nPayment ID: ${response.razorpay_payment_id}`);
           clearCart();
         },
         prefill: {
@@ -70,7 +93,8 @@ export default function CheckoutButton({ amount }: CheckoutButtonProps) {
       const rzp1 = new window.Razorpay(options);
       rzp1.open();
     } catch (err) {
-      console.error(err);
+      const message = err instanceof Error ? err.message : "Unknown error";
+      console.error(message);
       alert("❌ Something went wrong. Please try again.");
     } finally {
       setLoading(false);
@@ -79,8 +103,10 @@ export default function CheckoutButton({ amount }: CheckoutButtonProps) {
 
   return (
     <>
-      {/* Ensure Razorpay SDK loads */}
-      <Script src="https://checkout.razorpay.com/v1/checkout.js" strategy="lazyOnload" />
+      <Script
+        src="https://checkout.razorpay.com/v1/checkout.js"
+        strategy="lazyOnload"
+      />
       <button
         onClick={handlePayment}
         disabled={loading}
