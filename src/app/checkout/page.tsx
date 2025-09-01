@@ -29,14 +29,17 @@ export default function CheckoutPage() {
   );
   const total = subtotal - discount;
 
-  const applyPromo = () => {
-    if (promo === "NIR20") {
-      setDiscount(subtotal * 0.2);
-      alert("✅ Promo Applied! 20% off.");
-    } else {
-      alert("❌ Invalid promo code");
-    }
-  };
+ const applyPromo = () => {
+  const activePromo = process.env.NEXT_PUBLIC_PROMO_CODE;
+
+  if (promo === activePromo) {
+    setDiscount(subtotal * 0.2); // still fixed 20%, can also make % dynamic
+    alert("✅ Promo Applied! 20% off.");
+  } else {
+    alert("❌ Invalid promo code");
+  }
+};
+
 
   return (
     <main className="min-h-screen bg-white py-10 px-4 md:px-20">
