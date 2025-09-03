@@ -3,21 +3,18 @@ import dbConnect from "@/app/mongo";
 import Order from "@/app/models/adminorder";
 import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 export default async function OrdersPage() {
   // 1️⃣ Get token from cookies
-  const cookieStore = cookies();
-  const token = (await cookieStore).get("admin_token")?.value;
+  const cookieStore = await cookies();
+  const token = cookieStore.get("admin_token")?.value;
 
   // 2️⃣ Verify JWT
   try {
     jwt.verify(token!, process.env.JWT_SECRET!);
   } catch (err) {
-    // Redirect to login if token is invalid
-    return new Response(null, {
-      status: 302,
-      headers: { Location: "/admin/login" },
-    });
+    redirect("/admin/login"); // ✅ use redirect instead of Response
   }
 
   // 3️⃣ Connect to DB and fetch orders
@@ -47,24 +44,22 @@ export default async function OrdersPage() {
             </tr>
           </thead>
           <tbody>
-  {orders.map((order, idx) => (
-    <tr key={String(order._id)} className="text-black text-center">
-      <td className="p-3 border">{idx + 1}</td>
-      <td className="p-3 border">{order.customer?.name || "-"}</td>
-      <td className="p-3 border">{order.customer?.email || "-"}</td>
-      <td className="p-3 border">{order.customer?.phone || "-"}</td>
-      <td className="p-3 border">{order.customer?.address || "-"}</td>
-      <td className="p-3 border">₹{order.amount || "-"}</td>
-      <td className="p-3 border">{order.paymentId || "-"}</td>
-      <td className="p-3 border">{order.status || "Pending"}</td>
-      <td className="p-3 border">
-        {new Date(order.createdAt).toLocaleString()}
-      </td>
-    </tr>
-  ))}
-</tbody>
-
-
+            {orders.map((order, idx) => (
+              <tr key={String(order._id)} className="text-black text-center">
+                <td className="p-3 border">{idx + 1}</td>
+                <td className="p-3 border">{order.customer?.name || "-"}</td>
+                <td className="p-3 border">{order.customer?.email || "-"}</td>
+                <td className="p-3 border">{order.customer?.phone || "-"}</td>
+                <td className="p-3 border">{order.customer?.address || "-"}</td>
+                <td className="p-3 border">₹{order.amount || "-"}</td>
+                <td className="p-3 border">{order.paymentId || "-"}</td>
+                <td className="p-3 border">{order.status || "Pending"}</td>
+                <td className="p-3 border">
+                  {new Date(order.createdAt).toLocaleString()}
+                </td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       )}
     </main>
