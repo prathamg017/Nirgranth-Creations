@@ -1,9 +1,10 @@
-// app/admin/layout.tsx
+"use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
+  const pathname = usePathname(); // works only in client components
 
   const links = [
     { href: "/admin", label: "📊 Dashboard" },
