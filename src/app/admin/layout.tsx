@@ -1,15 +1,13 @@
 // app/admin/layout.tsx
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function AdminLayout({
   children,
-  params,
 }: {
   children: React.ReactNode;
-  params?: { slug?: string };
 }) {
-  // Determine current path from params or fallback
-  const pathname = `/admin/${params?.slug || ""}`;
+  const pathname = usePathname(); // ✅ Correct way to get current route
 
   const links = [
     { href: "/admin", label: "📊 Dashboard" },
@@ -28,7 +26,9 @@ export default function AdminLayout({
               key={link.href}
               href={link.href}
               className={`p-2 rounded-md text-black ${
-                pathname === link.href ? "bg-[#e7546b]" : "hover:bg-gray-200"
+                pathname === link.href
+                  ? "bg-[#e7546b] text-white"
+                  : "hover:bg-gray-200"
               }`}
             >
               {link.label}

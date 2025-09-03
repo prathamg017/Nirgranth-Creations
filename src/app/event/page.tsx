@@ -98,21 +98,22 @@ export default function EventManagementPage() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: i * 0.2 }}
-        className="relative bg-white/10 rounded-3xl p-10 shadow-xl hover:scale-105 transition-transform overflow-hidden"
+        className="relative bg-gradient-to-br from-pink-500/20 to-rose-400/50 text-white rounded-3xl p-10 shadow-xl hover:scale-105 transition-transform overflow-hidden"
       >
         {/* Shiny sweep effect */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-transparent opacity-20 animate-[shine_3s_linear_infinite]"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-white/30 via-transparent to-transparent opacity-30 animate-[shine_3s_linear_infinite]"></div>
 
         {/* Counter animation */}
-       <p className="text-5xl font-extrabold">
-  <AnimatedCounter value={s.value} />
-</p>
+        <p className="text-5xl font-extrabold drop-shadow-lg">
+          <AnimatedCounter value={s.value} />
+        </p>
 
-        <p className="mt-2 text-xl font-semibold">{s.label}</p>
+        <p className="mt-2 text-xl font-semibold text-white/90">{s.label}</p>
       </motion.div>
     ))}
   </div>
 </section>
+
 
 
       {/* FEATURED EVENTS */}
