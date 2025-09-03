@@ -130,13 +130,35 @@ export default function CheckoutPage() {
                 className="border px-3 py-2 rounded-lg focus:ring-2 focus:ring-pink-500 text-gray-900 placeholder:text-gray-400"
               />
               <input
-                type="tel"
-                name="phone"
-                placeholder="Phone Number"
-                value={formData.phone}
-                onChange={handleChange}
-                className="border px-3 py-2 rounded-lg focus:ring-2 focus:ring-pink-500 text-gray-900 placeholder:text-gray-400"
-              />
+  type="tel"
+  name="phone"
+  placeholder="+91 9876543210"
+  value={formData.phone}
+  onChange={(e) => {
+    let value = e.target.value;
+
+    // Always start with +91
+    if (!value.startsWith("+91")) {
+      value = "+91" + value.replace(/^\+91/, "");
+    }
+
+    // Remove non-digits after +91
+    let digits = value.replace(/^\+91/, "").replace(/\D/g, "");
+
+    // Limit to 10 digits
+    if (digits.length > 10) {
+      digits = digits.slice(0, 10);
+    }
+
+    // Update state directly instead of faking event
+    setFormData((prev) => ({
+      ...prev,
+      phone: "+91" + digits,
+    }));
+  }}
+  className="border px-3 py-2 rounded-lg focus:ring-2 focus:ring-pink-500 text-gray-900 placeholder:text-gray-400"
+/>
+
               <textarea
                 name="address"
                 placeholder="Full Address"
