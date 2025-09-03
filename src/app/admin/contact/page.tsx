@@ -3,6 +3,7 @@ import dbConnect from "@/app/mongo";
 import Contact from "@/app/models/admincontact";
 import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation"; // ✅ use this
 
 export default async function ContactsPage() {
   // 1️⃣ Get token from cookies
@@ -13,11 +14,8 @@ export default async function ContactsPage() {
   try {
     jwt.verify(token!, process.env.JWT_SECRET!);
   } catch (err) {
-    // Redirect to login if token is invalid
-    return new Response(null, {
-      status: 302,
-      headers: { Location: "/admin/login" },
-    });
+    // ✅ Redirect properly (not Response)
+    redirect("/admin/login");
   }
 
   // 3️⃣ Connect to DB and fetch contacts
@@ -45,7 +43,7 @@ export default async function ContactsPage() {
           </thead>
           <tbody>
             {contacts.map((contact, idx) => (
-<tr key={String(contact._id)} className="text-black text-center">
+              <tr key={String(contact._id)} className="text-black text-center">
                 <td className="p-3 border">{idx + 1}</td>
                 <td className="p-3 border">{contact.name}</td>
                 <td className="p-3 border">{contact.email}</td>
