@@ -15,70 +15,81 @@ export default function GraphicsVideoEditingPage() {
   return (
     <main className="text-gray-900">
       {/* ===== HERO: Neon Gradient, Glass Card ===== */}
-      <section className="relative overflow-hidden">
-        {/* bg layers */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute -top-[20%] left-1/2 -translate-x-1/2 w-[120vw] h-[120vw] rounded-full blur-3xl opacity-40 bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-600" />
-          <div className="absolute bottom-[-30%] right-[-10%] w-[70vw] h-[70vw] rounded-full blur-3xl opacity-30 bg-gradient-to-tr from-fuchsia-400 to-sky-400" />
+     <section className="relative overflow-hidden">
+  {/* Background video */}
+  <video
+    className="absolute inset-0 w-full h-full object-cover -z-10"
+    autoPlay
+    muted
+    loop
+    playsInline
+  >
+    <source src="/vid.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  {/* Subtle dark tint for readability */}
+  <div className="absolute inset-0 bg-black/30 -z-10" />
+
+  <div className="max-w-7xl mx-auto px-6 pt-28 pb-20">
+    {/* Glass card for hero text */}
+    <motion.div
+      {...fadeUp(0)}
+      className="mx-auto max-w-4xl text-center bg-black/30 backdrop-blur-sm rounded-2xl p-10 border border-white/10"
+    >
+      <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium bg-white/20 text-white backdrop-blur border border-white/30">
+        ✨ Creative Studio
+      </span>
+      <h1 className="mt-6 text-4xl md:text-6xl font-extrabold leading-tight text-white drop-shadow">
+        Graphics & Video Editing that
+        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-pink-200 to-white">
+          actually gets you clicks.
+        </span>
+      </h1>
+      <p className="mt-5 text-white/90 text-lg md:text-xl">
+        Thumb-stopping social content, cinematic edits, brand kits, motion
+        graphics, ads that convert, and everything in-between.
+      </p>
+
+      <div className="mt-8 flex flex-wrap justify-center gap-4">
+        <Link
+          href="#portfolio"
+          className="px-6 py-3 rounded-full font-semibold text-white bg-black/40 border border-white/20 backdrop-blur hover:scale-105 transition"
+        >
+          See Portfolio
+        </Link>
+        <Link
+          href="#brief"
+          className="px-6 py-3 rounded-full font-semibold bg-white text-pink-700 hover:bg-pink-50 hover:scale-105 transition"
+        >
+          Start a Project
+        </Link>
+      </div>
+    </motion.div>
+
+    {/* Stats bar */}
+    <motion.div
+      {...fadeUp(0.2)}
+      className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4"
+    >
+      {[
+        { k: "1,000+", v: "Videos Edited" },
+        { k: "200+", v: "Brand Kits" },
+        { k: "50M+", v: "Views Generated" },
+        { k: "4.9★", v: "Client Rating" },
+      ].map((s) => (
+        <div
+          key={s.v}
+          className="rounded-2xl p-6 text-center bg-white/10 text-white backdrop-blur border border-white/20"
+        >
+          <div className="text-2xl font-extrabold">{s.k}</div>
+          <div className="text-white/80">{s.v}</div>
         </div>
+      ))}
+    </motion.div>
+  </div>
+</section>
 
-        <div className="max-w-7xl mx-auto px-6 pt-28 pb-20">
-          <motion.div
-            {...fadeUp(0)}
-            className="mx-auto max-w-4xl text-center"
-          >
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium bg-white/10 text-white backdrop-blur border border-white/20">
-              ✨ Creative Studio
-            </span>
-            <h1 className="mt-6 text-4xl md:text-6xl font-extrabold leading-tight text-white drop-shadow">
-              Graphics & Video Editing that
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-pink-200 to-white">
-                actually gets you clicks.
-              </span>
-            </h1>
-            <p className="mt-5 text-white/90 text-lg md:text-xl">
-              Thumb-stopping social content, cinematic edits, brand kits, motion
-              graphics, ads that convert, and everything in-between.
-            </p>
-
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Link
-                href="#portfolio"
-                className="px-6 py-3 rounded-full font-semibold text-white bg-black/40 border border-white/20 backdrop-blur hover:scale-105 transition"
-              >
-                See Portfolio
-              </Link>
-              <Link
-                href="#brief"
-                className="px-6 py-3 rounded-full font-semibold bg-white text-pink-700 hover:bg-pink-50 hover:scale-105 transition"
-              >
-                Start a Project
-              </Link>
-            </div>
-          </motion.div>
-
-          {/* Glass stat bar */}
-          <motion.div
-            {...fadeUp(0.2)}
-            className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4"
-          >
-            {[
-              { k: "1,000+", v: "Videos Edited" },
-              { k: "200+", v: "Brand Kits" },
-              { k: "50M+", v: "Views Generated" },
-              { k: "4.9★", v: "Client Rating" },
-            ].map((s) => (
-              <div
-                key={s.v}
-                className="rounded-2xl p-6 text-center bg-white/10 text-white backdrop-blur border border-white/20"
-              >
-                <div className="text-2xl font-extrabold">{s.k}</div>
-                <div className="text-white/80">{s.v}</div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
 
       {/* ===== MARQUEE: niches we serve ===== */}
       <section className="py-8 bg-white">

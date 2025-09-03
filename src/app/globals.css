@@ -83,6 +83,36 @@ html.dark {
   --pri-light: #1f2937;
   --pri-text: #f9fafb;
 }
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-container {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: flex;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee-track span {
+  margin: 0 3rem;
+  font-weight: 800;
+  font-size: 2.5rem; /* adjust size */
+  background: linear-gradient(to right, #e7546b, #fb7185);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 8px rgba(231, 84, 107, 0.2);
+}
+
 
 /* === Utility Classes (usable anywhere) === */
 .bg-base      { background-color: var(--color-bg); }

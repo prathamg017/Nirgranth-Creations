@@ -11,54 +11,75 @@ export default function GiftsClient() {
   const router = useRouter();
 
   return (
-    <main className="relative bg-gradient-to-b from-amber-50 via-white to-amber-100 text-gray-900 min-h-screen">
-      {/* Offer Bar */}
-      <div className="bg-gradient-to-r from-pink-500 to-yellow-500 text-white text-center py-3 font-semibold">
+    <main className="relative bg-gradient-to-b from-amber-50 via-rose-50 to-amber-100 text-gray-900 min-h-screen overflow-hidden">
+      {/* Animated Offer Bar */}
+      <div className="bg-gradient-to-r from-pink-500 via-orange-400 to-yellow-500 text-white text-center py-3 font-semibold animate-pulse">
         🎉 Festival Special: Flat 20% Off Today Only + Free Delivery 🚚
       </div>
 
       {/* Hero */}
-      <section className="text-center py-20 px-6 bg-[url('https://i.ibb.co/sRZFnKq/jain-pattern.png')] bg-cover bg-center relative">
-        <div className="absolute inset-0 bg-white/70"></div>
-        <div className="relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold text-pink-700">
+      <section className="relative text-center py-24 px-6 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://i.pinimg.com/1200x/7b/4b/e7/7b4be7bab18d46a45ef157e6556633ef.jpgg')] bg-cover bg-center opacity-10" />
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="relative z-10"
+        >
+          <h1 className="text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-pink-600 via-orange-500 to-yellow-500 bg-clip-text text-transparent drop-shadow">
             Jain Focused Gifts 🛕
           </h1>
           <p className="mt-6 text-lg md:text-xl max-w-2xl mx-auto text-gray-700">
-            Discover handcrafted, spiritual gifts inspired by Jain traditions.
+            Handcrafted treasures inspired by Jain traditions. Bring home{" "}
+            <span className="text-pink-600 font-semibold">spiritual joy</span>.
           </p>
-        </div>
+          <motion.a
+            href="#shop"
+            whileHover={{ scale: 1.08 }}
+            className="mt-10 inline-block px-8 py-4 bg-gradient-to-r from-pink-500 to-yellow-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition"
+          >
+            Start Shopping ✨
+          </motion.a>
+        </motion.div>
       </section>
 
       {/* Products */}
-      <section className="py-16 px-6 max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 text-pink-600">
-          Shop Spiritual Treasures ✨
+      <section id="shop" className="py-20 px-6 max-w-7xl mx-auto relative">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-14 bg-gradient-to-r from-pink-600 via-orange-500 to-yellow-500 bg-clip-text text-transparent">
+          Shop Spiritual Treasures
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {products.map((p) => (
             <motion.div
               key={p.id}
-              whileHover={{ scale: 1.05 }}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden border border-amber-200 relative"
+              whileHover={{ scale: 1.05, rotate: 0.5 }}
+              className="relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl overflow-hidden border border-amber-200 hover:shadow-2xl transition"
             >
-              <div className="absolute top-3 left-3 bg-pink-500 text-white text-sm px-3 py-1 rounded-full shadow">
+              {/* Tag */}
+              <div className="absolute top-4 left-4 bg-gradient-to-r from-pink-500 to-orange-400 text-white text-xs px-3 py-1 rounded-full shadow">
                 {p.tag}
               </div>
 
-              <Image
-                src={p.img}
-                alt={p.name}
-                width={400}
-                height={250}
-                className="w-full h-56 object-cover"
-              />
+              {/* Image */}
+              <div className="overflow-hidden">
+                <Image
+                  src={p.img}
+                  alt={p.name}
+                  width={400}
+                  height={250}
+                  className="w-full h-60 object-cover hover:scale-110 transition"
+                />
+              </div>
 
-              <div className="p-6">
+              {/* Content */}
+              <div className="p-6 flex flex-col h-full">
                 <h3 className="text-xl font-semibold mb-2 text-gray-800">{p.name}</h3>
                 <p className="text-gray-600 mb-3">
-                  {p.stock <= 3 ? <span className="text-red-500">🔥 Only {p.stock} left!</span> : "Available"}
+                  {p.stock <= 3 ? (
+                    <span className="text-red-500">🔥 Only {p.stock} left!</span>
+                  ) : (
+                    "Available"
+                  )}
                 </p>
 
                 <div className="flex items-center gap-3 mb-4">
@@ -68,8 +89,16 @@ export default function GiftsClient() {
 
                 <motion.button
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => addToCart({ id: p.id.toString(), name: p.name, price: p.price, quantity: 1,img:p.img })}
-                  className="w-full bg-gradient-to-r from-pink-500 to-yellow-500 text-white py-3 rounded-xl font-semibold shadow-md hover:shadow-lg"
+                  onClick={() =>
+                    addToCart({
+                      id: p.id.toString(),
+                      name: p.name,
+                      price: p.price,
+                      quantity: 1,
+                      img: p.img,
+                    })
+                  }
+                  className="w-full mt-auto bg-gradient-to-r from-pink-500 to-yellow-500 text-white py-3 rounded-xl font-semibold shadow-md hover:shadow-lg"
                 >
                   Add to Cart 🛒
                 </motion.button>
@@ -81,12 +110,21 @@ export default function GiftsClient() {
 
       {/* Floating Cart Button */}
       {cart.length > 0 && (
-        <button
+        <motion.button
           onClick={() => router.push("/checkout")}
-          className="fixed bottom-6 right-6 bg-pink-600 text-white px-5 py-3 rounded-full shadow-xl hover:shadow-2xl transition"
+          whileHover={{ scale: 1.1 }}
+          animate={{
+            boxShadow: [
+              "0 0 0px #e7546b",
+              "0 0 15px #e7546b",
+              "0 0 0px #e7546b",
+            ],
+          }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="fixed bottom-6 right-6 bg-gradient-to-r from-pink-600 to-yellow-500 text-white px-6 py-4 rounded-full shadow-xl font-semibold"
         >
           🛒 {cart.length} Items
-        </button>
+        </motion.button>
       )}
     </main>
   );

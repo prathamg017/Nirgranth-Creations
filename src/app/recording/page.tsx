@@ -14,7 +14,7 @@ export default function RecordingVoiceoverPage() {
   {/* Left */}
   <div className="relative">
     <Image
-      src="/recording.jpg"
+      src="/setup.jpg"
       alt="Recording studio"
       fill
       priority
@@ -38,7 +38,7 @@ export default function RecordingVoiceoverPage() {
   {/* Right */}
   <div className="relative">
     <Image
-      src="/sing.jpg"
+      src="/music.jpg"
       alt="Studio setup"
       fill
       priority

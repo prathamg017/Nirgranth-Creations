@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { AnimatedCounter } from "@/app/components/counter";
+
 
 const featuredEvents = [
   {
@@ -52,58 +54,66 @@ export default function EventManagementPage() {
     <main className="text-gray-900 font-sans">
 
       {/* HERO: Fullscreen carousel video/images with overlay */}
-      <section className="relative h-screen overflow-hidden">
-        <Image
+<section className="relative h-screen overflow-hidden">
+  <Image
           src="https://i.pinimg.com/1200x/dd/da/0d/ddda0d8002b346e35ede092d7c0f3ea6.jpg"
           alt="Happy event crowd"
           fill
           className="object-cover brightness-75"
         />
         <div className="absolute inset-0 bg-black/50"></div>
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+  <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
+    <motion.h1
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
             className="text-5xl md:text-7xl font-extrabold text-white tracking-wider drop-shadow-2xl"
-          >
+    >
             Legendary Events, Unforgettable Moments
-          </motion.h1>
-          <motion.p
+    </motion.h1>
+    <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 1 }}
-            className="mt-6 text-lg md:text-2xl text-white/90 max-w-3xl"
-          >
+      className="mt-6 text-lg md:text-2xl text-white/90 max-w-3xl"
+    >
             Red carpet celebrations, spiritual gatherings, and luxury galas – curated with perfection.
-          </motion.p>
-          <Link
-            href="#contact"
+    </motion.p>
+    <Link
+      href="#contact"
             className="mt-10 px-8 py-4 rounded-full bg-gradient-to-r from-pink-600 to-yellow-500 text-white text-lg font-bold shadow-xl hover:scale-105 transition-transform"
-          >
+    >
             Plan Your Event
-          </Link>
-        </div>
-      </section>
+    </Link>
+  </div>
+</section>
 
-      {/* SUCCESS STATS: animated gradient cards */}
-      <section className="py-20 bg-pri-l text-white">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-6">
-          {stats.map((s, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.2 }}
-              className="bg-gradient-to-br from-pink-200 to-red-300 rounded-3xl p-10 shadow-2xl hover:scale-105 transition-transform text-center"
-            >
-              <p className="text-5xl font-extrabold">{s.value}</p>
-              <p className="mt-2 text-xl font-semibold">{s.label}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+{/* STATS with counter animation */}
+<section className="py-20 bg-gradient-to-r from-pink-300 via-white-500 to-red-300 text-white">
+  <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-6 text-center">
+    {stats.map((s, i) => (
+      <motion.div
+        key={i}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: i * 0.2 }}
+        className="relative bg-white/10 rounded-3xl p-10 shadow-xl hover:scale-105 transition-transform overflow-hidden"
+      >
+        {/* Shiny sweep effect */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-transparent opacity-20 animate-[shine_3s_linear_infinite]"></div>
+
+        {/* Counter animation */}
+       <p className="text-5xl font-extrabold">
+  <AnimatedCounter value={s.value} />
+</p>
+
+        <p className="mt-2 text-xl font-semibold">{s.label}</p>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
 
       {/* FEATURED EVENTS */}
       <section className="py-24 bg-gradient-to-b from-gray-50 to-white text-center">

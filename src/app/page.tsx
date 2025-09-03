@@ -60,55 +60,31 @@ export default function Home() {
       </section>
 
       {/* ✅ Products Section */}
-      <section id="products" className="py-16 px-6 bg-pink-50 text-center">
-        <h2 className="text-3xl md:text-5xl font-bold text-pink-600 mb-12">
-          Our Products & Services
-        </h2>
+     <section id="products" className="py-20 px-6 bg-white relative">
+  <h2 className="text-4xl md:text-6xl font-extrabold mb-16 text-center text-pink-600">
+    Our Products & Services
+  </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {[
-            {
-              title: "🎙 Recording Studio & Voice Over",
-              desc: "Professional audio production.",
-              href: "/recording",
-            },
-            {
-              title: "🎬 Graphics & Video Editing",
-              desc: "Creative visuals that inspire.",
-              href: "/graphic",
-            },
-            {
-              title: "💻 App & Web Development",
-              desc: "Building modern tech solutions.",
-              href: "/development",
-            },
-            {
-              title: "🛕 Jain Focused Gifts",
-              desc: "Special spiritual and cultural gifting ideas.",
-              href: "/jainproducts",
-            },
-            {
-              title: "🎁 Customised & Handmade Gifts",
-              desc: "Personalised creations and unique resin art, crafted for every occasion.",
-              href: "/customgifts",
-            },
-            {
-              title: "🎉 Event Planning & Management",
-              desc: "From intimate gatherings to grand celebrations, we plan and manage events that leave lasting impressions.",
-              href: "/event",
-            },
-          ].map((card, i) => (
-            <Link key={i} href={card.href}>
-              <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition cursor-pointer h-full flex flex-col">
-                <h3 className="text-xl font-semibold text-pink-600 mb-3">
-                  {card.title}
-                </h3>
-                <p className="text-gray-600 flex-grow">{card.desc}</p>
-              </div>
-            </Link>
-          ))}
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    {[
+      { icon: "🎙", title: "Recording Studio & Voice Over", desc: "Professional audio production.", href: "/recording" },
+      { icon: "🎬", title: "Graphics & Video Editing", desc: "Creative visuals that inspire.", href: "/graphic" },
+      { icon: "💻", title: "App & Web Development", desc: "Building modern tech solutions.", href: "/development" },
+      { icon: "🛕", title: "Jain Focused Gifts", desc: "Spiritual and cultural gifting ideas.", href: "/jainproducts" },
+      { icon: "🎁", title: "Customised & Handmade Gifts", desc: "Personalised resin art & more.", href: "/customgifts" },
+      { icon: "🎉", title: "Event Planning & Management", desc: "Unforgettable celebrations.", href: "/event" },
+    ].map((card, i) => (
+      <Link key={i} href={card.href}>
+        <div className="h-full flex flex-col items-center justify-between p-8 rounded-2xl border-2 border-transparent bg-white shadow-lg hover:shadow-pink-200 hover:border-pink-400 transition hover:-translate-y-2 text-center">
+          <div className="text-5xl mb-4">{card.icon}</div>
+          <h3 className="text-xl font-bold text-pink-600 mb-2">{card.title}</h3>
+          <p className="text-gray-600 flex-grow">{card.desc}</p>
         </div>
-      </section>
+      </Link>
+    ))}
+  </div>
+</section>
+
 
         {/* ✅ Highlights Section (simplified slideshow, no heavy animations) */}
         <section id="gallery" className="py-16 px-6 bg-white text-center">
