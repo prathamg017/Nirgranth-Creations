@@ -18,20 +18,24 @@ export default function Home() {
       {/* ✅ Hero Section with Motion */}
       <section className="relative h-[90vh] flex flex-col justify-center items-center text-center overflow-hidden">
         <div className="absolute inset-0 flex">
-          {["/bg8.JPG", "/bg4.JPG", "/bg11.JPG", "/bg10.JPG", "/bg9.JPG"].map(
-            (src, i) => (
-              <div key={i} className="relative w-1/4 h-full">
-                <Image
-                  src={src}
-                  alt={`Background ${i + 1}`}
-                  fill
-                  className="object-cover blur-sm opacity-80"
-                  priority={i === 0} // only first loads eagerly
-                />
-              </div>
-            )
-          )}
-        </div>
+  {["/bg8.JPG", "/bg4.JPG", "/bg11.JPG", "/bg10.JPG", "/bg9.JPG"].map(
+    (src, i) => (
+      <div key={i} className="relative w-1/5 h-full">
+        <Image
+          src={src}
+          alt={`Background ${i + 1}`}
+          fill
+          className="object-cover opacity-80"
+          priority // ✅ preload all hero images
+          placeholder="blur" // ✅ no white flash
+          blurDataURL="/tiny-blur.png" // optional tiny placeholder
+          sizes="20vw" // ✅ hint browser for performance
+        />
+      </div>
+    )
+  )}
+</div>
+
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/40" />
@@ -173,9 +177,9 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-3">Quick Links</h4>
               <ul className="space-y-2 text-white/80">
-                <li><a href="#about">About</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/recording">studio</a></li>
+                <li><a href="/development">development</a></li>
               </ul>
             </div>
 
