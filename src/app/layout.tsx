@@ -1,10 +1,11 @@
 "use client";
 
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import Navbar from "@/app/components/Navbar";
+import ToastProvider from "@/app/components/toast"; // ✅ default import
 import { ThemeProvider } from "next-themes";
+import { Geist, Geist_Mono } from "next/font/google";
 import { CartProvider } from "./context/CartContext";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,9 +28,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <CartProvider>   {/* ✅ Global cart context */}
-            <Navbar />
-            <main>{children}</main>
+          <CartProvider>
+            <ToastProvider> {/* ✅ Wrap everything inside your ToastProvider */}
+              <Navbar />
+              <main>{children}</main>
+            </ToastProvider>
           </CartProvider>
         </ThemeProvider>
       </body>

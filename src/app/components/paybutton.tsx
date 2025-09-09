@@ -1,5 +1,7 @@
 "use client";
 
+import { useToast } from "@/app/components/toast";
+import { useRouter } from "next/navigation"; // ✅ Import router
 import { useEffect, useState } from "react";
 
 interface CartItem {
@@ -36,6 +38,9 @@ export default function PayButton({
 }: PayButtonProps) {
   const [loading, setLoading] = useState(false);
   const [isRazorpayLoaded, setIsRazorpayLoaded] = useState(false);
+  const router = useRouter(); // ✅ Initialize router
+  const { showToast } = useToast();
+
 
   // Load Razorpay SDK dynamically
   useEffect(() => {
@@ -49,39 +54,37 @@ export default function PayButton({
 
   const handlePayment = async () => {
     if (!isRazorpayLoaded) {
-      alert("⚠️ Razorpay SDK not loaded yet. Please try again.");
+      showToast("⚠️ Razorpay SDK not loaded yet. Please try again.");
       return;
     }
 
     setLoading(true);
 
     try {
-      // 1️⃣ Save order in your DB as pending
+      // 1️⃣ Save order in DB
       const dbRes = await fetch("/api/order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount, formData, cart, status: "pending" }),
       });
       const dbData = await dbRes.json();
-
       if (!dbData?.success) {
-        alert("❌ Failed to save order in DB");
+        showToast("❌ Failed to save order in DB");
         setLoading(false);
         return;
       }
 
       const orderId = dbData.dbOrder._id;
 
-      // 2️⃣ Create Razorpay order via backend
+      // 2️⃣ Create Razorpay order
       const rzpRes = await fetch("/api/razorpay", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount, email: formData.email }),
       });
       const rzpOrder = await rzpRes.json();
-
       if (!rzpOrder?.id) {
-        alert("❌ Failed to create Razorpay order");
+        showToast("❌ Failed to create Razorpay order");
         setLoading(false);
         return;
       }
@@ -95,7 +98,6 @@ export default function PayButton({
         name: "Nirgranth Creations",
         description: "Order Payment",
         handler: async function (response: any) {
-          // Payment success → update order
           try {
             const res = await fetch("/api/updateorder", {
               method: "PUT",
@@ -109,25 +111,26 @@ export default function PayButton({
             const data = await res.json();
             if (!data.success) {
               console.error("❌ Failed to update order:", data);
-              alert("⚠️ Payment succeeded but updating order failed!");
+              showToast("⚠️ Payment succeeded but updating order failed!");
               return;
             }
-            alert("✅ Payment successful and order updated!");
+
+            showToast("✅ Payment successful!");
+            router.push("/"); // ✅ Redirect after success
           } catch (err) {
             console.error("⚠️ Error updating order:", err);
-            alert("⚠️ Payment succeeded but something went wrong updating order.");
+            showToast("⚠️ Payment succeeded but something went wrong updating order.");
           }
         },
         modal: {
           ondismiss: async function () {
-            // Payment cancelled → update order
             try {
               await fetch("/api/updateorder", {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ orderId, status: "cancelled" }),
               });
-              alert("⚠️ Payment cancelled");
+              showToast("⚠️ Payment cancelled");
             } catch (err) {
               console.error("⚠️ Error updating cancelled order:", err);
             }
@@ -146,7 +149,7 @@ export default function PayButton({
       rzp.open();
     } catch (err) {
       console.error("⚠️ Error during payment:", err);
-      alert("⚠️ Something went wrong");
+      showToast("⚠️ Something went wrong");
     } finally {
       setLoading(false);
     }
