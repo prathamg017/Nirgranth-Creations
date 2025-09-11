@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import GraphicRequestForm from "../components/graphicform";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -404,38 +405,7 @@ export default function GraphicsVideoEditingPage() {
             </ul>
           </div>
 
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20 shadow"
-          >
-            <div className="grid md:grid-cols-2 gap-4">
-              <input
-                required
-                placeholder="Your Name"
-                className="px-4 py-3 rounded-lg bg-white text-gray-800"
-              />
-              <input
-                required
-                placeholder="Email / Phone"
-                className="px-4 py-3 rounded-lg bg-white text-gray-800"
-              />
-              <select className="px-4 py-3 rounded-lg bg-white text-gray-800 md:col-span-2">
-                <option>Brand Kit & Socials</option>
-                <option>Video Editing (Shorts/Reels)</option>
-                <option>Explainer / Product Video</option>
-                <option>Motion Graphics / 3D</option>
-                <option>Other</option>
-              </select>
-              <textarea
-                rows={4}
-                placeholder="Project goals, references, links…"
-                className="px-4 py-3 rounded-lg bg-white text-gray-800 md:col-span-2"
-              />
-            </div>
-            <button className="mt-4 w-full px-6 py-3 rounded-lg bg-white text-pink-700 font-semibold hover:bg-pink-50 transition">
-              Get My Free Moodboard
-            </button>
-          </form>
+          <GraphicRequestForm/>
         </div>
       </section>
 

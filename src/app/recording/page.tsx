@@ -1,8 +1,10 @@
 "use client";
 
+import QuoteForm from "@/app/components/quotationform";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+
 
 export default function RecordingVoiceoverPage() {
   return (
@@ -234,37 +236,8 @@ export default function RecordingVoiceoverPage() {
               Tell us your project details and we’ll suggest the best approach, voice, timeline, and budget.
             </p>
           </div>
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 shadow-lg"
-          >
-            <div className="grid md:grid-cols-2 gap-4">
-              <input
-                className="px-4 py-3 rounded-lg bg-white text-gray-800 focus:ring-2 focus:ring-pink-500"
-                placeholder="Your Name"
-                required
-              />
-              <input
-                className="px-4 py-3 rounded-lg bg-white text-gray-800 focus:ring-2 focus:ring-pink-500"
-                placeholder="Email / Phone"
-                required
-              />
-              <select className="px-4 py-3 rounded-lg bg-white text-gray-800 md:col-span-2 focus:ring-2 focus:ring-pink-500">
-                <option>Voice Over</option>
-                <option>Podcast</option>
-                <option>Song Recording</option>
-                <option>Mixing/Mastering</option>
-              </select>
-              <textarea
-                className="px-4 py-3 rounded-lg bg-white text-gray-800 md:col-span-2 focus:ring-2 focus:ring-pink-500"
-                placeholder="Tell us about your project..."
-                rows={4}
-              />
-            </div>
-            <button className="mt-6 w-full px-6 py-3 rounded-lg bg-white text-pink-700 font-semibold hover:bg-pink-50 transition">
-              Request Quote
-            </button>
-          </form>
+          <QuoteForm />
+
         </div>
       </section>
 

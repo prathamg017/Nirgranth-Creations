@@ -1,14 +1,14 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
 import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { useState } from "react";
 import { Autoplay, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/autoplay";
+import "swiper/css/pagination";
 
 export default function Home() {
   const [lightbox, setLightbox] = useState<string | null>(null);
@@ -196,7 +196,11 @@ export default function Home() {
               <h4 className="font-semibold mb-3">Address</h4>
               <ul className="space-y-2 text-white/80">
                 <li>📍 Indore, India</li>
-                <li>📧 info@nirgranth.com</li>
+                <li className="flex items-center gap-2">
+  <span>📧</span>
+  <span>nirgranthcreations.co@gmail.com</span>
+</li>
+
               </ul>
             </div>
           </div>
