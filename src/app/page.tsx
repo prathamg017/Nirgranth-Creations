@@ -267,11 +267,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 cursor-pointer h-[320px]"
+                className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 cursor-pointer h-auto md:h-[320px]"
               >
                 <div className="flex flex-col md:flex-row-reverse h-full">
-                {/* Image Section */}
-                <div className="relative h-48 md:h-full md:w-1/2 overflow-hidden">
+                {/* Image Section - Larger on Mobile */}
+                <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
                     quality={75}
@@ -281,20 +281,20 @@ export default function Home() {
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-500"></div>
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
                 </div>
                 
-                {/* Content Section - FIXED with isolation */}
-                <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
+                {/* Content Section - Better Mobile Padding */}
+                <div className="relative isolate p-5 sm:p-6 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
                   <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                   <div className="relative flex-1 flex flex-col justify-center">
-                    <h3 className="text-lg md:text-xl font-bold mb-2 text-gray-900 group-hover:text-white transition-colors duration-500">
+                    <h3 className="text-xl sm:text-2xl md:text-xl font-bold mb-2 sm:mb-3 text-gray-900 group-hover:text-white transition-colors duration-500">
                       JAIN FOCUSED<br />GIFTS
                     </h3>
-                    <p className="text-gray-600 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500">
+                    <p className="text-gray-600 group-hover:text-white/95 mb-3 text-sm sm:text-base md:text-sm leading-relaxed transition-colors duration-500">
                       Spiritual and cultural gifting inspired by Jain tradition.
                     </p>
-                    <ul className="space-y-1 text-gray-500 group-hover:text-white/90 text-xs md:text-sm transition-colors duration-500">
+                    <ul className="space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500">
                       <li>• Temple-themed gifts</li>
                       <li>• Spiritual decor</li>
                       <li>• Miniature structures</li>
@@ -313,11 +313,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 cursor-pointer h-[320px]"
+                className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 cursor-pointer h-auto md:h-[320px]"
               >
                 <div className="flex flex-col md:flex-row h-full">
-                {/* Image Section */}
-                <div className="relative h-48 md:h-full md:w-1/2 overflow-hidden">
+                {/* Image Section - Larger on Mobile */}
+                <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
                     quality={75}
@@ -327,20 +327,20 @@ export default function Home() {
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-500"></div>
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
                 </div>
                 
-                {/* Content Section - FIXED with isolation */}
-                <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
+                {/* Content Section - Better Mobile Padding */}
+                <div className="relative isolate p-5 sm:p-6 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
                   <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                   <div className="relative flex-1 flex flex-col justify-center">
-                    <h3 className="text-lg md:text-xl font-bold mb-2 text-gray-900 group-hover:text-white transition-colors duration-500">
+                    <h3 className="text-xl sm:text-2xl md:text-xl font-bold mb-2 sm:mb-3 text-gray-900 group-hover:text-white transition-colors duration-500">
                       EVENT<br />MANAGEMENT
                     </h3>
-                    <p className="text-gray-600 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500">
+                    <p className="text-gray-600 group-hover:text-white/95 mb-3 text-sm sm:text-base md:text-sm leading-relaxed transition-colors duration-500">
                       Unforgettable celebrations crafted with precision and care.
                     </p>
-                    <ul className="space-y-1 text-gray-500 group-hover:text-white/90 text-xs md:text-sm transition-colors duration-500">
+                    <ul className="space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500">
                       <li>• Corporate events</li>
                       <li>• Wedding planning</li>
                       <li>• Cultural celebrations</li>
@@ -359,11 +359,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 cursor-pointer h-[320px]"
+                className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 cursor-pointer h-auto md:h-[320px]"
               >
                 <div className="flex flex-col md:flex-row-reverse h-full">
-                {/* Image Section */}
-                <div className="relative h-48 md:h-full md:w-1/2 overflow-hidden">
+                {/* Image Section - Larger on Mobile */}
+                <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
                     quality={75}
@@ -373,24 +373,24 @@ export default function Home() {
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-500"></div>
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
                 </div>
                 
-                {/* Content Section - FIXED with isolation */}
-                <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
+                {/* Content Section - Better Mobile Padding */}
+                <div className="relative isolate p-5 sm:p-6 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
                   <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                   <div className="relative flex-1 flex flex-col justify-center">
-                    <h3 className="text-lg md:text-xl font-bold mb-2 text-gray-900 group-hover:text-white transition-colors duration-500">
+                    <h3 className="text-xl sm:text-2xl md:text-xl font-bold mb-2 sm:mb-3 text-gray-900 group-hover:text-white transition-colors duration-500">
                       RATNATRAY
                     </h3>
-                    <p className="text-gray-600 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500">
-                      Sacred Jain ceremonial items and spiritual accessories.
+                    <p className="text-gray-600 group-hover:text-white/95 mb-3 text-sm sm:text-base md:text-sm leading-relaxed transition-colors duration-500">
+                      Jinshasan ki Prabhavna - Modern dharmik concert event to attract Jain youth.
                     </p>
-                    <ul className="space-y-1 text-gray-500 group-hover:text-white/90 text-xs md:text-sm transition-colors duration-500">
-                      <li>• Ceremonial trays</li>
-                      <li>• Pooja accessories</li>
-                      <li>• Traditional designs</li>
-                      <li>• Custom arrangements</li>
+                    <ul className="space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500">
+                      <li>• Spiritual concerts</li>
+                      <li>• Youth engagement</li>
+                      <li>• Modern dharmik events</li>
+                      <li>• Cultural celebrations</li>
                     </ul>
                   </div>
                 </div>
