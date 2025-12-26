@@ -106,7 +106,7 @@ export default function Home() {
                 Ready to Bring Your Vision to Life?
               </h3>
               <p className="text-white/95 text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto mb-6 md:mb-8 leading-relaxed">
-                Whether it's a spiritual project, creative design, or digital solution – we're here to help you create something extraordinary.
+                Whether it&apos;s a spiritual project, creative design, or digital solution – we&apos;re here to help you create something extraordinary.
               </p>
               <Link href="/contact">
                 <button className="bg-white px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-full font-bold text-sm sm:text-base md:text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 shadow-xl" style={{ color: '#FF5851' }}>
@@ -596,7 +596,7 @@ export default function Home() {
                   </h4>
                   <p className="text-xs md:text-sm text-gray-500 mb-4">{testimonial.location}</p>
                   <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                    "{testimonial.testimonial}"
+                    &quot;{testimonial.testimonial}&quot;
                   </p>
                 </div>
               </motion.div>

@@ -266,7 +266,7 @@ export default function DevelopmentClient() {
             Ready to <span style={{ color: '#FF5851' }}>Ship</span> Your Product?
           </h2>
           <p className="text-xl text-gray-400 mb-10 font-sans">
-            Let's turn your vision into a scalable, production-ready application
+            Let&apos;s turn your vision into a scalable, production-ready application
           </p>
           <a
             href="#quote"
@@ -297,10 +297,10 @@ export default function DevelopmentClient() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeUp(0)}>
               <h3 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 font-sans">
-                Let's Build Something Extraordinary
+                Let&apos;s Build Something Extraordinary
               </h3>
               <p className="text-xl text-white/90 mb-8 leading-relaxed font-sans">
-                Share your project requirements and we'll craft a custom solution using the latest technology.
+                Share your project requirements and we&apos;ll craft a custom solution using the latest technology.
               </p>
               <ul className="space-y-4 text-lg font-sans">
                 <li className="flex items-center gap-3">

@@ -52,7 +52,6 @@ interface LeadData {
 export default function AdaptiveChatBot() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentStep, setCurrentStep] = useState<ChatStep>('welcome');
-  const [selectedService, setSelectedService] = useState<ServiceType>(null);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [leadData, setLeadData] = useState<LeadData>({});
   const [contactInput, setContactInput] = useState('');
@@ -67,6 +66,7 @@ export default function AdaptiveChatBot() {
       openChat();
     }, 2000);
     return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Auto-scroll to bottom
@@ -103,7 +103,6 @@ export default function AdaptiveChatBot() {
 
       case 'service':
         setLeadData(prev => ({ ...prev, service: value as ServiceType }));
-        setSelectedService(value as ServiceType);
         
         if (value === 'website') {
           addMessage('What are you planning to build?', 'bot', 1200);
