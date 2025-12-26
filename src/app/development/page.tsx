@@ -1,189 +1,334 @@
 // app/development/DevelopmentClient.tsx
 "use client";
 
+import VisionaryShowcase from "@/app/components/VisionaryShowcase";
+import QuoteForm from "@/app/components/quotationform";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import VisionaryShowcase from "@/app/components/VisionaryShowcase";
+
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.6, delay },
+});
+
+const techStack = [
+  { name: "Next.js", icon: "▲", color: "#000000" },
+  { name: "Flutter", icon: "F", color: "#02569B" },
+  { name: "React", icon: "⚛", color: "#61DAFB" },
+  { name: "Node.js", icon: "◆", color: "#339933" },
+  { name: "TypeScript", icon: "TS", color: "#3178C6" },
+  { name: "Firebase", icon: "🔥", color: "#FFCA28" },
+];
+
+const services = [
+  {
+    title: "Next.js Web Apps",
+    desc: "Lightning-fast, SEO-optimized web applications built with Next.js",
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+      </svg>
+    ),
+  },
+  {
+    title: "Flutter Mobile Apps",
+    desc: "Cross-platform iOS & Android apps with a single Flutter codebase",
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+      </svg>
+    ),
+  },
+  {
+    title: "Backend & APIs",
+    desc: "Scalable Node.js backends with RESTful & GraphQL APIs",
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Cloud & DevOps",
+    desc: "Firebase, AWS deployment with CI/CD pipelines",
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
+      </svg>
+    ),
+  },
+];
 
 export default function DevelopmentClient() {
-  // Cursor glow tracking
-  const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [typedText, setTypedText] = useState("");
+  const codeSnippet = "const future = await build();";
+
   useEffect(() => {
-    const move = (e: MouseEvent) => setPos({ x: e.clientX, y: e.clientY });
-    window.addEventListener("mousemove", move);
-    return () => window.removeEventListener("mousemove", move);
+    let i = 0;
+    const typing = setInterval(() => {
+      if (i < codeSnippet.length) {
+        setTypedText(codeSnippet.substring(0, i + 1));
+        i++;
+      } else {
+        clearInterval(typing);
+      }
+    }, 100);
+    return () => clearInterval(typing);
   }, []);
 
   return (
-    <main className="relative text-gray-800 overflow-hidden font-sans">
-
-      {/* Cursor Glow */}
-      <div
-        className="pointer-events-none fixed inset-0 -z-10"
-        style={{
-          background: `radial-gradient(circle 200px at ${pos.x}px ${pos.y}px, rgba(231,84,107,0.15), transparent 80%)`,
-        }}
-      />
-
+    <main className="relative text-white overflow-hidden font-mono bg-gradient-to-b from-gray-900 via-black to-gray-900">
       {/* Animated Grid Background */}
-      <div className="absolute inset-0 -z-20 opacity-10">
-        <svg className="w-full h-full">
-          <defs>
-            <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="gray" strokeWidth="0.4" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
+      <div className="fixed inset-0 -z-10 opacity-20">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,88,81,0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,88,81,0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '50px 50px',
+        }}></div>
       </div>
 
-      {/* Floating Blobs */}
-      <motion.div
-        animate={{ y: [0, -25, 0], scale: [1, 1.08, 1] }}
-        transition={{ repeat: Infinity, duration: 8 }}
-        className="absolute top-[-150px] left-[-100px] w-[400px] h-[400px] bg-gradient-to-r from-pink-200 via-rose-200 to-yellow-200 rounded-full blur-[120px] -z-10"
-      />
-      <motion.div
-        animate={{ y: [0, 30, 0], scale: [1, 1.05, 1] }}
-        transition={{ repeat: Infinity, duration: 10 }}
-        className="absolute bottom-[-200px] right-[-150px] w-[500px] h-[500px] bg-gradient-to-r from-pink-300 via-orange-200 to-pink-100 rounded-full blur-[140px] -z-10"
-      />
-
-      {/* 1. HERO */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 bg-gradient-to-br from-pink-50 via-rose-100 to-yellow-50">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-10"
+      {/* Floating Code Elements - Simplified */}
+      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <motion.div
+          animate={{ y: [0, -20, 0], opacity: [0.2, 0.4, 0.2] }}
+          transition={{ repeat: Infinity, duration: 8 }}
+          className="absolute top-20 left-10 text-5xl text-pink-500/20 font-bold"
         >
-          <source src="/brand-bg.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-pink-50/80 -z-10" />
+          {"{ }"}
+        </motion.div>
+        <motion.div
+          animate={{ y: [0, 20, 0], opacity: [0.2, 0.4, 0.2] }}
+          transition={{ repeat: Infinity, duration: 10 }}
+          className="absolute bottom-40 right-20 text-5xl text-blue-500/20 font-bold"
+        >
+          {"< />"}
+        </motion.div>
+      </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto">
-          <motion.h1
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight text-gray-900"
-          >
-            We Shape{" "}
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 1 }}
-              className="bg-gradient-to-r from-pink-500 via-orange-400 to-rose-400 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(231,84,107,0.3)]"
-            >
-              Digital Futures
-            </motion.span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
+      {/* HERO SECTION - Terminal Style */}
+      <section className="relative min-h-screen flex items-center justify-center px-6 pt-20">
+        <div className="max-w-6xl mx-auto w-full">
+          {/* Terminal Window */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="mt-6 text-xl text-gray-700 max-w-2xl mx-auto"
+            transition={{ duration: 0.8 }}
+            className="bg-gray-800/50 backdrop-blur-xl rounded-2xl border border-gray-700 shadow-2xl overflow-hidden"
           >
-            More than apps. More than websites.{" "}
-            We craft <span className="text-pink-600 font-semibold">timeless digital brands</span>.
-          </motion.p>
+            {/* Terminal Header */}
+            <div className="bg-gray-700/50 px-4 py-3 flex items-center gap-2 border-b border-gray-600">
+              <div className="flex gap-2">
+                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+              </div>
+              <span className="text-gray-400 text-sm ml-4">development.tsx</span>
+            </div>
 
-          <motion.a
-            href="/contact"
-            animate={{
-              boxShadow: [
-                "0 0 0px #e7546b",
-                "0 0 15px #e7546b",
-                "0 0 0px #e7546b",
-              ],
-            }}
-            transition={{ repeat: Infinity, duration: 2 }}
-            whileHover={{ scale: 1.08 }}
-            className="mt-10 inline-block px-10 py-4 bg-gradient-to-r from-pink-500 via-orange-400 to-rose-400 text-white rounded-full font-semibold shadow-lg hover:shadow-pink-400/50 transition"
-          >
-            Let’s Talk Vision 🚀
-          </motion.a>
+            {/* Terminal Content */}
+            <div className="p-8 md:p-12">
+              <div className="text-green-400 mb-4 text-sm">$ npm run build</div>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                <span className="text-gray-300">We Build Apps With</span>{" "}
+                <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+                  Flutter & Next.js
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-400 mb-8 font-sans max-w-3xl">
+                Cross-platform mobile apps with Flutter. Lightning-fast web applications with Next.js.
+                One vision, multiple platforms.
+              </p>
+
+              {/* Typed Code */}
+              <div className="bg-black/50 rounded-lg p-4 mb-8 border border-gray-700">
+                <code className="text-pink-400">
+                  {typedText}
+                  <span className="animate-pulse">|</span>
+                </code>
+              </div>
+
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="#quote"
+                  className="px-8 py-4 rounded-lg font-bold text-white shadow-lg hover:shadow-pink-500/50 transition-all duration-300 font-sans"
+                  style={{ backgroundColor: '#FF5851' }}
+                >
+                  Start Your Project
+                </a>
+                <a
+                  href="#tech"
+                  className="px-8 py-4 rounded-lg bg-gray-700/50 border border-gray-600 font-bold text-white hover:bg-gray-600/50 transition-all duration-300 font-sans"
+                >
+                  View Tech Stack
+                </a>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="h-[2px] w-3/4 mx-auto my-16 bg-gradient-to-r from-yellow-300 via-pink-400 to-rose-300" />
+      {/* TECH STACK SECTION */}
+      <section id="tech" className="py-24 px-6 bg-black/30">
+        <div className="max-w-7xl mx-auto">
+          <motion.div {...fadeUp(0)} className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-sans">
+              Our <span style={{ color: '#FF5851' }}>Tech Stack</span>
+            </h2>
+            <p className="text-gray-400 text-xl font-sans">Technologies we master to build your vision</p>
+          </motion.div>
 
-      {/* 2. FUTURISTIC MARQUEE */}
-      <section className="py-16 border-y border-gray-200 bg-gradient-to-r from-pink-50 via-orange-50 to-rose-100">
-        <div className="marquee-container">
-          <div className="marquee-track">
-            {["Websites", "Apps", "AI", "E-Commerce", "Startups", "Innovation"].map(
-              (word, i) => (
-                <span key={i}>{word}</span>
-              )
-            )}
-            {["Websites", "Apps", "AI", "E-Commerce", "Startups", "Innovation"].map(
-              (word, i) => (
-                <span key={`dup-${i}`}>{word}</span>
-              )
-            )}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {techStack.map((tech, i) => (
+              <motion.div
+                key={i}
+                {...fadeUp(i * 0.1)}
+                className="group relative bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-pink-500 transition-all duration-300 hover:scale-105"
+              >
+                <div className="text-4xl mb-3 text-center">{tech.icon}</div>
+                <div className="text-center font-bold text-gray-300 font-sans">{tech.name}</div>
+                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 3. VISIONARY SHOWCASE */}
-      <VisionaryShowcase />
+      {/* SERVICES SECTION */}
+      <section className="py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <motion.div {...fadeUp(0)} className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-sans">
+              What We <span style={{ color: '#FF5851' }}>Build</span>
+            </h2>
+            <p className="text-gray-400 text-xl font-sans max-w-2xl mx-auto">
+              Full-stack development services for modern businesses
+            </p>
+          </motion.div>
 
-      {/* Divider */}
-      <div className="h-[2px] w-3/4 mx-auto my-16 bg-gradient-to-r from-rose-300 via-pink-400 to-yellow-300" />
-
-      {/* 4. BRAND QUOTE */}
-      <section className="py-32 text-center relative bg-gradient-to-br from-pink-50 via-yellow-50 to-rose-100">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-2xl md:text-4xl italic max-w-4xl mx-auto leading-relaxed text-gray-700"
-        >
-          “We don’t just build tech.{" "}
-          We <span className="text-pink-600 font-semibold">craft stories</span> that live inside apps.”
-          <span className="block mt-6 text-pink-500 font-bold">
-            – Akash Jain, Founder
-          </span>
-        </motion.p>
+          <div className="grid md:grid-cols-2 gap-6">
+            {services.map((service, i) => (
+              <motion.div
+                key={i}
+                {...fadeUp(i * 0.15)}
+                className="group relative bg-gray-800/30 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-pink-500 transition-all duration-500 hover:scale-[1.02]"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-lg bg-pink-500/10 text-pink-500 group-hover:bg-pink-500 group-hover:text-white transition-all duration-300">
+                    {service.icon}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-white mb-2 font-sans">{service.title}</h3>
+                    <p className="text-gray-400 font-sans leading-relaxed">{service.desc}</p>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
 
-      {/* Divider */}
-      <div className="h-[2px] w-3/4 mx-auto my-16 bg-gradient-to-r from-yellow-300 via-pink-400 to-rose-300" />
+      {/* VISIONARY SHOWCASE */}
+      <VisionaryShowcase />
 
-      {/* 5. FINAL MANIFESTO CTA */}
-      <section className="py-32 text-center relative bg-gradient-to-b from-rose-100 via-pink-50 to-yellow-50">
-        <motion.h2
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7 }}
-          className="text-4xl md:text-6xl font-extrabold max-w-4xl mx-auto leading-snug text-gray-900"
-        >
-          You’re Not Hiring <span className="text-pink-600">Developers</span>.
-          <br />
-          You’re Partnering With{" "}
-          <span className="bg-gradient-to-r from-pink-500 via-orange-400 to-rose-400 bg-clip-text text-transparent">
-            Visionaries
-          </span>.
-        </motion.h2>
-        <motion.a
-          href="/contact"
-          whileHover={{ scale: 1.08 }}
-          animate={{
-            boxShadow: [
-              "0 0 0px #e7546b",
-              "0 0 15px #e7546b",
-              "0 0 0px #e7546b",
-            ],
-          }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="mt-12 inline-block px-12 py-5 bg-gradient-to-r from-pink-500 via-orange-400 to-rose-400 text-white rounded-full font-semibold shadow-lg hover:shadow-pink-400/50 transition"
-        >
-          Start Your Journey
-        </motion.a>
+      {/* STATS SECTION - Code Style */}
+      <section className="py-24 px-6 bg-black/30">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              { label: "Projects Delivered", value: "150+", symbol: "{}" },
+              { label: "Client Satisfaction", value: "99%", symbol: "<>" },
+              { label: "Years Experience", value: "8+", symbol: "[]" },
+              { label: "Tech Stack", value: "20+", symbol: "()" },
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                {...fadeUp(i * 0.1)}
+                className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 text-center hover:border-pink-500 transition-all duration-300"
+              >
+                <div className="text-pink-500 text-2xl mb-2">{stat.symbol}</div>
+                <div className="text-4xl font-bold text-white mb-2 font-sans">{stat.value}</div>
+                <div className="text-gray-400 text-sm font-sans">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA SECTION */}
+      <section className="py-32 px-6 text-center">
+        <motion.div {...fadeUp(0)} className="max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 font-sans leading-tight">
+            Ready to <span style={{ color: '#FF5851' }}>Ship</span> Your Product?
+          </h2>
+          <p className="text-xl text-gray-400 mb-10 font-sans">
+            Let's turn your vision into a scalable, production-ready application
+          </p>
+          <a
+            href="#quote"
+            className="inline-block px-12 py-5 rounded-lg font-bold text-white shadow-2xl hover:shadow-pink-500/50 transition-all duration-300 hover:scale-105 font-sans"
+            style={{ backgroundColor: '#FF5851' }}
+          >
+            Get Started Now
+          </a>
+        </motion.div>
+      </section>
+
+      {/* QUOTE FORM SECTION - Dark Theme */}
+      <section
+        id="quote"
+        className="py-24 px-6 text-white relative overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800 to-black border-t border-gray-700"
+      >
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `
+              linear-gradient(rgba(255,88,81,0.3) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,88,81,0.3) 1px, transparent 1px)
+            `,
+            backgroundSize: '30px 30px',
+          }}></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div {...fadeUp(0)}>
+              <h3 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 font-sans">
+                Let's Build Something Extraordinary
+              </h3>
+              <p className="text-xl text-white/90 mb-8 leading-relaxed font-sans">
+                Share your project requirements and we'll craft a custom solution using the latest technology.
+              </p>
+              <ul className="space-y-4 text-lg font-sans">
+                <li className="flex items-center gap-3">
+                  <svg className="w-6 h-6 flex-shrink-0 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                  <span>Free technical consultation & architecture planning</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <svg className="w-6 h-6 flex-shrink-0 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                  <span>Custom tech stack recommendations</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <svg className="w-6 h-6 flex-shrink-0 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                  <span>Transparent timeline & cost breakdown</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            <motion.div {...fadeUp(0.2)}>
+              <QuoteForm />
+            </motion.div>
+          </div>
+        </div>
       </section>
     </main>
   );

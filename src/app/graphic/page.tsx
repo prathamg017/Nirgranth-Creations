@@ -16,40 +16,41 @@ export default function GraphicsVideoEditingPage() {
   return (
     <main className="text-gray-900">
       {/* ===== HERO: Neon Gradient, Glass Card ===== */}
-     <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden min-h-screen">
   {/* Background video */}
   <video
-    className="absolute inset-0 w-full h-full object-cover -z-10"
+    className="absolute inset-0 w-full h-full object-cover z-0"
     autoPlay
     muted
     loop
     playsInline
+    preload="auto"
   >
     <source src="/vid.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
   {/* Subtle dark tint for readability */}
-  <div className="absolute inset-0 bg-black/30 -z-10" />
+  <div className="absolute inset-0 bg-black/30 z-0" />
 
-  <div className="max-w-7xl mx-auto px-6 pt-28 pb-20">
+  <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-20">
     {/* Glass card for hero text */}
     <motion.div
       {...fadeUp(0)}
       className="mx-auto max-w-4xl text-center bg-black/30 backdrop-blur-sm rounded-2xl p-10 border border-white/10"
     >
       <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium bg-white/20 text-white backdrop-blur border border-white/30">
-        ✨ Creative Studio
+        ✨ Creative Studio - Graphics &amp; Video
       </span>
       <h1 className="mt-6 text-4xl md:text-6xl font-extrabold leading-tight text-white drop-shadow">
-        Graphics & Video Editing that
+        Graphics &amp; Video Editing that
         <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-pink-200 to-white">
           actually gets you clicks.
         </span>
       </h1>
       <p className="mt-5 text-white/90 text-lg md:text-xl">
-        Thumb-stopping social content, cinematic edits, brand kits, motion
-        graphics, ads that convert, and everything in-between.
+        From stunning graphics to cinematic video edits - we deliver thumb-stopping social content, 
+        brand kits, motion graphics, documentaries, ads that convert, and everything in-between.
       </p>
 
       <div className="mt-8 flex flex-wrap justify-center gap-4">
@@ -388,7 +389,8 @@ export default function GraphicsVideoEditingPage() {
       {/* ===== BRIEF FORM / CTA ===== */}
       <section
         id="brief"
-        className="py-24 px-6 text-white bg-gradient-to-r from-pink-600 to-violet-600"
+        className="py-24 px-6 text-white"
+        style={{ backgroundColor: '#FF5851' }}
       >
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div>

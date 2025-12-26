@@ -3,8 +3,50 @@
 @import "swiper/css/pagination";
 @import "swiper/css/autoplay";
 
+/* Performance optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
+html {
+  scroll-behavior: smooth;
+}
 
+/* GPU acceleration for transforms */
+.transform,
+[class*="translate"],
+[class*="scale"],
+[class*="rotate"] {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Optimize animations */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Performance: Contain layout shifts */
+img,
+video {
+  content-visibility: auto;
+  contain: layout style paint;
+}
+
+/* Performance: Font loading */
+@font-face {
+  font-display: swap;
+}
 
 :root {
   --background: #ffffff;
@@ -24,42 +66,15 @@
     --foreground: #ededed;
   }
 }
-.clip-left {
-  /* triangle on left */
-  -webkit-clip-path: polygon(0 0, 60% 0, 50% 100%, 0% 100%);
-  clip-path: polygon(0 0, 60% 0, 50% 100%, 0% 100%);
-}
-
-.clip-right {
-  /* triangle on right */
-  -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 40% 100%);
-  clip-path: polygon(50% 0, 100% 0, 100% 100%, 40% 100%);
-}
-
-/* Mobile: stacks hero images so it still looks good */
-@media (max-width: 768px) {
-  .clip-left, .clip-right {
-    clip-path: none !important;
-    -webkit-clip-path: none !important;
-  }
-}
-
-
-
-.animate-shine {
-  animation: shine 2s linear infinite;
-  background-size: 200% auto;
-  mix-blend-mode: screen; /* ensures shimmer blends instead of blocking */
-}
-
-
-
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
 }
+
 /* === Light Theme (default) === */
 :root {
   --color-bg: #ffffff;
@@ -67,7 +82,8 @@ body {
   --color-text: #111827;
   --color-text-muted: #4b5563;
 
-  --pri: #e7546b;     /* Brand primary */
+  --pri: #e7546b;
+  /* Brand primary */
   --pri-light: #ffe9ed;
   --pri-text: #ffffff;
 }
@@ -79,14 +95,17 @@ html.dark {
   --color-text: #f9fafb;
   --color-text-muted: #9ca3af;
 
-  --pri: #e7546b;     /* keep same brand OR change if needed */
+  --pri: #e7546b;
+  /* keep same brand OR change if needed */
   --pri-light: #1f2937;
   --pri-text: #f9fafb;
 }
+
 @keyframes marquee {
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-100%);
   }
@@ -106,7 +125,8 @@ html.dark {
 .marquee-track span {
   margin: 0 3rem;
   font-weight: 800;
-  font-size: 2.5rem; /* adjust size */
+  font-size: 2.5rem;
+  /* adjust size */
   background: linear-gradient(to right, #e7546b, #fb7185);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -115,16 +135,40 @@ html.dark {
 
 
 /* === Utility Classes (usable anywhere) === */
-.bg-base      { background-color: var(--color-bg); }
-.bg-base-alt  { background-color: var(--color-bg-alt); }
-.text-base    { color: var(--color-text); }
-.text-muted   { color: var(--color-text-muted); }
+.bg-base {
+  background-color: var(--color-bg);
+}
 
-.bg-pri       { background-color: var(--pri); }
-.bg-pri-light { background-color: var(--pri-light); }
-.text-pri     { color: var(--pri-text); }
+.bg-base-alt {
+  background-color: var(--color-bg-alt);
+}
+
+.text-base {
+  color: var(--color-text);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.bg-pri {
+  background-color: var(--pri);
+}
+
+.bg-pri-light {
+  background-color: var(--pri-light);
+}
+
+.text-pri {
+  color: var(--pri-text);
+}
 
 /* Smooth transitions on theme change */
-html, body, .bg-base, .bg-base-alt, .bg-pri, .bg-pri-light {
+html,
+body,
+.bg-base,
+.bg-base-alt,
+.bg-pri,
+.bg-pri-light {
   transition: background-color 0.3s ease, color 0.3s ease;
 }

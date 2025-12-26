@@ -1,5 +1,6 @@
 "use client";
 
+import ChatBot from "@/app/components/ChatBot";
 import Navbar from "@/app/components/Navbar";
 import ToastProvider from "@/app/components/toast"; // ✅ default import
 import { ThemeProvider } from "next-themes";
@@ -32,6 +33,7 @@ export default function RootLayout({
             <ToastProvider> {/* ✅ Wrap everything inside your ToastProvider */}
               <Navbar />
               <main>{children}</main>
+              <ChatBot />
             </ToastProvider>
           </CartProvider>
         </ThemeProvider>
