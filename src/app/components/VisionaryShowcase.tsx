@@ -100,7 +100,7 @@ export default function VisionaryShowcase() {
       {/* CTA */}
       <div className="text-center mt-28">
         <motion.a
-          href="/contact"
+          href="/contact?service=App-and-Web-Development"
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.95 }}
           className="px-12 py-5 bg-[#e7546b] text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-pink-400/40 transition"
