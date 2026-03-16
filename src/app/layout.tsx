@@ -53,7 +53,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nirgranth Creations | Agency of Future",
     description: "We manufacture authority and craft empires.",
-  }
+  },
+  icons: {
+    icon: "/nirgranthlogo.PNG",
+    apple: "/nirgranthlogo.PNG",
+  },
 };
 
 export const viewport = {

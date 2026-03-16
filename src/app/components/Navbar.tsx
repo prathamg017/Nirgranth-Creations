@@ -23,12 +23,12 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center cursor-pointer">
             <Image
-              src="/logo.svg"
+              src="/nirgranthlogo.PNG"
               alt="Nirgranth Creations Logo"
-              width={140}
-              height={40}
+              width={180}
+              height={60}
               priority
-              className="object-contain w-[120px] md:w-[150px] h-auto"
+              className="object-contain w-[140px] md:w-[180px] h-auto"
             />
           </Link>
 

@@ -675,10 +675,10 @@ export default function Home() {
                     loading="lazy"
                     quality={75}
                     sizes="(max-width: 768px) 100px, 120px"
-                  src="/logo.svg"
+                  src="/nirgranthlogo.PNG"
                   alt="Nirgranth Creations Logo"
-                  width={100}
-                  height={33}
+                  width={150}
+                  height={50}
                   className="object-contain"
                 />
               </div>
