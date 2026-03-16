@@ -124,7 +124,7 @@ export default function PremiumChatBot() {
             <div className="p-6 bg-gradient-to-r from-[#FF5851] to-orange-600 flex items-center justify-between text-white shrink-0">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-white rounded-2xl p-1 flex items-center justify-center">
-                  <Image src="/nirgranthlogo.PNG" alt="Nirgranth" width={40} height={40} className="object-contain" />
+                  <Image src="/logo.svg" alt="Nirgranth" width={32} height={32} className="object-contain" />
                 </div>
                 <div>
                   <h3 className="font-black text-lg leading-tight tracking-tight">Master Execution</h3>
