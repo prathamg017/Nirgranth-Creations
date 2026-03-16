@@ -55,8 +55,13 @@ export const metadata: Metadata = {
     description: "We manufacture authority and craft empires.",
   },
   icons: {
-    icon: "/nirgranthlogo.PNG",
-    apple: "/nirgranthlogo.PNG",
+    icon: [
+      { url: "/favicon-branded.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/favicon-branded.png", sizes: "192x192", type: "image/png" },
+    ],
   },
 };
 
