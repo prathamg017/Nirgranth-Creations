@@ -16,13 +16,13 @@ export default function Home() {
             fill
             priority
             fetchPriority="high"
-            className="object-cover object-[center_30%] sm:object-center blur-[100px] sm:blur-0 scale-150 sm:scale-100 opacity-90 sm:opacity-100 transition-all duration-700"
-            quality={90}
+            className="object-cover object-[center_30%] sm:object-center blur-[100px] sm:blur-none scale-150 sm:scale-100 opacity-90 sm:opacity-100 transition-all duration-700"
+            quality={100}
             sizes="100vw"
           />
           
-          {/* Professional Gradient Overlay - Responsive for transparency/readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/70 sm:from-black/50 sm:via-transparent sm:to-black/60"></div>
+          {/* Professional Gradient Overlay - Lightened on desktop to show image clearly */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/80 sm:from-black/40 sm:via-transparent sm:to-black/40"></div>
           
           {/* Text Overlay - Optimized for Mobile - Added PT to avoid navbar overlap */}
           <div className="absolute inset-0 flex items-center justify-center sm:justify-start pt-24 md:pt-28">
