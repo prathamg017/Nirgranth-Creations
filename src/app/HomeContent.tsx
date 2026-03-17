@@ -16,13 +16,13 @@ export default function Home() {
             fill
             priority
             fetchPriority="high"
-            className="object-cover object-[center_30%] sm:object-center blur-[120px] scale-150 opacity-90"
-            quality={1}
+            className="object-cover object-[center_30%] sm:object-center blur-[100px] sm:blur-0 scale-150 sm:scale-100 opacity-90 sm:opacity-100 transition-all duration-700"
+            quality={90}
             sizes="100vw"
           />
           
-          {/* Professional Gradient Overlay - Lightened to let colors shine through */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50"></div>
+          {/* Professional Gradient Overlay - Responsive for transparency/readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/70 sm:from-black/50 sm:via-transparent sm:to-black/60"></div>
           
           {/* Text Overlay - Optimized for Mobile - Added PT to avoid navbar overlap */}
           <div className="absolute inset-0 flex items-center justify-center sm:justify-start pt-24 md:pt-28">
@@ -152,14 +152,13 @@ export default function Home() {
                 <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
-                    quality={40}
+                    quality={75}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     src="/recording.jpg"
                     alt="Recording Studio"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                    
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
                 </div>
                 
@@ -200,7 +199,7 @@ export default function Home() {
                 <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
-                    quality={50}
+                    quality={75}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     src="/vigraphic.png"
                     alt="Graphics & Video Editing"
@@ -247,7 +246,7 @@ export default function Home() {
                 <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
-                    quality={50}
+                    quality={75}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     src="/development.png"
                     alt="App & Web Development"
@@ -293,7 +292,7 @@ export default function Home() {
                 <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
-                    quality={50}
+                    quality={75}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     src="/smm.png"
                     alt="Social Media Management"
@@ -339,7 +338,7 @@ export default function Home() {
                 <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
-                    quality={50}
+                    quality={75}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     src="/event-management-premium.png"
                     alt="Event Management"
@@ -385,7 +384,7 @@ export default function Home() {
                 <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
-                    quality={50}
+                    quality={75}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     src="/ratnatray.jpeg"
                     alt="Ratnatray"
