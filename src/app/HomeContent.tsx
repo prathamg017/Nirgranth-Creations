@@ -15,8 +15,9 @@ export default function Home() {
             alt="Nirgranth Creations Banner"
             fill
             priority
+            fetchPriority="high"
             className="object-cover object-[center_30%] sm:object-center blur-[120px] scale-150 opacity-90"
-            quality={85}
+            quality={1}
             sizes="100vw"
           />
           
@@ -151,13 +152,14 @@ export default function Home() {
                 <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
-                    quality={75}
+                    quality={40}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     src="/recording.jpg"
                     alt="Recording Studio"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
+                    
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
                 </div>
                 
@@ -198,7 +200,7 @@ export default function Home() {
                 <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
-                    quality={75}
+                    quality={50}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     src="/vigraphic.png"
                     alt="Graphics & Video Editing"
@@ -245,7 +247,7 @@ export default function Home() {
                 <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
-                    quality={75}
+                    quality={50}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     src="/development.png"
                     alt="App & Web Development"
@@ -291,7 +293,7 @@ export default function Home() {
                 <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
-                    quality={75}
+                    quality={50}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     src="/smm.png"
                     alt="Social Media Management"
@@ -337,7 +339,7 @@ export default function Home() {
                 <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
-                    quality={75}
+                    quality={50}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     src="/event-management-premium.png"
                     alt="Event Management"
@@ -383,7 +385,7 @@ export default function Home() {
                 <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
-                    quality={75}
+                    quality={50}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     src="/ratnatray.jpeg"
                     alt="Ratnatray"
