@@ -99,9 +99,7 @@ export default function RootLayout({
               "url": "https://nirgranthcreations.com",
               "logo": "https://nirgranthcreations.com/icon-512.png",
               "sameAs": [
-                "https://www.instagram.com/nirgranth_creation/",
-                "https://twitter.com/nirgranth_c",
-                "https://youtube.com/@nirgranthcreations"
+                "https://www.instagram.com/nirgranth_creation/"
               ]
             })
           }}

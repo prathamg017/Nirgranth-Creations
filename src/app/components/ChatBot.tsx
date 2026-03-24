@@ -231,9 +231,14 @@ export default function PremiumChatBot() {
                 </button>
               </form>
               <div className="mt-4 flex justify-center gap-6">
-                <a href="tel:+919826046833" className="flex items-center gap-2 text-[10px] font-black text-white/40 hover:text-[#FF5851] transition-colors uppercase tracking-widest">
-                  <Phone size={12} /> Call Master
-                </a>
+                <div className="flex flex-col gap-1 items-center">
+                  <a href="tel:+918839481571" className="flex items-center gap-2 text-[10px] font-black text-white/40 hover:text-[#FF5851] transition-colors uppercase tracking-widest">
+                    <Phone size={12} /> 8839481571
+                  </a>
+                  <a href="tel:+918109224176" className="flex items-center gap-2 text-[10px] font-black text-white/40 hover:text-[#FF5851] transition-colors uppercase tracking-widest">
+                    <Phone size={12} /> 8109224176
+                  </a>
+                </div>
                 <div className="w-px h-3 bg-white/10"></div>
                 <a href="mailto:contact@nirgranthcreations.com" className="flex items-center gap-2 text-[10px] font-black text-white/40 hover:text-[#FF5851] transition-colors uppercase tracking-widest">
                   <Mail size={12} /> Email Intel
