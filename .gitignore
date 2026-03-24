@@ -42,6 +42,10 @@ next-env.d.ts
 
 # ChatBot lead data
 /data/leads.json
+<<<<<<< HEAD
 
 # Projects
 nirgranth-ai-receptionist/
+=======
+nirgranth-ai-receptionist/node_modules
+>>>>>>> 97ef99c8 (feat: comprehensive mobile responsiveness overhaul and branding fixes)

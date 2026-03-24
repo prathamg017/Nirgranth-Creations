@@ -89,6 +89,23 @@ export default function RootLayout({
       >
         <ClientWrapper>{children}</ClientWrapper>
         <SpeedInsights />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Nirgranth Creations",
+              "url": "https://nirgranthcreations.com",
+              "logo": "https://nirgranthcreations.com/icon-512.png",
+              "sameAs": [
+                "https://www.instagram.com/nirgranth_creation/",
+                "https://twitter.com/nirgranth_c",
+                "https://youtube.com/@nirgranthcreations"
+              ]
+            })
+          }}
+        />
       </body>
     </html>
   );

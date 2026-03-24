@@ -151,8 +151,8 @@ export default function Home() {
                 className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
               >
                 <div className="flex flex-col md:flex-row h-full">
-                {/* Image Section - Smaller on Mobile */}
-                <div className="relative h-48 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
+                {/* Image Section - Compact on Mobile */}
+                <div className="relative h-32 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
                     quality={75}
@@ -169,7 +169,7 @@ export default function Home() {
                 <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
                   <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                   <div className="relative flex-1 flex flex-col justify-center">
-                    <h3 className="text-xl sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
+                    <h3 className="text-lg sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
                       RECORDING STUDIO<br />&amp; VOICE OVER
                     </h3>
                     <p className="text-gray-500 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
@@ -198,8 +198,8 @@ export default function Home() {
                 className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
               >
                 <div className="flex flex-col md:flex-row-reverse h-full">
-                {/* Image Section - Larger on Mobile */}
-                <div className="relative h-48 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
+                {/* Image Section - Smaller on Mobile */}
+                <div className="relative h-32 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
                     quality={75}
@@ -212,11 +212,11 @@ export default function Home() {
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
                 </div>
                 
-                {/* Content Section - Better Mobile Padding */}
-                <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
+                {/* Content Section - Compact Mobile Padding */}
+                <div className="relative isolate p-4 md:p-8 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
                   <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                   <div className="relative flex-1 flex flex-col justify-center">
-                    <h3 className="text-xl sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
+                    <h3 className="text-lg sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
                       GRAPHICS &amp; VIDEO<br />EDITING
                     </h3>
                     <p className="text-gray-500 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
@@ -245,8 +245,8 @@ export default function Home() {
                 className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
               >
                 <div className="flex flex-col md:flex-row h-full">
-                {/* Image Section */}
-                <div className="relative h-48 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
+                {/* Image Section - Compact Mobile */}
+                <div className="relative h-32 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
                     quality={75}
@@ -263,7 +263,7 @@ export default function Home() {
                 <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
                   <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                   <div className="relative flex-1 flex flex-col justify-center">
-                    <h3 className="text-xl sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
+                    <h3 className="text-lg sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
                       APP &amp; WEB<br />DEVELOPMENT
                     </h3>
                     <p className="text-gray-500 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
@@ -291,8 +291,8 @@ export default function Home() {
                 className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
               >
                 <div className="flex flex-col md:flex-row-reverse h-full">
-                {/* Image Section - Larger on Mobile */}
-                <div className="relative h-48 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
+                {/* Image Section - Smaller on Mobile */}
+                <div className="relative h-32 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
                     quality={75}
@@ -305,11 +305,11 @@ export default function Home() {
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
                 </div>
                 
-                {/* Content Section - Better Mobile Padding */}
-                <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
+                {/* Content Section - Compact Mobile Padding */}
+                <div className="relative isolate p-4 md:p-8 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
                   <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                   <div className="relative flex-1 flex flex-col justify-center">
-                    <h3 className="text-xl sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
+                    <h3 className="text-lg sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
                       SOCIAL MEDIA<br />MANAGEMENT
                     </h3>
                     <p className="text-gray-500 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
@@ -337,8 +337,8 @@ export default function Home() {
                 className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
               >
                 <div className="flex flex-col md:flex-row h-full">
-                {/* Image Section - Larger on Mobile */}
-                <div className="relative h-48 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
+                {/* Image Section - Smaller on Mobile */}
+                <div className="relative h-32 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
                     quality={75}
@@ -351,11 +351,11 @@ export default function Home() {
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
                 </div>
                 
-                {/* Content Section - Better Mobile Padding */}
-                <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
+                {/* Content Section - Compact Mobile Padding */}
+                <div className="relative isolate p-4 md:p-8 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
                   <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                   <div className="relative flex-1 flex flex-col justify-center">
-                    <h3 className="text-xl sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
+                    <h3 className="text-lg sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
                       EVENT<br />MANAGEMENT
                     </h3>
                     <p className="text-gray-500 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
@@ -383,8 +383,8 @@ export default function Home() {
                 className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
               >
                 <div className="flex flex-col md:flex-row-reverse h-full">
-                {/* Image Section - Larger on Mobile */}
-                <div className="relative h-48 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
+                {/* Image Section - Smaller on Mobile */}
+                <div className="relative h-32 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
                     quality={75}
@@ -397,11 +397,11 @@ export default function Home() {
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
                 </div>
                 
-                {/* Content Section - Better Mobile Padding */}
-                <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
+                {/* Content Section - Compact Mobile Padding */}
+                <div className="relative isolate p-4 md:p-8 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
                   <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                   <div className="relative flex-1 flex flex-col justify-center">
-                    <h3 className="text-xl sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
+                    <h3 className="text-lg sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
                       RATNATRAY
                     </h3>
                     <p className="text-gray-500 group-hover:text-white/95 mb-3 text-sm sm:text-base md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
