@@ -15,13 +15,17 @@ export default function Home() {
             alt="Nirgranth Creations Banner"
             fill
             priority
-            className="object-cover object-[center_30%] sm:object-center blur-[120px] scale-150 opacity-90"
-            quality={85}
+            fetchPriority="high"
+            className="object-cover object-[center_30%] sm:object-center blur-[80px] sm:blur-none scale-150 sm:scale-100 opacity-95 sm:opacity-100 transition-all duration-700"
+            quality={100}
             sizes="100vw"
           />
           
-          {/* Professional Gradient Overlay - Lightened to let colors shine through */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50"></div>
+          {/* Mobile-only matching yellow ambient glow */}
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-400/20 via-yellow-400/10 to-transparent sm:hidden"></div>
+          
+          {/* Professional Gradient Overlay - Responsive for transparency/readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/10 to-black/80 sm:from-black/40 sm:via-transparent sm:to-black/40"></div>
           
           {/* Text Overlay - Optimized for Mobile - Added PT to avoid navbar overlap */}
           <div className="absolute inset-0 flex items-center justify-center sm:justify-start pt-24 md:pt-28">
@@ -107,14 +111,14 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative mb-8 md:mb-20 rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-xl mx-4 md:mx-0"
+            className="relative mb-12 md:mb-20 rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-2xl mx-1"
           >
             {/* Overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#FF5851] to-[#ff7b75]"></div>
             
             {/* Content */}
-            <div className="relative z-10 text-center py-10 md:py-20 px-4 sm:px-12">
-              <h3 className="text-2xl sm:text-4xl md:text-6xl font-black text-white mb-4 md:mb-6 leading-tight">
+            <div className="relative z-10 text-center py-12 md:py-20 px-6 sm:px-12">
+              <h3 className="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
                 Scale Your Brand To The <br className="hidden sm:block" /> Next Level
               </h3>
               <p className="text-white text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-bold">
@@ -124,7 +128,7 @@ export default function Home() {
                 <motion.button 
                   whileHover={{ scale: 1.05, y: -3 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full sm:w-auto group relative overflow-hidden bg-white px-8 py-4 md:px-10 md:py-5 rounded-full font-black text-sm md:text-lg shadow-[0_20px_40px_-5px_rgba(255,255,255,0.3)] transition-all duration-300 tracking-tighter uppercase flex items-center justify-center gap-3"
+                  className="w-full sm:w-auto group relative overflow-hidden bg-white px-10 py-5 rounded-full font-black text-base md:text-lg shadow-[0_20px_40px_-5px_rgba(255,255,255,0.3)] transition-all duration-300 tracking-tighter uppercase flex items-center justify-center gap-3"
                   style={{ color: '#FF5851' }}
                 >
                   <span className="relative z-10 uppercase tracking-widest font-black">Secure Your Consultation</span>
@@ -135,7 +139,7 @@ export default function Home() {
           </motion.div>
 
           {/* Service Cards Grid - Mobile Optimized */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 max-w-7xl mx-auto px-4 sm:px-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 max-w-7xl mx-auto px-1 sm:px-0">
             
             {/* Card 1: Recording Studio */}
             <Link href="/recording">
@@ -783,4 +787,3 @@ export default function Home() {
     </main>
   );
 }
-

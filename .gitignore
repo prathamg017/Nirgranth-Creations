@@ -42,4 +42,6 @@ next-env.d.ts
 
 # ChatBot lead data
 /data/leads.json
-nirgranth-ai-receptionist/node_modules
+
+# Projects
+nirgranth-ai-receptionist/

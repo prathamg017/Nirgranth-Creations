@@ -93,9 +93,13 @@ export default function Navbar() {
               </a>
             </div>
             <Link href="/contact?service=General-Inquiry">
-              <button className="bg-[#FF5851] text-white px-8 py-3 rounded-full font-bold hover:scale-105 transition-all shadow-lg hover:shadow-[#FF5851]/40">
+              <motion.button 
+                whileHover={{ scale: 1.05, y: -1 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-[#FF5851] text-white px-6 py-2.5 rounded-full font-black text-xs uppercase tracking-widest shadow-[0_10px_20px_-5px_rgba(255,88,81,0.4)] hover:shadow-[0_15px_30px_-5px_rgba(255,88,81,0.6)] transition-all duration-300"
+              >
                 Let&apos;s Connect
-              </button>
+              </motion.button>
             </Link>
           </div>
 
