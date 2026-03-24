@@ -17,7 +17,7 @@ export default function Home() {
             priority
             fetchPriority="high"
             className="object-cover object-[center_30%] sm:object-center blur-[80px] sm:blur-none scale-150 sm:scale-100 opacity-95 sm:opacity-100 transition-all duration-700"
-            quality={100}
+            quality={75}
             sizes="100vw"
           />
           
@@ -111,7 +111,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative mb-12 md:mb-20 rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-2xl mx-1"
+            className="relative mb-12 md:mb-20 rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-2xl mx-4"
           >
             {/* Overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#FF5851] to-[#ff7b75]"></div>
@@ -124,22 +124,24 @@ export default function Home() {
               <p className="text-white text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-bold">
                 Connect with our strategists to build a tailored roadmap for your brand&apos;s digital dominance.
               </p>
-              <Link href="/contact?service=Consultation" className="w-full sm:w-auto">
-                <motion.button 
-                  whileHover={{ scale: 1.05, y: -3 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full sm:w-auto group relative overflow-hidden bg-white px-10 py-5 rounded-full font-black text-base md:text-lg shadow-[0_20px_40px_-5px_rgba(255,255,255,0.3)] transition-all duration-300 tracking-tighter uppercase flex items-center justify-center gap-3"
-                  style={{ color: '#FF5851' }}
-                >
-                  <span className="relative z-10 uppercase tracking-widest font-black">Secure Your Consultation</span>
-                  <div className="bg-[#FF5851] w-2 h-2 rounded-full group-hover:w-full group-hover:h-full absolute right-0 transition-all duration-500 opacity-0 group-hover:opacity-10 -z-0"></div>
-                </motion.button>
-              </Link>
+              <div className="flex justify-center">
+                <Link href="/contact?service=Consultation" className="w-full sm:w-auto">
+                  <motion.button 
+                    whileHover={{ scale: 1.05, y: -3 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full sm:w-auto group relative overflow-hidden bg-white px-6 py-3 md:px-10 md:py-5 rounded-full font-black text-sm md:text-lg shadow-[0_20px_40px_-5px_rgba(255,255,255,0.3)] transition-all duration-300 tracking-tighter uppercase flex items-center justify-center gap-3"
+                    style={{ color: '#FF5851' }}
+                  >
+                    <span className="relative z-10 uppercase tracking-widest font-black">Secure Your Consultation</span>
+                    <div className="bg-[#FF5851] w-2 h-2 rounded-full group-hover:w-full group-hover:h-full absolute right-0 transition-all duration-500 opacity-0 group-hover:opacity-10 -z-0"></div>
+                  </motion.button>
+                </Link>
+              </div>
             </div>
           </motion.div>
 
           {/* Service Cards Grid - Mobile Optimized */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 max-w-7xl mx-auto px-1 sm:px-0">
+          <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 md:gap-10 max-w-7xl mx-auto px-4 sm:px-0">
             
             {/* Card 1: Recording Studio */}
             <Link href="/recording">
@@ -148,42 +150,51 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-full min-h-[210px] md:min-h-0 md:h-[320px]"
               >
-                <div className="flex flex-col md:flex-row h-full">
-                {/* Image Section - Compact on Mobile */}
-                <div className="relative h-32 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
-                  <Image
-                    loading="lazy"
-                    quality={75}
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    src="/recording.jpg"
-                    alt="Recording Studio"
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
-                </div>
-                
-                {/* Content Section - Compact Mobile Padding */}
-                <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
-                  <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-                  <div className="relative flex-1 flex flex-col justify-center">
-                    <h3 className="text-lg sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
-                      RECORDING STUDIO<br />&amp; VOICE OVER
-                    </h3>
-                    <p className="text-gray-500 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
-                      Studio starting ₹1500/hr. Professional production.
-                    </p>
-                    <ul className="space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500 font-bold">
-                      <li>• Voice recording (₹1500 - ₹10000)</li>
-                      <li>• Studio rental: ₹1500/hr</li>
-                      <li>• Professional scriptwriting</li>
-                      <li>• Mixing &amp; mastering</li>
-                      <li>• High-end audio gear</li>
-                    </ul>
+                {/* 
+                   MOBILE DESIGN: FUll Screen Glass Tiles 
+                   DESKTOP DESIGN: Professional Side-by-Side Horizontal 
+                */}
+                <div className="flex flex-col md:flex-row h-full relative group">
+                  {/* Background Imagery - Professional Grid Format */}
+                  <div className="absolute inset-0 md:relative md:h-full md:w-1/2 overflow-hidden z-0">
+                    <Image
+                      loading="lazy"
+                      quality={75}
+                      sizes="(max-width: 768px) 50vw, 50vw"
+                      src="/recording.jpg"
+                      alt="Recording Studio"
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    {/* Editorial Fade - Mobile Only (Fades image into white base) */}
+                    <div className="md:hidden absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent z-10 transition-opacity duration-500"></div>
+                    {/* Authority Overlay - Desktop Specific */}
+                    <div className="hidden md:block absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-500"></div>
                   </div>
-                </div>
+                  
+                  {/* Content Section - Glass Overlay on Mobile, Inset on Desktop */}
+                  <div className="relative isolate flex-1 flex flex-col justify-end md:justify-center p-3 md:p-8 md:w-1/2 h-full z-20 overflow-hidden">
+                    {/* Minimalist Panel - Mobile Only (Ensures text contrast on fade) */}
+                    <div className="md:hidden absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white via-white/80 to-transparent -z-10"></div>
+                    {/* Brand Hover Overlay - Desktop Only */}
+                    <div className="hidden md:block absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+                    
+                    <div className="relative flex flex-col justify-center items-center md:items-start text-center md:text-left whitespace-normal">
+                      <h3 className="text-sm sm:text-lg md:text-xl font-black mb-0.5 sm:mb-2 text-[#FF5851] md:text-black group-hover:text-white transition-colors duration-500 uppercase leading-tight tracking-tight">
+                        RECORDING STUDIO<br />&amp; VOICE OVER
+                      </h3>
+                      <p className="hidden xs:block text-gray-600 md:text-gray-500 group-hover:text-white/95 mb-0 sm:mb-2 text-[10px] md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
+                        Starting ₹1500/hr.
+                      </p>
+                      <ul className="hidden sm:block space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500 font-bold">
+                        <li>• Voice recording</li>
+                        <li>• Studio rental</li>
+                        <li>• Mixing &amp; mastering</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </Link>
@@ -195,42 +206,44 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-full min-h-[210px] md:min-h-0 md:h-[320px]"
               >
-                <div className="flex flex-col md:flex-row-reverse h-full">
-                {/* Image Section - Smaller on Mobile */}
-                <div className="relative h-32 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
-                  <Image
-                    loading="lazy"
-                    quality={75}
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    src="/vigraphic.png"
-                    alt="Graphics & Video Editing"
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
-                </div>
-                
-                {/* Content Section - Compact Mobile Padding */}
-                <div className="relative isolate p-4 md:p-8 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
-                  <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-                  <div className="relative flex-1 flex flex-col justify-center">
-                    <h3 className="text-lg sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
-                      GRAPHICS &amp; VIDEO<br />EDITING
-                    </h3>
-                    <p className="text-gray-500 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
-                      Graphics from ₹649. Video from ₹1199.
-                    </p>
-                    <ul className="space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500 font-bold">
-                      <li>• AI Video Creation (₹1499+)</li>
-                      <li>• Branding & Logo (₹39999+)</li>
-                      <li>• Documentary & Edit (₹24999+)</li>
-                      <li>• Social Media Creatives</li>
-                      <li>• Motion Graphics</li>
-                    </ul>
+                <div className="flex flex-col md:flex-row-reverse h-full relative group">
+                  {/* Background Imagery */}
+                  <div className="absolute inset-0 md:relative md:h-full md:w-1/2 overflow-hidden z-0">
+                    <Image
+                      loading="lazy"
+                      quality={75}
+                      sizes="(max-width: 768px) 50vw, 50vw"
+                      src="/vigraphic.png"
+                      alt="Graphics & Video Editing"
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    {/* Editorial Fade - Mobile Only (Fades image into white base) */}
+                    <div className="md:hidden absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent z-10 transition-opacity duration-500"></div>
+                    <div className="hidden md:block absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-500"></div>
                   </div>
-                </div>
+                  
+                  {/* Content Section */}
+                  <div className="relative isolate flex-1 flex flex-col justify-end md:justify-center p-3 md:p-8 md:w-1/2 h-full z-20 overflow-hidden">
+                    <div className="md:hidden absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white via-white/80 to-transparent -z-10"></div>
+                    <div className="hidden md:block absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+                    
+                    <div className="relative flex flex-col justify-center items-center md:items-start text-center md:text-left whitespace-normal">
+                      <h3 className="text-sm sm:text-lg md:text-xl font-black mb-0.5 sm:mb-2 text-[#FF5851] md:text-black group-hover:text-white transition-colors duration-500 uppercase leading-tight tracking-tight">
+                        GRAPHICS &amp; VIDEO<br />EDITING
+                      </h3>
+                      <p className="hidden xs:block text-gray-600 md:text-gray-500 group-hover:text-white/95 mb-0 sm:mb-2 text-[10px] md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
+                        Graphics from ₹649.
+                      </p>
+                      <ul className="hidden sm:block space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500 font-bold">
+                        <li>• AI Video Creation</li>
+                        <li>• Branding & Logo</li>
+                        <li>• Social Media Creatives</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </Link>
@@ -242,41 +255,44 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-full min-h-[210px] md:min-h-0 md:h-[320px]"
               >
-                <div className="flex flex-col md:flex-row h-full">
-                {/* Image Section - Compact Mobile */}
-                <div className="relative h-32 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
-                  <Image
-                    loading="lazy"
-                    quality={75}
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    src="/development.png"
-                    alt="App & Web Development"
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
-                </div>
-                
-                {/* Content Section - FIXED with isolation */}
-                <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
-                  <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-                  <div className="relative flex-1 flex flex-col justify-center">
-                    <h3 className="text-lg sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
-                      APP &amp; WEB<br />DEVELOPMENT
-                    </h3>
-                    <p className="text-gray-500 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
-                      Starting from ₹15k. High-performance sites.
-                    </p>
-                    <ul className="space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500 font-bold">
-                      <li>• Custom Web Development</li>
-                      <li>• iOS & Android Apps</li>
-                      <li>• UI/UX Strategy</li>
-                      <li>• E-commerce Solutions</li>
-                    </ul>
+                <div className="flex flex-col md:flex-row h-full relative group">
+                  {/* Background Imagery */}
+                  <div className="absolute inset-0 md:relative md:h-full md:w-1/2 overflow-hidden z-0">
+                    <Image
+                      loading="lazy"
+                      quality={75}
+                      sizes="(max-width: 768px) 50vw, 50vw"
+                      src="/development.png"
+                      alt="App & Web Development"
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    {/* Editorial Fade - Mobile Only (Fades image into white base) */}
+                    <div className="md:hidden absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent z-10 transition-opacity duration-500"></div>
+                    <div className="hidden md:block absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-500"></div>
                   </div>
-                </div>
+                  
+                  {/* Content Section */}
+                  <div className="relative isolate flex-1 flex flex-col justify-end md:justify-center p-3 md:p-8 md:w-1/2 h-full z-20 overflow-hidden">
+                    <div className="md:hidden absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white via-white/80 to-transparent -z-10"></div>
+                    <div className="hidden md:block absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+                    
+                    <div className="relative flex flex-col justify-center items-center md:items-start text-center md:text-left whitespace-normal">
+                      <h3 className="text-sm sm:text-lg md:text-xl font-black mb-0.5 sm:mb-2 text-[#FF5851] md:text-black group-hover:text-white transition-colors duration-500 uppercase leading-tight tracking-tight">
+                        APP &amp; WEB<br />DEVELOPMENT
+                      </h3>
+                      <p className="hidden xs:block text-gray-600 md:text-gray-500 group-hover:text-white/95 mb-0 sm:mb-2 text-[10px] md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
+                        Starting from ₹15k.
+                      </p>
+                      <ul className="hidden sm:block space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500 font-bold">
+                        <li>• Custom Web Development</li>
+                        <li>• iOS & Android Apps</li>
+                        <li>• E-commerce Solutions</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </Link>
@@ -288,41 +304,44 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-full min-h-[210px] md:min-h-0 md:h-[320px]"
               >
-                <div className="flex flex-col md:flex-row-reverse h-full">
-                {/* Image Section - Smaller on Mobile */}
-                <div className="relative h-32 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
-                  <Image
-                    loading="lazy"
-                    quality={75}
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    src="/smm.png"
-                    alt="Social Media Management"
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
-                </div>
-                
-                {/* Content Section - Compact Mobile Padding */}
-                <div className="relative isolate p-4 md:p-8 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
-                  <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-                  <div className="relative flex-1 flex flex-col justify-center">
-                    <h3 className="text-lg sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
-                      SOCIAL MEDIA<br />MANAGEMENT
-                    </h3>
-                    <p className="text-gray-500 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
-                      Organic growth. Plans from ₹15k.
-                    </p>
-                    <ul className="space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500 font-bold">
-                      <li>• Content Strategy</li>
-                      <li>• High Success Rates</li>
-                      <li>• Basic/Growth/Premium Plans</li>
-                      <li>• Analytics & Reporting</li>
-                    </ul>
+                <div className="flex flex-col md:flex-row-reverse h-full relative group">
+                  {/* Background Imagery */}
+                  <div className="absolute inset-0 md:relative md:h-full md:w-1/2 overflow-hidden z-0">
+                    <Image
+                      loading="lazy"
+                      quality={75}
+                      sizes="(max-width: 768px) 50vw, 50vw"
+                      src="/smm.png"
+                      alt="Social Media Management"
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    {/* Editorial Fade - Mobile Only (Fades image into white base) */}
+                    <div className="md:hidden absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent z-10 transition-opacity duration-500"></div>
+                    <div className="hidden md:block absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-500"></div>
                   </div>
-                </div>
+                  
+                  {/* Content Section */}
+                  <div className="relative isolate flex-1 flex flex-col justify-end md:justify-center p-3 md:p-8 md:w-1/2 h-full z-20 overflow-hidden">
+                    <div className="md:hidden absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white via-white/80 to-transparent -z-10"></div>
+                    <div className="hidden md:block absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+                    
+                    <div className="relative flex flex-col justify-center items-center md:items-start text-center md:text-left whitespace-normal">
+                      <h3 className="text-sm sm:text-lg md:text-xl font-black mb-0.5 sm:mb-2 text-[#FF5851] md:text-black group-hover:text-white transition-colors duration-500 uppercase leading-tight tracking-tight">
+                        SOCIAL MEDIA<br />MANAGEMENT
+                      </h3>
+                      <p className="hidden xs:block text-gray-600 md:text-gray-500 group-hover:text-white/95 mb-0 sm:mb-2 text-[10px] md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
+                        Plans from ₹15k.
+                      </p>
+                      <ul className="hidden sm:block space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500 font-bold">
+                        <li>• Content Strategy</li>
+                        <li>• High Success Rates</li>
+                        <li>• Analytics & Reporting</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </Link>
@@ -334,41 +353,44 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-full min-h-[210px] md:min-h-0 md:h-[320px]"
               >
-                <div className="flex flex-col md:flex-row h-full">
-                {/* Image Section - Smaller on Mobile */}
-                <div className="relative h-32 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
-                  <Image
-                    loading="lazy"
-                    quality={75}
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    src="/event-management-premium.png"
-                    alt="Event Management"
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
-                </div>
-                
-                {/* Content Section - Compact Mobile Padding */}
-                <div className="relative isolate p-4 md:p-8 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
-                  <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-                  <div className="relative flex-1 flex flex-col justify-center">
-                    <h3 className="text-lg sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
-                      EVENT<br />MANAGEMENT
-                    </h3>
-                    <p className="text-gray-500 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
-                      Premium celebrations crafted with care.
-                    </p>
-                    <ul className="space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500 font-bold">
-                      <li>• Corporate events</li>
-                      <li>• Wedding planning</li>
-                      <li>• Cultural celebrations</li>
-                      <li>• Complete coordination</li>
-                    </ul>
+                <div className="flex flex-col md:flex-row h-full relative group">
+                  {/* Background Imagery */}
+                  <div className="absolute inset-0 md:relative md:h-full md:w-1/2 overflow-hidden z-0">
+                    <Image
+                      loading="lazy"
+                      quality={75}
+                      sizes="(max-width: 768px) 50vw, 50vw"
+                      src="/event-management-premium.png"
+                      alt="Event Management"
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    {/* Editorial Fade - Mobile Only (Fades image into white base) */}
+                    <div className="md:hidden absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent z-10 transition-opacity duration-500"></div>
+                    <div className="hidden md:block absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-500"></div>
                   </div>
-                </div>
+                  
+                  {/* Content Section */}
+                  <div className="relative isolate flex-1 flex flex-col justify-end md:justify-center p-3 md:p-8 md:w-1/2 h-full z-20 overflow-hidden">
+                    <div className="md:hidden absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white via-white/80 to-transparent -z-10"></div>
+                    <div className="hidden md:block absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+                    
+                    <div className="relative flex flex-col justify-center items-center md:items-start text-center md:text-left whitespace-normal">
+                      <h3 className="text-sm sm:text-lg md:text-xl font-black mb-0.5 sm:mb-2 text-[#FF5851] md:text-black group-hover:text-white transition-colors duration-500 uppercase leading-tight tracking-tight">
+                        EVENT<br />MANAGEMENT
+                      </h3>
+                      <p className="hidden xs:block text-gray-600 md:text-gray-500 group-hover:text-white/95 mb-0 sm:mb-2 text-[10px] md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
+                        Premium celebrations.
+                      </p>
+                      <ul className="hidden sm:block space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500 font-bold">
+                        <li>• Corporate events</li>
+                        <li>• Wedding planning</li>
+                        <li>• Cultural celebrations</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </Link>
@@ -380,41 +402,44 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-full min-h-[210px] md:min-h-0 md:h-[320px]"
               >
-                <div className="flex flex-col md:flex-row-reverse h-full">
-                {/* Image Section - Smaller on Mobile */}
-                <div className="relative h-32 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
-                  <Image
-                    loading="lazy"
-                    quality={75}
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    src="/ratnatray.jpeg"
-                    alt="Ratnatray"
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
-                </div>
-                
-                {/* Content Section - Compact Mobile Padding */}
-                <div className="relative isolate p-4 md:p-8 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
-                  <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-                  <div className="relative flex-1 flex flex-col justify-center">
-                    <h3 className="text-lg sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
-                      RATNATRAY
-                    </h3>
-                    <p className="text-gray-500 group-hover:text-white/95 mb-3 text-sm sm:text-base md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
-                      Jinshasan ki Prabhavna - Modern dharmik concert event to attract Jain youth.
-                    </p>
-                    <ul className="space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500 font-bold">
-                      <li>• Spiritual concerts</li>
-                      <li>• Youth engagement</li>
-                      <li>• Modern dharmik events</li>
-                      <li>• Cultural celebrations</li>
-                    </ul>
+                <div className="flex flex-col md:flex-row-reverse h-full relative group">
+                  {/* Background Imagery */}
+                  <div className="absolute inset-0 md:relative md:h-full md:w-1/2 overflow-hidden z-0">
+                    <Image
+                      loading="lazy"
+                      quality={75}
+                      sizes="(max-width: 768px) 50vw, 50vw"
+                      src="/ratnatray.jpeg"
+                      alt="Ratnatray"
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    {/* Editorial Fade - Mobile Only (Fades image into white base) */}
+                    <div className="md:hidden absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent z-10 transition-opacity duration-500"></div>
+                    <div className="hidden md:block absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-500"></div>
                   </div>
-                </div>
+                  
+                  {/* Content Section */}
+                  <div className="relative isolate flex-1 flex flex-col justify-end md:justify-center p-3 md:p-8 md:w-1/2 h-full z-20 overflow-hidden">
+                    <div className="md:hidden absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white via-white/80 to-transparent -z-10"></div>
+                    <div className="hidden md:block absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+                    
+                    <div className="relative flex flex-col justify-center items-center md:items-start text-center md:text-left whitespace-normal">
+                      <h3 className="text-sm sm:text-lg md:text-xl font-black mb-0.5 sm:mb-2 text-[#FF5851] md:text-black group-hover:text-white transition-colors duration-500 uppercase leading-tight tracking-tight">
+                        RATNATRAY
+                      </h3>
+                      <p className="hidden xs:block text-gray-600 md:text-gray-500 group-hover:text-white/95 mb-0 sm:mb-2 text-[10px] md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
+                        Jinshasan ki Prabhavna.
+                      </p>
+                      <ul className="hidden sm:block space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500 font-bold">
+                        <li>• Spiritual concerts</li>
+                        <li>• Youth engagement</li>
+                        <li>• Cultural celebrations</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </a>
@@ -434,7 +459,7 @@ export default function Home() {
             Why <span style={{ color: '#FF5851' }}>Choose Us</span>
           </motion.h2>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 sm:gap-10 lg:gap-16 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 sm:gap-10 lg:gap-16 max-w-6xl mx-auto">
             {/* Icon 1 - Art/Creativity (Theme Color) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -513,7 +538,7 @@ export default function Home() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-col items-center text-center"
+              className="flex flex-col items-center text-center col-span-2 md:col-span-1"
             >
               <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full flex items-center justify-center mb-4 shadow-lg hover:scale-110 transition-transform duration-300" style={{ backgroundColor: '#FF5851' }}>
                 <svg className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
@@ -745,7 +770,7 @@ export default function Home() {
               <div className="space-y-2 md:space-y-3 text-white/90 text-xs md:text-base">
                 <p className="font-semibold text-white text-sm md:text-base">Nirgranth Creations</p>
                 <p className="text-xs md:text-sm leading-relaxed">
-                  3rd Floor, Dhari Bazar, Tilak Mandi, Moti-Indore, M.P
+                  5th Floor, Dawa Bazaar, Indore, M.P
                 </p>
                 <a href="tel:9826046833">
                   <button className="mt-2 md:mt-4 bg-white px-4 py-1.5 md:px-6 md:py-2.5 rounded-full font-bold text-xs md:text-base hover:bg-orange-50 hover:scale-105 transition-all shadow-lg" style={{ color: '#FF5851' }}>
