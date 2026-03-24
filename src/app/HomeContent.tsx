@@ -715,68 +715,64 @@ export default function Home() {
       {/* Footer - Mobile Optimized */}
       <footer className="text-white py-6 md:py-10 px-4 md:px-6" style={{ backgroundColor: '#FF5851' }}>
         <div className="container mx-auto max-w-7xl">
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-y-8 gap-x-4 md:gap-8">
-            {/* Logo Section */}
-            <div className="col-span-2 md:col-span-1">
-              <div className="bg-white rounded-xl p-2 md:p-4 inline-block mb-2 md:mb-3 shadow-lg">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-y-10 gap-x-4 md:gap-12">
+            {/* Logo Section - Symmetric Center */}
+            <div className="col-span-2 md:col-span-1 flex flex-col items-center md:items-start">
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 inline-block mb-4 md:mb-6 border border-white/20">
                 <Image
                     loading="lazy"
                     quality={75}
-                    sizes="(max-width: 768px) 80px, 100px"
+                    sizes="80px"
                   src="/logo.svg"
                   alt="Nirgranth Creations Logo"
                   width={80}
                   height={26}
-                  className="object-contain"
+                  className="object-contain brightness-0 invert"
                 />
               </div>
             </div>
 
             {/* Quick Links */}
-            <div className="col-span-1">
-              <h4 className="font-black text-[10px] md:text-xs mb-1.5 md:mb-3 uppercase tracking-widest opacity-80">Links</h4>
-              <ul className="space-y-1.5 md:space-y-2 text-white/90 text-xs md:text-base">
-                <li><Link href="/about" className="hover:text-white hover:underline transition">About</Link></li>
-                <li><Link href="/recording" className="hover:text-white hover:underline transition">Services</Link></li>
-                <li><Link href="/contact?service=General-Inquiry" className="hover:text-white hover:underline transition">Contact</Link></li>
+            <div className="col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
+              <h4 className="font-black text-[10px] md:text-xs mb-2 md:mb-4 uppercase tracking-[0.2em] opacity-60">Company</h4>
+              <ul className="space-y-2 text-white/90 text-xs md:text-sm font-medium">
+                <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
+                <li><Link href="/recording" className="hover:text-white transition-colors">Services</Link></li>
+                <li><Link href="/contact?service=General-Inquiry" className="hover:text-white transition-colors">Contact</Link></li>
               </ul>
             </div>
 
             {/* Services */}
-            <div className="col-span-1">
-              <h4 className="font-black text-[10px] md:text-xs mb-1.5 md:mb-3 uppercase tracking-widest opacity-80">Services</h4>
-              <ul className="space-y-1.5 md:space-y-2 text-white/90 text-xs md:text-base">
-                <li><Link href="/recording" className="hover:text-white hover:underline transition">Recording</Link></li>
-                <li><Link href="/graphic" className="hover:text-white hover:underline transition">Graphics</Link></li>
-                <li><Link href="/development" className="hover:text-white hover:underline transition">Development</Link></li>
-                <li><Link href="/smm" className="hover:text-white hover:underline transition">Social Media</Link></li>
-                <li><Link href="/event" className="hover:text-white hover:underline transition">Events</Link></li>
+            <div className="col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
+              <h4 className="font-black text-[10px] md:text-xs mb-2 md:mb-4 uppercase tracking-[0.2em] opacity-60">Solutions</h4>
+              <ul className="space-y-2 text-white/90 text-xs md:text-sm font-medium">
+                <li><Link href="/recording" className="hover:text-white transition-colors">Studio</Link></li>
+                <li><Link href="/graphic" className="hover:text-white transition-colors">Graphics</Link></li>
+                <li><Link href="/development" className="hover:text-white transition-colors">Dev</Link></li>
+                <li><Link href="/smm" className="hover:text-white transition-colors">Social</Link></li>
               </ul>
             </div>
 
             {/* Legal */}
-            <div className="col-span-1">
-              <h4 className="font-black text-[10px] md:text-xs mb-1.5 md:mb-3 uppercase tracking-widest opacity-80">Legal</h4>
-              <ul className="space-y-1.5 md:space-y-2 text-white/90 text-xs md:text-base">
-                <li><Link href="/terms" className="hover:text-white hover:underline transition">Terms</Link></li>
-                <li><Link href="/privacy" className="hover:text-white hover:underline transition">Privacy</Link></li>
-                <li><Link href="/refund" className="hover:text-white hover:underline transition">Refund</Link></li>
+            <div className="col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
+              <h4 className="font-black text-[10px] md:text-xs mb-2 md:mb-4 uppercase tracking-[0.2em] opacity-60">Legal</h4>
+              <ul className="space-y-2 text-white/90 text-xs md:text-sm font-medium">
+                <li><Link href="/terms" className="hover:text-white transition-colors">Terms</Link></li>
+                <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link></li>
+                <li><Link href="/refund" className="hover:text-white transition-colors">Refund</Link></li>
               </ul>
             </div>
 
             {/* Contact */}
-            <div className="col-span-1 md:col-span-1">
-              <h4 className="font-black text-[10px] md:text-xs mb-1.5 md:mb-3 uppercase tracking-widest opacity-80">Contact</h4>
-              <div className="space-y-2 md:space-y-3 text-white/90 text-xs md:text-base">
-                <p className="font-bold text-white text-[11px] md:text-sm">Indore HQ</p>
-                <p className="text-[10px] md:text-xs leading-tight opacity-90">
-                  5th Floor, Dawa Bazaar
-                </p>
-                <div className="flex flex-col gap-1.5 mt-2">
-                  <a href="tel:8839481571" className="w-fit bg-white/10 hover:bg-white/20 px-3 py-1 rounded-full text-[10px] md:text-xs font-bold transition-all border border-white/10">
+            <div className="col-span-1 md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
+              <h4 className="font-black text-[10px] md:text-xs mb-2 md:mb-4 uppercase tracking-[0.2em] opacity-60">Office</h4>
+              <div className="space-y-3 text-white/90 text-xs md:text-sm">
+                <p className="font-bold text-white tracking-tight">INDORE HQ</p>
+                <div className="flex flex-col gap-2 items-center md:items-start mt-2">
+                  <a href="tel:8839481571" className="w-fit bg-white text-[#FF5851] px-4 py-1.5 rounded-full text-[10px] font-black transition-all shadow-lg hover:scale-105">
                     8839481571
                   </a>
-                  <a href="tel:8109224176" className="w-fit bg-white/10 hover:bg-white/20 px-3 py-1 rounded-full text-[10px] md:text-xs font-bold transition-all border border-white/10">
+                  <a href="tel:8109224176" className="w-fit bg-white text-[#FF5851] px-4 py-1.5 rounded-full text-[10px] font-black transition-all shadow-lg hover:scale-105">
                     8109224176
                   </a>
                 </div>
