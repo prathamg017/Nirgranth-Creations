@@ -774,12 +774,12 @@ export default function Home() {
                 </p>
                 <div className="flex flex-col gap-2 mt-2 md:mt-4">
                   <a href="tel:8839481571">
-                    <button className="w-full bg-white px-4 py-1.5 md:px-6 md:py-2.5 rounded-full font-bold text-xs md:text-base hover:bg-orange-50 hover:scale-105 transition-all shadow-lg" style={{ color: '#FF5851' }}>
+                    <button className="w-fit bg-white px-5 py-1.5 md:px-6 md:py-2 rounded-full font-bold text-xs md:text-sm hover:bg-orange-50 hover:scale-105 transition-all shadow-md" style={{ color: '#FF5851' }}>
                       8839481571
                     </button>
                   </a>
                   <a href="tel:8109224176">
-                    <button className="w-full bg-white px-4 py-1.5 md:px-6 md:py-2.5 rounded-full font-bold text-xs md:text-base hover:bg-orange-50 hover:scale-105 transition-all shadow-lg" style={{ color: '#FF5851' }}>
+                    <button className="w-fit bg-white px-5 py-1.5 md:px-6 md:py-2 rounded-full font-bold text-xs md:text-sm hover:bg-orange-50 hover:scale-105 transition-all shadow-md" style={{ color: '#FF5851' }}>
                       8109224176
                     </button>
                   </a>
