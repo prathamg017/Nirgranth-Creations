@@ -715,7 +715,7 @@ export default function Home() {
       {/* Footer - Mobile Optimized */}
       <footer className="text-white py-6 md:py-10 px-4 md:px-6" style={{ backgroundColor: '#FF5851' }}>
         <div className="container mx-auto max-w-7xl">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-y-8 gap-x-4 md:gap-8">
             {/* Logo Section */}
             <div className="col-span-2 md:col-span-1">
               <div className="bg-white rounded-xl p-2 md:p-4 inline-block mb-2 md:mb-3 shadow-lg">
@@ -733,8 +733,8 @@ export default function Home() {
             </div>
 
             {/* Quick Links */}
-            <div>
-              <h4 className="font-bold text-sm md:text-lg mb-2 md:mb-4">Quick Links</h4>
+            <div className="col-span-1">
+              <h4 className="font-black text-[10px] md:text-xs mb-1.5 md:mb-3 uppercase tracking-widest opacity-80">Links</h4>
               <ul className="space-y-1.5 md:space-y-2 text-white/90 text-xs md:text-base">
                 <li><Link href="/about" className="hover:text-white hover:underline transition">About</Link></li>
                 <li><Link href="/recording" className="hover:text-white hover:underline transition">Services</Link></li>
@@ -743,8 +743,8 @@ export default function Home() {
             </div>
 
             {/* Services */}
-            <div>
-              <h4 className="font-bold text-sm md:text-lg mb-2 md:mb-4">Services</h4>
+            <div className="col-span-1">
+              <h4 className="font-black text-[10px] md:text-xs mb-1.5 md:mb-3 uppercase tracking-widest opacity-80">Services</h4>
               <ul className="space-y-1.5 md:space-y-2 text-white/90 text-xs md:text-base">
                 <li><Link href="/recording" className="hover:text-white hover:underline transition">Recording</Link></li>
                 <li><Link href="/graphic" className="hover:text-white hover:underline transition">Graphics</Link></li>
@@ -754,9 +754,9 @@ export default function Home() {
               </ul>
             </div>
 
-            {/* Links */}
-            <div>
-              <h4 className="font-bold text-sm md:text-lg mb-2 md:mb-4">Links</h4>
+            {/* Legal */}
+            <div className="col-span-1">
+              <h4 className="font-black text-[10px] md:text-xs mb-1.5 md:mb-3 uppercase tracking-widest opacity-80">Legal</h4>
               <ul className="space-y-1.5 md:space-y-2 text-white/90 text-xs md:text-base">
                 <li><Link href="/terms" className="hover:text-white hover:underline transition">Terms</Link></li>
                 <li><Link href="/privacy" className="hover:text-white hover:underline transition">Privacy</Link></li>
@@ -764,24 +764,20 @@ export default function Home() {
               </ul>
             </div>
 
-            {/* Location */}
-            <div className="col-span-2 md:col-span-1">
-              <h4 className="font-bold text-sm md:text-lg mb-2 md:mb-4">Location</h4>
+            {/* Contact */}
+            <div className="col-span-1 md:col-span-1">
+              <h4 className="font-black text-[10px] md:text-xs mb-1.5 md:mb-3 uppercase tracking-widest opacity-80">Contact</h4>
               <div className="space-y-2 md:space-y-3 text-white/90 text-xs md:text-base">
-                <p className="font-semibold text-white text-sm md:text-base">Nirgranth Creations</p>
-                <p className="text-xs md:text-sm leading-relaxed">
-                  5th Floor, Dawa Bazaar, Indore, M.P
+                <p className="font-bold text-white text-[11px] md:text-sm">Indore HQ</p>
+                <p className="text-[10px] md:text-xs leading-tight opacity-90">
+                  5th Floor, Dawa Bazaar
                 </p>
-                <div className="flex flex-col gap-2 mt-2 md:mt-4">
-                  <a href="tel:8839481571">
-                    <button className="w-fit bg-white px-5 py-1.5 md:px-6 md:py-2 rounded-full font-bold text-xs md:text-sm hover:bg-orange-50 hover:scale-105 transition-all shadow-md" style={{ color: '#FF5851' }}>
-                      8839481571
-                    </button>
+                <div className="flex flex-col gap-1.5 mt-2">
+                  <a href="tel:8839481571" className="w-fit bg-white/10 hover:bg-white/20 px-3 py-1 rounded-full text-[10px] md:text-xs font-bold transition-all border border-white/10">
+                    8839481571
                   </a>
-                  <a href="tel:8109224176">
-                    <button className="w-fit bg-white px-5 py-1.5 md:px-6 md:py-2 rounded-full font-bold text-xs md:text-sm hover:bg-orange-50 hover:scale-105 transition-all shadow-md" style={{ color: '#FF5851' }}>
-                      8109224176
-                    </button>
+                  <a href="tel:8109224176" className="w-fit bg-white/10 hover:bg-white/20 px-3 py-1 rounded-full text-[10px] md:text-xs font-bold transition-all border border-white/10">
+                    8109224176
                   </a>
                 </div>
               </div>
