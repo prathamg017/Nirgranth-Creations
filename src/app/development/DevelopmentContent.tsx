@@ -130,7 +130,7 @@ export default function DevelopmentClient() {
             </div>
 
             {/* Terminal Content */}
-            <div className="p-8 md:p-12">
+            <div className="p-6 md:p-12">
               <div className="text-green-400 mb-4 text-sm">$ npm run build</div>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                 <span className="text-gray-300">We Build Apps With</span>{" "}
@@ -261,7 +261,7 @@ export default function DevelopmentClient() {
 
       {/* PREMIUM FINAL CTA SECTION */}
       <section 
-        className="py-32 px-6 relative overflow-hidden"
+        className="py-20 md:py-32 px-6 relative overflow-hidden"
         style={{ background: 'linear-gradient(to bottom, #0a0a0a, #000000, #ff5851)' }}
       >
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `radial-gradient(#fff 1px, transparent 1px)`, backgroundSize: '40px 40px' }}></div>
@@ -282,7 +282,7 @@ export default function DevelopmentClient() {
             </p>
             <Link 
               href="/contact?service=App-and-Web-Development"
-              className="inline-flex items-center gap-6 px-16 py-8 rounded-full bg-white text-black font-black text-xl hover:bg-black hover:text-white transition-all duration-500 hover:scale-105 shadow-[0_30px_100px_rgba(255,255,255,0.15)] group"
+              className="inline-flex items-center gap-6 px-8 py-5 md:px-16 md:py-8 rounded-full bg-white text-black font-black text-lg md:text-xl hover:bg-black hover:text-white transition-all duration-500 hover:scale-105 shadow-[0_30px_100px_rgba(255,255,255,0.15)] group"
             >
               SECURE YOUR BLUEPRINT
             </Link>

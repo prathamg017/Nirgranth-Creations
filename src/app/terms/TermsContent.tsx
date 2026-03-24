@@ -11,7 +11,7 @@ export default function TermsContent() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-7xl font-black tracking-tighter uppercase italic mb-12">
+          <h1 className="text-4xl md:text-7xl font-black tracking-tighter uppercase italic mb-8 md:mb-12">
             Terms of <span className="text-[#FF5851]">Service</span>
           </h1>
 

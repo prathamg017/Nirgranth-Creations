@@ -41,26 +41,25 @@ export default function VisionaryShowcase() {
       {/* Heading */}
       <div className="relative max-w-5xl mx-auto text-center mb-24 px-4">
   {/* Floating accent blobs */}
-  <div className="absolute -top-20 -left-24 w-64 h-64 bg-[#e7546b]/20 rounded-full blur-3xl animate-pulse" />
-  <div className="absolute -bottom-16 -right-20 w-72 h-72 bg-cyan-300/20 rounded-full blur-3xl animate-pulse delay-300" />
+  <div className="absolute -top-20 -left-24 w-64 h-64 bg-[#FF5851]/20 rounded-full blur-3xl animate-pulse" />
+  <div className="absolute -bottom-16 -right-20 w-72 h-72 bg-[#FF5851]/10 rounded-full blur-3xl animate-pulse delay-300" />
 
   {/* Tagline pill */}
-  <span className="relative inline-block px-5 py-2 rounded-full text-sm font-medium bg-[#e7546b]/10 text-[#e7546b] mb-6 tracking-wide">
+  <span className="relative inline-block px-5 py-2 rounded-full text-sm font-bold bg-[#FF5851]/10 text-[#FF5851] mb-6 tracking-wide">
     🚀 Future-Driven Innovation
   </span>
 
   {/* Main heading */}
-<h2 className="relative text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight 
-  text-gray-900">
-  Imagine What’s{" "}
-  <span className="text-[#e7546b] drop-shadow-sm">Possible ✨</span>
-</h2>
+  <h2 className="relative text-3xl md:text-6xl font-black tracking-tight mb-8 leading-[1.1] text-gray-900 uppercase italic">
+    Imagine What’s{" "}
+    <span className="text-[#FF5851]">Possible ✨</span>
+  </h2>
 
 
   {/* Subheading */}
   <p className="relative text-lg md:text-xl text-gray-700 leading-relaxed max-w-2xl mx-auto">
-    We don’t just build <span className="font-semibold text-gray-900">products</span>.  
-    We craft <span className="text-[#e7546b] font-semibold">immersive experiences</span>  
+    We don’t just build <span className="font-bold text-gray-900 underline decoration-[#FF5851]/30">products</span>.  
+    We craft <span className="text-[#FF5851] font-black uppercase">immersive experiences</span>  
     that define the future of digital brands.
   </p>
 </div>
@@ -79,7 +78,7 @@ export default function VisionaryShowcase() {
             className="rounded-3xl p-8 text-center bg-gradient-to-br from-white via-pink-50 to-pink-100 shadow-lg hover:shadow-2xl transition relative overflow-hidden"
           >
             {/* Glow effect */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#e7546b]/20 via-transparent to-transparent opacity-60 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#FF5851]/20 via-transparent to-transparent opacity-60 pointer-events-none" />
 
             {/* Lottie */}
             <div className="w-44 h-44 mx-auto relative z-10">
@@ -98,14 +97,15 @@ export default function VisionaryShowcase() {
       </div>
 
       {/* CTA */}
-      <div className="text-center mt-28">
+      <div className="text-center mt-20 md:mt-28">
         <motion.a
           href="/contact?service=App-and-Web-Development"
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.95 }}
-          className="px-12 py-5 bg-[#e7546b] text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-pink-400/40 transition"
+          className="inline-block px-8 py-4 md:px-12 md:py-5 text-white text-base md:text-lg font-bold rounded-full shadow-lg hover:shadow-[#FF5851]/40 transition-all uppercase tracking-widest"
+          style={{ backgroundColor: '#FF5851' }}
         >
-          Let’s Build Something Beautiful 🚀
+          Let&apos;s Build Something Beautiful 🚀
         </motion.a>
       </div>
     </section>

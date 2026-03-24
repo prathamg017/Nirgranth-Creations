@@ -15,16 +15,16 @@ export default function Home() {
             alt="Nirgranth Creations Banner"
             fill
             priority
-            className="object-cover object-[center_30%] sm:object-center"
+            className="object-cover object-[center_30%] sm:object-center blur-[120px] scale-150 opacity-90"
             quality={85}
             sizes="100vw"
           />
           
-          {/* Professional Gradient Overlay - Darker on mobile for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 sm:from-black/40 sm:via-black/20 sm:to-black/50"></div>
+          {/* Professional Gradient Overlay - Lightened to let colors shine through */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50"></div>
           
           {/* Text Overlay - Optimized for Mobile - Added PT to avoid navbar overlap */}
-          <div className="absolute inset-0 flex items-center justify-center sm:justify-start pt-20 md:pt-28">
+          <div className="absolute inset-0 flex items-center justify-center sm:justify-start pt-24 md:pt-28">
             <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -32,23 +32,27 @@ export default function Home() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="max-w-2xl text-center sm:text-left"
               >
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-black text-white leading-[1.1] mb-4 sm:mb-6 drop-shadow-2xl">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-black text-white leading-[1.1] mb-4 sm:mb-6 drop-shadow-2xl uppercase tracking-tighter">
                   SCALE YOUR BRAND<br />
                   TO THE <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5851] to-orange-400">NEXT LEVEL</span>
                 </h1>
                 <p className="text-sm sm:text-base md:text-lg text-white mb-8 sm:mb-10 max-w-xl drop-shadow-lg leading-relaxed px-2 sm:px-0 font-bold">
                   We don&apos;t just post content; we manufacture authority. The ultimate execution agency for corporate scaling and elite digital presence.
                 </p>
-                <div className="flex flex-wrap justify-center sm:justify-start gap-4">
-                  <Link href="/contact?service=General-Inquiry">
-                    <button className="text-white px-8 py-4 rounded-full font-bold text-base md:text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 shadow-xl" style={{ backgroundColor: '#FF5851' }}>
-                      Start Your Project
-                    </button>
+                <div className="flex justify-center sm:justify-start">
+                  <Link href="/contact?service=General-Inquiry" className="w-full sm:w-auto">
+                    <motion.button 
+                      whileHover={{ scale: 1.02, y: -2 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="w-full sm:w-auto relative group overflow-hidden bg-gradient-to-br from-[#FF5851] to-[#ff7b75] text-white px-10 py-4 rounded-full font-black text-sm md:text-base shadow-[0_15px_30px_-5px_rgba(255,88,81,0.5)] transition-all duration-300 tracking-wider uppercase flex items-center justify-center"
+                    >
+                      <span className="relative z-10 flex items-center gap-2">
+                        Start Your Project
+                        <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                      </span>
+                      <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-700 skew-x-12"></div>
+                    </motion.button>
                   </Link>
-                  <button className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full font-bold text-base md:text-lg hover:bg-white/20 transition-all duration-300 flex items-center gap-2">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/></svg>
-                    Watch Showreel
-                  </button>
                 </div>
               </motion.div>
             </div>
@@ -103,29 +107,35 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative mb-16 md:mb-20 rounded-[3rem] overflow-hidden shadow-2xl"
+            className="relative mb-8 md:mb-20 rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-xl mx-4 md:mx-0"
           >
             {/* Overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#FF5851] to-[#ff7b75]"></div>
             
             {/* Content */}
-            <div className="relative z-10 text-center py-12 md:py-20 px-6">
-              <h3 className="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
-                Scale Your Brand To The <br />Next Level
+            <div className="relative z-10 text-center py-10 md:py-20 px-4 sm:px-12">
+              <h3 className="text-2xl sm:text-4xl md:text-6xl font-black text-white mb-4 md:mb-6 leading-tight">
+                Scale Your Brand To The <br className="hidden sm:block" /> Next Level
               </h3>
               <p className="text-white text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-bold">
                 Connect with our strategists to build a tailored roadmap for your brand&apos;s digital dominance.
               </p>
-              <Link href="/contact?service=Consultation">
-                <button className="bg-white px-10 py-5 rounded-full font-black text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 shadow-xl" style={{ color: '#FF5851' }}>
-                  Secure Your Consultation
-                </button>
+              <Link href="/contact?service=Consultation" className="w-full sm:w-auto">
+                <motion.button 
+                  whileHover={{ scale: 1.05, y: -3 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full sm:w-auto group relative overflow-hidden bg-white px-8 py-4 md:px-10 md:py-5 rounded-full font-black text-sm md:text-lg shadow-[0_20px_40px_-5px_rgba(255,255,255,0.3)] transition-all duration-300 tracking-tighter uppercase flex items-center justify-center gap-3"
+                  style={{ color: '#FF5851' }}
+                >
+                  <span className="relative z-10 uppercase tracking-widest font-black">Secure Your Consultation</span>
+                  <div className="bg-[#FF5851] w-2 h-2 rounded-full group-hover:w-full group-hover:h-full absolute right-0 transition-all duration-500 opacity-0 group-hover:opacity-10 -z-0"></div>
+                </motion.button>
               </Link>
             </div>
           </motion.div>
 
           {/* Service Cards Grid - Mobile Optimized */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 max-w-7xl mx-auto px-4 sm:px-0">
             
             {/* Card 1: Recording Studio */}
             <Link href="/recording">
@@ -134,11 +144,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 cursor-pointer h-auto md:h-[320px]"
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
               >
                 <div className="flex flex-col md:flex-row h-full">
-                {/* Image Section - Larger on Mobile */}
-                <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
+                {/* Image Section - Smaller on Mobile */}
+                <div className="relative h-48 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
                     quality={75}
@@ -151,15 +161,15 @@ export default function Home() {
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
                 </div>
                 
-                {/* Content Section - Better Mobile Padding */}
-                <div className="relative isolate p-5 sm:p-6 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
+                {/* Content Section - Compact Mobile Padding */}
+                <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
                   <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                   <div className="relative flex-1 flex flex-col justify-center">
                     <h3 className="text-xl sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
                       RECORDING STUDIO<br />&amp; VOICE OVER
                     </h3>
-                    <p className="text-gray-500 group-hover:text-white/95 mb-3 text-sm sm:text-base md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
-                      Studio starting ₹1500/hr. Professional audio production & narration.
+                    <p className="text-gray-500 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
+                      Studio starting ₹1500/hr. Professional production.
                     </p>
                     <ul className="space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500 font-bold">
                       <li>• Voice recording (₹1500 - ₹10000)</li>
@@ -181,11 +191,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 cursor-pointer h-auto md:h-[320px]"
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
               >
                 <div className="flex flex-col md:flex-row-reverse h-full">
                 {/* Image Section - Larger on Mobile */}
-                <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
+                <div className="relative h-48 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
                     quality={75}
@@ -199,14 +209,14 @@ export default function Home() {
                 </div>
                 
                 {/* Content Section - Better Mobile Padding */}
-                <div className="relative isolate p-5 sm:p-6 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
+                <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
                   <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                   <div className="relative flex-1 flex flex-col justify-center">
                     <h3 className="text-xl sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
                       GRAPHICS &amp; VIDEO<br />EDITING
                     </h3>
-                    <p className="text-gray-500 group-hover:text-white/95 mb-3 text-sm sm:text-base md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
-                      Graphic Designing from ₹649. Video Editing from ₹1199.
+                    <p className="text-gray-500 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
+                      Graphics from ₹649. Video from ₹1199.
                     </p>
                     <ul className="space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500 font-bold">
                       <li>• AI Video Creation (₹1499+)</li>
@@ -228,11 +238,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 cursor-pointer h-auto md:h-[320px]"
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
               >
                 <div className="flex flex-col md:flex-row h-full">
                 {/* Image Section */}
-                <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
+                <div className="relative h-48 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
                     quality={75}
@@ -246,14 +256,14 @@ export default function Home() {
                 </div>
                 
                 {/* Content Section - FIXED with isolation */}
-                <div className="relative isolate p-5 sm:p-6 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
+                <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
                   <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                   <div className="relative flex-1 flex flex-col justify-center">
                     <h3 className="text-xl sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
                       APP &amp; WEB<br />DEVELOPMENT
                     </h3>
-                    <p className="text-gray-500 group-hover:text-white/95 mb-3 text-sm sm:text-base md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
-                      Starting from ₹15k. High-performance 5-page websites.
+                    <p className="text-gray-500 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
+                      Starting from ₹15k. High-performance sites.
                     </p>
                     <ul className="space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500 font-bold">
                       <li>• Custom Web Development</li>
@@ -274,11 +284,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 cursor-pointer h-auto md:h-[320px]"
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
               >
                 <div className="flex flex-col md:flex-row-reverse h-full">
                 {/* Image Section - Larger on Mobile */}
-                <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
+                <div className="relative h-48 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
                     quality={75}
@@ -292,14 +302,14 @@ export default function Home() {
                 </div>
                 
                 {/* Content Section - Better Mobile Padding */}
-                <div className="relative isolate p-5 sm:p-6 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
+                <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
                   <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                   <div className="relative flex-1 flex flex-col justify-center">
                     <h3 className="text-xl sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
                       SOCIAL MEDIA<br />MANAGEMENT
                     </h3>
-                    <p className="text-gray-500 group-hover:text-white/95 mb-3 text-sm sm:text-base md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
-                      Organic growth & management. Plans from ₹15k.
+                    <p className="text-gray-500 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
+                      Organic growth. Plans from ₹15k.
                     </p>
                     <ul className="space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500 font-bold">
                       <li>• Content Strategy</li>
@@ -320,11 +330,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 cursor-pointer h-auto md:h-[320px]"
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
               >
                 <div className="flex flex-col md:flex-row h-full">
                 {/* Image Section - Larger on Mobile */}
-                <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
+                <div className="relative h-48 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
                     quality={75}
@@ -338,14 +348,14 @@ export default function Home() {
                 </div>
                 
                 {/* Content Section - Better Mobile Padding */}
-                <div className="relative isolate p-5 sm:p-6 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
+                <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
                   <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                   <div className="relative flex-1 flex flex-col justify-center">
                     <h3 className="text-xl sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
                       EVENT<br />MANAGEMENT
                     </h3>
-                    <p className="text-gray-500 group-hover:text-white/95 mb-3 text-sm sm:text-base md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
-                      Unforgettable celebrations crafted with precision and care.
+                    <p className="text-gray-500 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
+                      Premium celebrations crafted with care.
                     </p>
                     <ul className="space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500 font-bold">
                       <li>• Corporate events</li>
@@ -366,11 +376,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 cursor-pointer h-auto md:h-[320px]"
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
               >
                 <div className="flex flex-col md:flex-row-reverse h-full">
                 {/* Image Section - Larger on Mobile */}
-                <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
+                <div className="relative h-48 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
                     quality={75}
@@ -384,7 +394,7 @@ export default function Home() {
                 </div>
                 
                 {/* Content Section - Better Mobile Padding */}
-                <div className="relative isolate p-5 sm:p-6 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
+                <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
                   <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                   <div className="relative flex-1 flex flex-col justify-center">
                     <h3 className="text-xl sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
@@ -409,7 +419,7 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16 md:py-24 lg:py-28 px-4 md:px-6 bg-white">
+      <section className="py-16 md:py-24 lg:py-28 px-6 bg-white">
         <div className="container mx-auto max-w-7xl">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -420,17 +430,17 @@ export default function Home() {
             Why <span style={{ color: '#FF5851' }}>Choose Us</span>
           </motion.h2>
 
-          <div className="flex flex-wrap justify-center items-start gap-6 md:gap-10 lg:gap-16 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 sm:gap-10 lg:gap-16 max-w-6xl mx-auto">
             {/* Icon 1 - Art/Creativity (Theme Color) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="flex flex-col items-center text-center w-32 sm:w-36 md:w-40"
+              className="flex flex-col items-center text-center"
             >
-              <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full flex items-center justify-center mb-4 shadow-lg hover:scale-110 transition-transform duration-300 relative" style={{ backgroundColor: '#FF5851' }}>
-                <svg className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+              <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full flex items-center justify-center mb-4 shadow-lg hover:scale-110 transition-transform duration-300 relative" style={{ backgroundColor: '#FF5851' }}>
+                <svg className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
                 </svg>
               </div>
@@ -445,10 +455,10 @@ export default function Home() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="flex flex-col items-center text-center w-32 sm:w-36 md:w-40"
+              className="flex flex-col items-center text-center"
             >
-              <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center mb-4 shadow-lg hover:scale-110 transition-transform duration-300">
-                <svg className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+              <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center mb-4 shadow-lg hover:scale-110 transition-transform duration-300">
+                <svg className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
                 </svg>
               </div>
@@ -463,10 +473,10 @@ export default function Home() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex flex-col items-center text-center w-32 sm:w-36 md:w-40"
+              className="flex flex-col items-center text-center"
             >
-              <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-white flex items-center justify-center mb-4 shadow-lg hover:scale-110 transition-transform duration-300" style={{ border: '4px solid #FF5851' }}>
-                <svg className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5" style={{ color: '#FF5851' }}>
+              <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-white flex items-center justify-center mb-4 shadow-lg hover:scale-110 transition-transform duration-300" style={{ border: '4px solid #FF5851' }}>
+                <svg className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5" style={{ color: '#FF5851' }}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M10.05 4.575a1.575 1.575 0 10-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 013.15 0v1.5m-3.15 0l.075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 013.15 0V15M6.9 7.575a1.575 1.575 0 10-3.15 0v8.175a6.75 6.75 0 006.75 6.75h2.018a5.25 5.25 0 003.712-1.538l1.732-1.732a5.25 5.25 0 001.538-3.712l.003-2.024a.668.668 0 01.198-.471 1.575 1.575 0 10-2.228-2.228 3.818 3.818 0 00-1.12 2.687M6.9 7.575V12m6.27 4.318A4.49 4.49 0 0116.35 15m.002 0h-.002" />
                 </svg>
               </div>
@@ -481,10 +491,10 @@ export default function Home() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-col items-center text-center w-32 sm:w-36 md:w-40"
+              className="flex flex-col items-center text-center"
             >
-              <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center mb-4 shadow-lg hover:scale-110 transition-transform duration-300">
-                <svg className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+              <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center mb-4 shadow-lg hover:scale-110 transition-transform duration-300">
+                <svg className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
                 </svg>
               </div>
@@ -499,10 +509,10 @@ export default function Home() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-col items-center text-center w-32 sm:w-36 md:w-40"
+              className="flex flex-col items-center text-center"
             >
-              <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full flex items-center justify-center mb-4 shadow-lg hover:scale-110 transition-transform duration-300" style={{ backgroundColor: '#FF5851' }}>
-                <svg className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+              <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full flex items-center justify-center mb-4 shadow-lg hover:scale-110 transition-transform duration-300" style={{ backgroundColor: '#FF5851' }}>
+                <svg className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
                 </svg>
               </div>
@@ -602,9 +612,18 @@ export default function Home() {
           <div className="text-center mt-20">
             <Link 
               href="/graphic" 
-              className="inline-flex items-center gap-4 px-12 py-5 bg-gray-900 text-white rounded-full font-black text-xs md:text-sm uppercase tracking-[0.3em] hover:bg-[#FF5851] transition-all shadow-2xl group"
+              className="inline-flex items-center"
             >
-              Explore Master Collection <ArrowLeft size={16} className="rotate-180 group-hover:translate-x-3 transition-transform" />
+              <motion.button
+                whileHover={{ scale: 1.05, backgroundColor: "#FF5851" }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center gap-4 px-10 py-5 bg-gray-900 text-white rounded-full font-black text-xs md:text-sm uppercase tracking-[0.25em] transition-all duration-300 shadow-2xl group border border-white/10"
+              >
+                Explore Master Collection 
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center transition-transform group-hover:translate-x-2">
+                  <ArrowLeft size={16} className="rotate-180" />
+                </div>
+              </motion.button>
             </Link>
           </div>
         </div>

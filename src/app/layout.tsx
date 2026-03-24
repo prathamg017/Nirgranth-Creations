@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nirgranthcreations.com"),
   title: "Nirgranth Creations | Elite Social Media Management & Creative Studio",
   description: "Transform your brand from zero to dominance. Expert Social Media Management, Recording Studio, AI Video Creation, and Web Development starting at ₹15k. The ultimate execution agency for modern brands.",
   keywords: [
@@ -48,19 +49,25 @@ export const metadata: Metadata = {
     title: "Nirgranth Creations | Scale Your Brand to Dominance",
     description: "Expert Social Media Management, Recording, and Creative Execution.",
     siteName: "Nirgranth Creations",
+    images: [{ url: "/favicon-branded.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Nirgranth Creations | Agency of Future",
     description: "We manufacture authority and craft empires.",
+    images: ["/favicon-branded.png"],
   },
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "any" },
       { url: "/favicon-branded.png", sizes: "192x192", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
     apple: [
-      { url: "/favicon-branded.png", sizes: "192x192", type: "image/png" },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      { rel: "mask-icon", url: "/logo.svg" },
     ],
   },
 };
