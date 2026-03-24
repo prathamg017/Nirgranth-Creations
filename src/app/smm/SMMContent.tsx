@@ -64,21 +64,21 @@ export default function SMMPremiumPage() {
             >
               <Zap size={14} className="animate-pulse" /> Elite Attention Engineering
             </motion.div>
-            <h1 className="text-6xl md:text-8xl lg:text-[11rem] font-black leading-[0.8] tracking-tighter mb-10">
+            <h1 className="text-5xl md:text-8xl lg:text-[10rem] font-black leading-[0.85] tracking-tighter mb-10">
               SOCIAL<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#FF5851] to-orange-600">DOMINANCE</span>
             </h1>
             <p className="text-lg md:text-2xl text-white/50 max-w-2xl mx-auto mb-16 leading-relaxed font-medium">
               We manufacture authority for 20+ elite brands. Our systems don&apos;t just post content; they engineer influence and drive absolute market authority.
             </p>
-            <div className="flex flex-wrap justify-center gap-8">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-8">
               <Link href="#tiers">
-                <button className="px-14 py-7 rounded-2xl bg-white text-black font-black text-xl hover:bg-[#FF5851] hover:text-white transition-all duration-500 hover:scale-105 shadow-[0_0_50px_rgba(255,255,255,0.1)]">
+                <button className="px-8 py-4 md:px-14 md:py-7 rounded-2xl bg-white text-black font-black text-lg md:text-xl hover:bg-[#FF5851] hover:text-white transition-all duration-500 hover:scale-105 shadow-[0_0_50px_rgba(255,255,255,0.1)]">
                   START THE ENGINE
                 </button>
               </Link>
               <Link href="#workflow">
-                <button className="px-14 py-7 rounded-2xl border border-white/10 backdrop-blur-xl bg-white/5 text-white font-black text-xl hover:bg-white/10 transition-all duration-500">
+                <button className="px-8 py-4 md:px-14 md:py-7 rounded-2xl border border-white/10 backdrop-blur-xl bg-white/5 text-white font-black text-lg md:text-xl hover:bg-white/10 transition-all duration-500">
                   VIEW BLUEPRINT
                 </button>
               </Link>
@@ -107,11 +107,11 @@ export default function SMMPremiumPage() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-40 relative bg-[#050505]">
+      <section className="py-20 md:py-40 relative bg-[#050505]">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-32 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 md:gap-32 items-center">
             <motion.div {...fadeUp(0)}>
-              <h2 className="text-5xl md:text-8xl font-black mb-12 leading-[0.95] tracking-tight">
+              <h2 className="text-4xl md:text-8xl font-black mb-12 leading-[0.95] tracking-tight">
                 Engineering <br />
                 <span className="text-[#FF5851]">Success.</span>
               </h2>
@@ -307,14 +307,14 @@ export default function SMMPremiumPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-40 relative">
+      <section className="py-20 md:py-40 relative">
         <div className="container mx-auto px-6 max-w-5xl text-center">
           <motion.div {...fadeUp(0)}>
             <div className="inline-block px-4 py-1 rounded-full border border-[#FF5851]/20 bg-[#FF5851]/10 text-[#FF5851] text-[10px] font-black tracking-[0.3em] mb-10 uppercase">Connect with Experts</div>
-            <h3 className="text-6xl md:text-9xl font-black mb-12 tracking-tight">Ready to <br /><span className="text-[#FF5851]">Dominate?</span></h3>
-            <p className="text-2xl text-white/40 mb-16 max-w-2xl mx-auto font-bold">The journey from zero to inevitable starts with a single execution. Secure your blueprint today.</p>
+            <h3 className="text-4xl md:text-9xl font-black mb-12 tracking-tight leading-none">Ready to <br /><span className="text-[#FF5851]">Dominate?</span></h3>
+            <p className="text-xl md:text-2xl text-white/40 mb-16 max-w-2xl mx-auto font-bold leading-relaxed">The journey from zero to inevitable starts with a single execution. Secure your blueprint today.</p>
             <Link href="/contact">
-              <button className="px-16 py-8 rounded-[2rem] bg-[#FF5851] text-white font-black text-2xl hover:bg-white hover:text-black transition-all duration-500 hover:scale-110 shadow-[0_30px_100px_rgba(255,88,81,0.3)]">
+              <button className="px-8 py-5 md:px-16 md:py-8 rounded-2xl md:rounded-[2rem] bg-[#FF5851] text-white font-black text-xl md:text-2xl hover:bg-white hover:text-black transition-all duration-500 hover:scale-110 shadow-[0_30px_100px_rgba(255,88,81,0.3)]">
                 START YOUR CHAPTER
               </button>
             </Link>

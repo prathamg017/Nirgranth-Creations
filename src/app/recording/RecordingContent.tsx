@@ -12,8 +12,8 @@ export default function RecordingVoiceoverPage() {
       {/* ===== HERO (Split Banner with Glass Overlay) ===== */}
       <section className="relative h-[85vh] min-h-[560px] overflow-hidden bg-black">
         {/* Background */}
-        <div className="absolute inset-0 grid grid-cols-3">
-  {/* Left */}
+        <div className="absolute inset-0 grid grid-cols-1 md:grid-cols-3">
+  {/* Left - Hero Image on Mobile */}
   <div className="relative">
     <Image
       src="/setup.jpg"
@@ -22,11 +22,11 @@ export default function RecordingVoiceoverPage() {
       priority
       className="object-cover"
     />
-    <div className="absolute inset-0 bg-black/30" />
+    <div className="absolute inset-0 bg-black/40" />
   </div>
 
-  {/* Center */}
-  <div className="relative">
+  {/* Hidden on Mobile for clean look */}
+  <div className="relative hidden md:block">
     <Image
       src="/voice.jpg"
       alt="Podcast setup"
@@ -34,11 +34,11 @@ export default function RecordingVoiceoverPage() {
       priority
       className="object-cover"
     />
-    <div className="absolute inset-0 bg-black/30" />
+    <div className="absolute inset-0 bg-black/40" />
   </div>
 
-  {/* Right */}
-  <div className="relative">
+  {/* Hidden on Mobile for clean look */}
+  <div className="relative hidden md:block">
     <Image
       src="/music.jpg"
       alt="Studio setup"
@@ -46,7 +46,7 @@ export default function RecordingVoiceoverPage() {
       priority
       className="object-cover"
     />
-    <div className="absolute inset-0 bg-black/30" />
+    <div className="absolute inset-0 bg-black/40" />
   </div>
 </div>
 
@@ -57,7 +57,7 @@ export default function RecordingVoiceoverPage() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="max-w-4xl backdrop-blur-md bg-white/10 p-8 rounded-2xl border border-white/20 shadow-2xl"
+            className="max-w-4xl backdrop-blur-md bg-white/10 p-6 md:p-8 rounded-2xl border border-white/20 shadow-2xl mx-4"
           >
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white drop-shadow-lg">
               Recording Studio & Voice Over
@@ -230,17 +230,17 @@ export default function RecordingVoiceoverPage() {
       {/* ===== BOOKING CTA ===== */}
       <section
         id="book"
-        className="py-24 px-6 bg-pri text-white"
+        className="py-16 md:py-24 px-6 bg-pri text-white"
       >
         <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-3xl md:text-5xl font-extrabold leading-snug mb-8">
               Ready to record something unforgettable?
             </h3>
-            <p className="mt-4 text-white/90 text-lg mb-10">
-              Tell us your project details and we’ll suggest the best approach, voice, timeline, and budget.
+            <p className="mt-4 text-white/90 text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
+              Tell us your project details and we&apos;ll suggest the best approach, voice, timeline, and budget.
             </p>
             <Link href="/contact?service=Recording-and-Voiceover">
-              <button className="px-10 py-5 rounded-full bg-white text-pink-600 font-black text-lg hover:scale-105 transition-transform shadow-2xl">
+              <button className="px-8 py-4 md:px-10 md:py-5 rounded-full bg-white text-pink-600 font-black text-base md:text-lg hover:scale-105 transition-transform shadow-2xl">
                 START RECORDING NOW
               </button>
             </Link>

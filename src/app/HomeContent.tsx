@@ -132,7 +132,7 @@ export default function Home() {
                   style={{ color: '#FF5851' }}
                 >
                   <span className="relative z-10 uppercase tracking-widest font-black">Secure Your Consultation</span>
-                  <div className="bg-[#FF5851] w-2 h-2 rounded-full group-hover:w-full group-hover:h-full absolute right-0 transition-all duration-500 opacity-0 group-hover:opacity-10 opacity-0 -z-0"></div>
+                  <div className="bg-[#FF5851] w-2 h-2 rounded-full group-hover:w-full group-hover:h-full absolute right-0 transition-all duration-500 opacity-0 group-hover:opacity-10 -z-0"></div>
                 </motion.button>
               </Link>
             </div>
@@ -148,11 +148,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 cursor-pointer h-auto md:h-[320px]"
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
               >
                 <div className="flex flex-col md:flex-row h-full">
-                {/* Image Section - Larger on Mobile */}
-                <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
+                {/* Image Section - Smaller on Mobile */}
+                <div className="relative h-48 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
                     quality={75}
@@ -165,15 +165,15 @@ export default function Home() {
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
                 </div>
                 
-                {/* Content Section - Better Mobile Padding */}
-                <div className="relative isolate p-5 sm:p-6 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
+                {/* Content Section - Compact Mobile Padding */}
+                <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
                   <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                   <div className="relative flex-1 flex flex-col justify-center">
                     <h3 className="text-xl sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
                       RECORDING STUDIO<br />&amp; VOICE OVER
                     </h3>
-                    <p className="text-gray-500 group-hover:text-white/95 mb-3 text-sm sm:text-base md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
-                      Studio starting ₹1500/hr. Professional audio production & narration.
+                    <p className="text-gray-500 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
+                      Studio starting ₹1500/hr. Professional production.
                     </p>
                     <ul className="space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500 font-bold">
                       <li>• Voice recording (₹1500 - ₹10000)</li>
@@ -195,11 +195,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 cursor-pointer h-auto md:h-[320px]"
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
               >
                 <div className="flex flex-col md:flex-row-reverse h-full">
                 {/* Image Section - Larger on Mobile */}
-                <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
+                <div className="relative h-48 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
                     quality={75}
@@ -213,14 +213,14 @@ export default function Home() {
                 </div>
                 
                 {/* Content Section - Better Mobile Padding */}
-                <div className="relative isolate p-5 sm:p-6 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
+                <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
                   <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                   <div className="relative flex-1 flex flex-col justify-center">
                     <h3 className="text-xl sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
                       GRAPHICS &amp; VIDEO<br />EDITING
                     </h3>
-                    <p className="text-gray-500 group-hover:text-white/95 mb-3 text-sm sm:text-base md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
-                      Graphic Designing from ₹649. Video Editing from ₹1199.
+                    <p className="text-gray-500 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
+                      Graphics from ₹649. Video from ₹1199.
                     </p>
                     <ul className="space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500 font-bold">
                       <li>• AI Video Creation (₹1499+)</li>
@@ -242,11 +242,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 cursor-pointer h-auto md:h-[320px]"
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
               >
                 <div className="flex flex-col md:flex-row h-full">
                 {/* Image Section */}
-                <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
+                <div className="relative h-48 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
                     quality={75}
@@ -260,14 +260,14 @@ export default function Home() {
                 </div>
                 
                 {/* Content Section - FIXED with isolation */}
-                <div className="relative isolate p-5 sm:p-6 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
+                <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
                   <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                   <div className="relative flex-1 flex flex-col justify-center">
                     <h3 className="text-xl sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
                       APP &amp; WEB<br />DEVELOPMENT
                     </h3>
-                    <p className="text-gray-500 group-hover:text-white/95 mb-3 text-sm sm:text-base md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
-                      Starting from ₹15k. High-performance 5-page websites.
+                    <p className="text-gray-500 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
+                      Starting from ₹15k. High-performance sites.
                     </p>
                     <ul className="space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500 font-bold">
                       <li>• Custom Web Development</li>
@@ -288,11 +288,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 cursor-pointer h-auto md:h-[320px]"
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
               >
                 <div className="flex flex-col md:flex-row-reverse h-full">
                 {/* Image Section - Larger on Mobile */}
-                <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
+                <div className="relative h-48 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
                     quality={75}
@@ -306,14 +306,14 @@ export default function Home() {
                 </div>
                 
                 {/* Content Section - Better Mobile Padding */}
-                <div className="relative isolate p-5 sm:p-6 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
+                <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
                   <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                   <div className="relative flex-1 flex flex-col justify-center">
                     <h3 className="text-xl sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
                       SOCIAL MEDIA<br />MANAGEMENT
                     </h3>
-                    <p className="text-gray-500 group-hover:text-white/95 mb-3 text-sm sm:text-base md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
-                      Organic growth & management. Plans from ₹15k.
+                    <p className="text-gray-500 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
+                      Organic growth. Plans from ₹15k.
                     </p>
                     <ul className="space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500 font-bold">
                       <li>• Content Strategy</li>
@@ -334,11 +334,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 cursor-pointer h-auto md:h-[320px]"
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
               >
                 <div className="flex flex-col md:flex-row h-full">
                 {/* Image Section - Larger on Mobile */}
-                <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
+                <div className="relative h-48 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
                     quality={75}
@@ -352,14 +352,14 @@ export default function Home() {
                 </div>
                 
                 {/* Content Section - Better Mobile Padding */}
-                <div className="relative isolate p-5 sm:p-6 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
+                <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
                   <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                   <div className="relative flex-1 flex flex-col justify-center">
                     <h3 className="text-xl sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
                       EVENT<br />MANAGEMENT
                     </h3>
-                    <p className="text-gray-500 group-hover:text-white/95 mb-3 text-sm sm:text-base md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
-                      Unforgettable celebrations crafted with precision and care.
+                    <p className="text-gray-500 group-hover:text-white/95 mb-2 text-xs md:text-sm leading-relaxed transition-colors duration-500 font-bold tracking-tight">
+                      Premium celebrations crafted with care.
                     </p>
                     <ul className="space-y-1.5 text-gray-500 group-hover:text-white/90 text-sm sm:text-base md:text-sm transition-colors duration-500 font-bold">
                       <li>• Corporate events</li>
@@ -380,11 +380,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 cursor-pointer h-auto md:h-[320px]"
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-auto md:h-[320px]"
               >
                 <div className="flex flex-col md:flex-row-reverse h-full">
                 {/* Image Section - Larger on Mobile */}
-                <div className="relative h-56 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
+                <div className="relative h-48 sm:h-64 md:h-full md:w-1/2 overflow-hidden">
                   <Image
                     loading="lazy"
                     quality={75}
@@ -398,7 +398,7 @@ export default function Home() {
                 </div>
                 
                 {/* Content Section - Better Mobile Padding */}
-                <div className="relative isolate p-5 sm:p-6 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
+                <div className="relative isolate p-4 md:p-6 md:w-1/2 h-full flex flex-col bg-white overflow-hidden">
                   <div className="absolute inset-0 bg-[#FF5851] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                   <div className="relative flex-1 flex flex-col justify-center">
                     <h3 className="text-xl sm:text-2xl md:text-xl font-black mb-2 sm:mb-3 text-black group-hover:text-white transition-colors duration-500">
@@ -443,8 +443,8 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="flex flex-col items-center text-center"
             >
-              <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full flex items-center justify-center mb-4 shadow-lg hover:scale-110 transition-transform duration-300 relative" style={{ backgroundColor: '#FF5851' }}>
-                <svg className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+              <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full flex items-center justify-center mb-4 shadow-lg hover:scale-110 transition-transform duration-300 relative" style={{ backgroundColor: '#FF5851' }}>
+                <svg className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
                 </svg>
               </div>
@@ -461,8 +461,8 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="flex flex-col items-center text-center"
             >
-              <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center mb-4 shadow-lg hover:scale-110 transition-transform duration-300">
-                <svg className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+              <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center mb-4 shadow-lg hover:scale-110 transition-transform duration-300">
+                <svg className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
                 </svg>
               </div>
@@ -479,8 +479,8 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="flex flex-col items-center text-center"
             >
-              <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-white flex items-center justify-center mb-4 shadow-lg hover:scale-110 transition-transform duration-300" style={{ border: '4px solid #FF5851' }}>
-                <svg className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5" style={{ color: '#FF5851' }}>
+              <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-white flex items-center justify-center mb-4 shadow-lg hover:scale-110 transition-transform duration-300" style={{ border: '4px solid #FF5851' }}>
+                <svg className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5" style={{ color: '#FF5851' }}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M10.05 4.575a1.575 1.575 0 10-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 013.15 0v1.5m-3.15 0l.075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 013.15 0V15M6.9 7.575a1.575 1.575 0 10-3.15 0v8.175a6.75 6.75 0 006.75 6.75h2.018a5.25 5.25 0 003.712-1.538l1.732-1.732a5.25 5.25 0 001.538-3.712l.003-2.024a.668.668 0 01.198-.471 1.575 1.575 0 10-2.228-2.228 3.818 3.818 0 00-1.12 2.687M6.9 7.575V12m6.27 4.318A4.49 4.49 0 0116.35 15m.002 0h-.002" />
                 </svg>
               </div>
@@ -497,8 +497,8 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="flex flex-col items-center text-center"
             >
-              <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center mb-4 shadow-lg hover:scale-110 transition-transform duration-300">
-                <svg className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+              <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center mb-4 shadow-lg hover:scale-110 transition-transform duration-300">
+                <svg className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
                 </svg>
               </div>
@@ -515,8 +515,8 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="flex flex-col items-center text-center"
             >
-              <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full flex items-center justify-center mb-4 shadow-lg hover:scale-110 transition-transform duration-300" style={{ backgroundColor: '#FF5851' }}>
-                <svg className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+              <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full flex items-center justify-center mb-4 shadow-lg hover:scale-110 transition-transform duration-300" style={{ backgroundColor: '#FF5851' }}>
+                <svg className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
                 </svg>
               </div>
@@ -787,4 +787,3 @@ export default function Home() {
     </main>
   );
 }
-

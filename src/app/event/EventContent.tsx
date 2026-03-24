@@ -115,7 +115,7 @@ export default function EventManagementPage() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 md:py-32 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -129,7 +129,7 @@ export default function EventManagementPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-tight mb-6"
+            className="text-4xl md:text-7xl lg:text-8xl font-extrabold text-white leading-tight mb-6"
           >
             Create{" "}
             <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-yellow-400 bg-clip-text text-transparent">
@@ -186,8 +186,8 @@ export default function EventManagementPage() {
                 className="relative group"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-purple-600 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>
-                <div className="relative bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
-                  <div className="text-5xl font-extrabold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent mb-2">
+                <div className="relative bg-gradient-to-br from-gray-50 to-white rounded-3xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
+                  <div className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent mb-2">
                     <AnimatedCounter value={s.value} />
                     {s.suffix}
                   </div>
@@ -216,7 +216,7 @@ export default function EventManagementPage() {
               <motion.div
                 key={i}
                 {...fadeUp(i * 0.1)}
-                className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2"
+                className="group relative bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2"
               >
                 <div className="mb-4 group-hover:scale-110 transition-transform duration-300 text-pink-600">
                   {service.svg}
@@ -287,7 +287,7 @@ export default function EventManagementPage() {
               <motion.div
                 key={i}
                 {...fadeUp(i * 0.15)}
-                className="relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                className="relative bg-white rounded-3xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
               >
                 <div className="flex items-center gap-4 mb-6">
                   <Image
@@ -317,14 +317,14 @@ export default function EventManagementPage() {
         style={{ backgroundColor: '#FF5851' }}
       >
         <div className="max-w-4xl mx-auto text-center relative z-10">
-            <h3 className="text-4xl md:text-6xl font-extrabold leading-tight mb-8">
+            <h3 className="text-3xl md:text-6xl font-extrabold leading-tight mb-8">
               Let&apos;s Create Your <span className="text-white">Legendary</span> Event
             </h3>
-            <p className="text-xl text-white/90 mb-12 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-white/90 mb-12 leading-relaxed max-w-2xl mx-auto">
               Share your vision with us and we&apos;ll craft an unforgettable experience that exceeds all expectations.
             </p>
             <Link href="/contact?service=Event-Management">
-              <button className="px-12 py-6 rounded-full bg-white text-pink-600 font-black text-xl hover:scale-105 transition-transform shadow-2xl">
+              <button className="px-8 py-4 md:px-12 md:py-6 rounded-full bg-white text-pink-600 font-black text-lg md:text-xl hover:scale-105 transition-transform shadow-2xl">
                 START PLANNING NOW
               </button>
             </Link>

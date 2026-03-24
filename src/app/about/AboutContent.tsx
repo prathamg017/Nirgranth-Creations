@@ -26,7 +26,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <span className="text-[#FF5851] text-[10px] font-black uppercase tracking-[0.5em] mb-8 block underline decoration-[#FF5851]/30 underline-offset-8">The Nirgranth Legacy</span>
-            <h1 className="text-5xl md:text-9xl font-black text-white leading-[0.8] tracking-tighter uppercase italic mb-12">
+            <h1 className="text-4xl md:text-9xl font-black text-white leading-[0.8] tracking-tighter uppercase italic mb-10 md:mb-12">
               BEYOND THE<br />
               <span className="text-[#FF5851]">ORDINARY.</span>
             </h1>
@@ -50,7 +50,7 @@ export default function About() {
       </section>
 
       {/* The Core: Authority & Precision */}
-      <section className="py-24 md:py-48 px-4 md:px-6">
+      <section className="py-16 md:py-48 px-4 md:px-6">
         <div className="container mx-auto max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <motion.div
@@ -113,7 +113,7 @@ export default function About() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-24 md:py-48 px-4 md:px-6 text-center">
+      <section className="py-16 md:py-48 px-4 md:px-6 text-center">
         <div className="container mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -128,7 +128,7 @@ export default function About() {
             <p className="text-gray-500 text-xl font-bold mb-16 max-w-2xl mx-auto">
               Join the elite ranks of brands and creators that have scaled their vision with Nirgranth Creations.
             </p>
-            <Link href="/contact?service=General-Inquiry" className="inline-flex items-center gap-6 px-16 py-8 bg-gray-900 text-white rounded-full font-black uppercase tracking-[0.3em] hover:bg-[#FF5851] transition-all shadow-3xl group">
+            <Link href="/contact?service=General-Inquiry" className="inline-flex items-center gap-6 px-10 py-6 md:px-16 md:py-8 bg-gray-900 text-white rounded-full font-black text-base md:text-xl uppercase tracking-[0.2em] md:tracking-[0.3em] hover:bg-[#FF5851] transition-all shadow-3xl group">
               Start The Mission <ArrowLeft size={24} className="rotate-180 group-hover:translate-x-4 transition-transform" />
             </Link>
           </motion.div>

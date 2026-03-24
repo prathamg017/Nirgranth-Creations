@@ -37,7 +37,7 @@ export default function GraphicsVideoEditingPage() {
     {/* Glass card for hero text */}
     <motion.div
       {...fadeUp(0)}
-      className="mx-auto max-w-4xl text-center bg-black/30 backdrop-blur-sm rounded-2xl p-10 border border-white/10"
+      className="mx-auto max-w-4xl text-center bg-black/40 backdrop-blur-md rounded-2xl p-6 md:p-10 border border-white/10"
     >
       <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium bg-white/20 text-white backdrop-blur border border-white/30">
         <Sparkles size={14} className="text-yellow-300" /> Creative Studio - Graphics & Video
@@ -56,13 +56,13 @@ export default function GraphicsVideoEditingPage() {
       <div className="mt-8 flex flex-wrap justify-center gap-4">
         <Link
           href="#portfolio"
-          className="px-6 py-3 rounded-full font-semibold text-white bg-black/40 border border-white/20 backdrop-blur hover:scale-105 transition"
+          className="px-6 py-3 rounded-full font-bold text-white bg-black/40 border border-white/20 backdrop-blur hover:scale-105 transition text-sm md:text-base"
         >
           See Portfolio
         </Link>
         <Link
           href="/contact"
-          className="px-6 py-3 rounded-full font-semibold bg-white text-pink-700 hover:bg-pink-50 hover:scale-105 transition"
+          className="px-6 py-3 rounded-full font-bold bg-white text-pink-700 hover:bg-pink-50 hover:scale-105 transition text-sm md:text-base"
         >
           Start a Project
         </Link>
@@ -187,11 +187,11 @@ export default function GraphicsVideoEditingPage() {
       </section>
 
       {/* ===== THE PORTFOLIO GLIMPSE: Simplified Integration ===== */}
-      <section id="portfolio" className="py-32 px-6 bg-white overflow-hidden">
+      <section id="portfolio" className="py-16 md:py-32 px-6 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <motion.div 
             {...fadeUp(0)}
-            className="mb-16 flex flex-col md:flex-row items-end justify-between gap-6"
+            className="mb-12 md:mb-16 flex flex-col md:flex-row items-center md:items-end justify-between gap-6 text-center md:text-left"
           >
             <div>
               <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#FF5851] mb-4 block">Portfolio Selection</span>
@@ -200,7 +200,7 @@ export default function GraphicsVideoEditingPage() {
                 <span className="text-[#FF5851]">GLIMPSE</span>
               </h2>
             </div>
-            <Link href="/portfolio" className="text-sm font-black uppercase text-[#FF5851] hover:underline tracking-widest border-2 border-[#FF5851] px-6 py-2 rounded-full transition-all hover:bg-[#FF5851] hover:text-white">
+            <Link href="/portfolio" className="text-xs font-black uppercase text-[#FF5851] hover:underline tracking-widest border-2 border-[#FF5851] px-8 py-3 rounded-full transition-all hover:bg-[#FF5851] hover:text-white">
               Explore Full Exhibition
             </Link>
           </motion.div>
@@ -395,18 +395,18 @@ export default function GraphicsVideoEditingPage() {
       {/* ===== BRIEF FORM / CTA ===== */}
       <section
         id="brief"
-        className="py-24 px-6 text-white"
+        className="py-20 md:py-32 px-6 text-white"
         style={{ backgroundColor: '#FF5851' }}
       >
         <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-3xl md:text-5xl font-extrabold leading-snug mb-8">
-              Tell us your vibe. We’ll ship the aesthetic.
-            </h3>
-            <p className="mt-4 text-white/90 text-lg mb-10">
+            <h2 className="text-3xl md:text-5xl font-black leading-tight mb-8 uppercase italic italic-none">
+              Tell us your vibe. <br className="md:hidden" /> We&apos;ll ship the aesthetic.
+            </h2>
+            <p className="mt-4 text-white/90 text-lg mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
               Stop waiting — get a professional consultation and timeline within 24 hours.
             </p>
             <Link href="/contact?service=Graphic-Design-and-Video-Editing">
-              <button className="px-12 py-6 rounded-full bg-white text-pink-600 font-black text-xl hover:scale-105 transition-transform shadow-2xl">
+              <button className="px-10 py-5 md:px-14 md:py-8 rounded-full bg-white text-[#FF5851] font-black text-lg md:text-2xl hover:scale-105 transition-transform shadow-3xl uppercase tracking-widest">
                 SECURE YOUR CREATIVE SLOT
               </button>
             </Link>

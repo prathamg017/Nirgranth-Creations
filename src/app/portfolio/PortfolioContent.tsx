@@ -98,7 +98,7 @@ export default function PortfolioContent() {
             transition={{ duration: 1 }}
           >
             <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#FF5851] mb-6 block">Execution Exhibition 2024</span>
-            <h1 className="text-5xl md:text-8xl lg:text-[10rem] font-black text-gray-900 tracking-tighter leading-[0.85] italic mb-10">
+            <h1 className="text-4xl md:text-8xl lg:text-[10rem] font-black text-gray-900 tracking-tighter leading-[0.85] italic mb-10">
               OFFICIAL<br />
               <span className="text-[#FF5851]">PORTFOLIO</span>
             </h1>
@@ -119,8 +119,8 @@ export default function PortfolioContent() {
       </section>
 
       {/* ===== THE EXHIBITION: Full Gallery ===== */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto space-y-40">
+      <section className="py-12 md:py-20 px-6">
+        <div className="max-w-7xl mx-auto space-y-20 md:space-y-40">
           {works.map((work, i) => (
             <motion.div
               key={work.title}
@@ -132,7 +132,7 @@ export default function PortfolioContent() {
             >
               {/* Image Showcase */}
               <div className="w-full lg:w-3/5">
-                <div className="relative aspect-[16/10] rounded-[3rem] overflow-hidden shadow-edge bg-gray-50 group">
+                <div className="relative aspect-[16/10] rounded-2xl md:rounded-[3rem] overflow-hidden shadow-edge bg-gray-50 group">
                   <Image
                     src={work.src}
                     alt={work.title}
@@ -170,16 +170,16 @@ export default function PortfolioContent() {
       </section>
 
       {/* ===== FINAL CALL ===== */}
-      <section className="py-32 px-6 bg-gray-50 text-center">
+      <section className="py-20 md:py-32 px-6 bg-gray-50 text-center">
          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-7xl font-black text-gray-900 mb-8 uppercase tracking-tighter italic leading-none">
+            <h2 className="text-3xl md:text-7xl font-black text-gray-900 mb-8 uppercase tracking-tighter italic leading-none">
                READY TO SHIP AN<br />
                <span className="text-[#FF5851]">ELITE IDENTITY?</span>
             </h2>
-            <p className="text-xl text-gray-500 font-bold mb-12 max-w-2xl mx-auto uppercase tracking-widest">
+            <p className="text-lg md:text-xl text-gray-500 font-bold mb-12 max-w-2xl mx-auto uppercase tracking-widest leading-relaxed">
                Our calendar fills fast. Secure your creative slot today.
             </p>
-            <Link href="/contact?service=Portfolio-Inquiry" className="inline-block px-12 py-6 bg-[#FF5851] text-white rounded-full font-black text-xl uppercase tracking-widest hover:scale-105 transition-all shadow-2xl">
+            <Link href="/contact?service=Portfolio-Inquiry" className="inline-block px-8 py-4 md:px-12 md:py-6 bg-[#FF5851] text-white rounded-full font-black text-lg md:text-xl uppercase tracking-widest hover:scale-105 transition-all shadow-2xl">
                Start Planning Now
             </Link>
          </div>

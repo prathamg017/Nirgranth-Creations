@@ -65,7 +65,7 @@ function ContactForm() {
   };
 
   return (
-    <div className="relative bg-white/80 backdrop-blur-xl border border-[#e7546b]/20 rounded-3xl shadow-2xl p-10">
+    <div className="relative bg-white/80 backdrop-blur-xl border border-[#e7546b]/20 rounded-3xl shadow-2xl p-6 md:p-10">
       <h2 className="text-3xl font-bold text-center text-[#e7546b] mb-6">
         {subject ? "Package Inquiry" : "Write Us a Letter"}
       </h2>
