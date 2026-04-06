@@ -17,7 +17,7 @@ export default function Home() {
             priority
             fetchPriority="high"
             className="object-cover object-[center_30%] sm:object-center blur-[80px] sm:blur-none scale-150 sm:scale-100 opacity-95 sm:opacity-100 transition-all duration-700"
-            quality={75}
+            quality={65}
             sizes="100vw"
           />
           
@@ -109,9 +109,9 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative mb-12 md:mb-20 rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-2xl mx-4"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="relative mb-12 md:mb-20 rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-2xl mx-4 will-change-transform"
           >
             {/* Overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#FF5851] to-[#ff7b75]"></div>
@@ -146,11 +146,11 @@ export default function Home() {
             {/* Card 1: Recording Studio */}
             <Link href="/recording">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-full min-h-[210px] md:min-h-0 md:h-[320px]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-full min-h-[210px] md:min-h-0 md:h-[320px] will-change-transform"
               >
                 {/* 
                    MOBILE DESIGN: FUll Screen Glass Tiles 
@@ -167,6 +167,7 @@ export default function Home() {
                       alt="Recording Studio"
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      decoding="async"
                     />
                     {/* Editorial Fade - Mobile Only (Fades image into white base) */}
                     <div className="md:hidden absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent z-10 transition-opacity duration-500"></div>
@@ -202,11 +203,11 @@ export default function Home() {
             {/* Card 2: Graphics & Video Editing */}
             <Link href="/graphic">
               <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-full min-h-[210px] md:min-h-0 md:h-[320px]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-full min-h-[210px] md:min-h-0 md:h-[320px] will-change-transform"
               >
                 <div className="flex flex-col md:flex-row-reverse h-full relative group">
                   {/* Background Imagery */}
@@ -219,6 +220,7 @@ export default function Home() {
                       alt="Graphics & Video Editing"
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      decoding="async"
                     />
                     {/* Editorial Fade - Mobile Only (Fades image into white base) */}
                     <div className="md:hidden absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent z-10 transition-opacity duration-500"></div>
@@ -251,11 +253,11 @@ export default function Home() {
             {/* Card 3: App & Web Development */}
             <Link href="/development">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-full min-h-[210px] md:min-h-0 md:h-[320px]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-full min-h-[210px] md:min-h-0 md:h-[320px] will-change-transform"
               >
                 <div className="flex flex-col md:flex-row h-full relative group">
                   {/* Background Imagery */}
@@ -268,6 +270,7 @@ export default function Home() {
                       alt="App & Web Development"
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      decoding="async"
                     />
                     {/* Editorial Fade - Mobile Only (Fades image into white base) */}
                     <div className="md:hidden absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent z-10 transition-opacity duration-500"></div>
@@ -300,11 +303,11 @@ export default function Home() {
             {/* Card 4: Social Media Management - REPLACED */}
             <Link href="/smm">
               <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-full min-h-[210px] md:min-h-0 md:h-[320px]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-full min-h-[210px] md:min-h-0 md:h-[320px] will-change-transform"
               >
                 <div className="flex flex-col md:flex-row-reverse h-full relative group">
                   {/* Background Imagery */}
@@ -317,6 +320,7 @@ export default function Home() {
                       alt="Social Media Management"
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      decoding="async"
                     />
                     {/* Editorial Fade - Mobile Only (Fades image into white base) */}
                     <div className="md:hidden absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent z-10 transition-opacity duration-500"></div>
@@ -349,11 +353,11 @@ export default function Home() {
             {/* Card 5: Event Management - NEW */}
             <Link href="/event">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-full min-h-[210px] md:min-h-0 md:h-[320px]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-full min-h-[210px] md:min-h-0 md:h-[320px] will-change-transform"
               >
                 <div className="flex flex-col md:flex-row h-full relative group">
                   {/* Background Imagery */}
@@ -366,6 +370,7 @@ export default function Home() {
                       alt="Event Management"
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      decoding="async"
                     />
                     {/* Editorial Fade - Mobile Only (Fades image into white base) */}
                     <div className="md:hidden absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent z-10 transition-opacity duration-500"></div>
@@ -398,11 +403,11 @@ export default function Home() {
             {/* Card 6: Ratnatray - NEW */}
             <a href="https://www.theratnatrayashow.com" target="_blank" rel="noopener noreferrer">
               <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-full min-h-[210px] md:min-h-0 md:h-[320px]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
+                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 cursor-pointer h-full min-h-[210px] md:min-h-0 md:h-[320px] will-change-transform"
               >
                 <div className="flex flex-col md:flex-row-reverse h-full relative group">
                   {/* Background Imagery */}
@@ -411,10 +416,11 @@ export default function Home() {
                       loading="lazy"
                       quality={75}
                       sizes="(max-width: 768px) 50vw, 50vw"
-                      src="/ratnatray.jpeg"
+                      src="/ratimage.JPG"
                       alt="Ratnatray"
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      decoding="async"
                     />
                     {/* Editorial Fade - Mobile Only (Fades image into white base) */}
                     <div className="md:hidden absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent z-10 transition-opacity duration-500"></div>

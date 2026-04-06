@@ -83,6 +83,8 @@ export default function Navbar() {
               About
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#FF5851] transition-all group-hover:w-full"></span>
             </Link>
+
+
           </nav>
 
           {/* Desktop Actions */}
@@ -141,6 +143,7 @@ export default function Navbar() {
                   ))}
                 </div>
                 <Link href="/about" className="text-xl font-bold border-b border-gray-50 pb-2" onClick={() => setIsOpen(false)}>About</Link>
+
                 <Link href="/contact?service=General-Inquiry" className="mt-4" onClick={() => setIsOpen(false)}>
                   <button className="w-full bg-[#FF5851] text-white py-4 rounded-2xl font-bold text-lg">
                     Contact Us

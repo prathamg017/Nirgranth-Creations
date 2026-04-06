@@ -15,6 +15,8 @@ export default function About() {
             alt="Studio Origin" 
             fill 
             className="object-cover grayscale"
+            quality={60}
+            priority
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-900/40 to-gray-900" />
@@ -59,7 +61,7 @@ export default function About() {
               viewport={{ once: true }}
               className="relative aspect-square rounded-[3rem] overflow-hidden border-8 border-gray-100 shadow-3xl"
             >
-              <Image src="/recording.jpg" alt="Execution Precision" fill className="object-cover" />
+              <Image src="/recording.jpg" alt="Execution Precision" fill className="object-cover" quality={65} decoding="async" />
               <div className="absolute inset-0 bg-[#FF5851]/10 mix-blend-overlay" />
             </motion.div>
 
@@ -94,6 +96,62 @@ export default function About() {
                     </div>
                   </div>
                 ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Visionary - Owner & CEO */}
+      <section className="py-24 bg-gray-50 border-y border-gray-100">
+        <div className="container mx-auto max-w-7xl px-4 md:px-6">
+          <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20 max-w-6xl mx-auto">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative w-64 h-64 md:w-80 md:h-80 shrink-0"
+            >
+              <div className="absolute inset-0 bg-[#FF5851] rounded-full blur-3xl opacity-20 animate-pulse"></div>
+              <div className="relative w-full h-full rounded-full overflow-hidden border-8 border-white shadow-2xl">
+                <Image 
+                  src="/akashjain.jpeg" 
+                  alt="Akash Jain - Owner & CEO" 
+                  fill 
+                  className="object-cover"
+                />
+              </div>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6 text-center md:text-left"
+            >
+              <div>
+                <div className="inline-block bg-[#FF5851]/10 text-[#FF5851] px-6 py-2 rounded-full text-xs font-black uppercase tracking-[0.2em] mb-4">
+                  The Visionary behind the brand
+                </div>
+                <h2 className="text-4xl md:text-6xl font-black text-gray-900 uppercase tracking-tighter">Akash Jain</h2>
+                <p className="text-[#FF5851] font-black text-lg md:text-xl uppercase tracking-[0.3em] mt-2">Owner & CEO</p>
+              </div>
+              
+              <p className="text-gray-500 text-lg md:text-xl font-bold leading-relaxed max-w-2xl mx-auto md:mx-0">
+                A digital innovator, cultural architect, and serial entrepreneur. Akash Jain is the driving force behind Nirgranth Creations, dedicated to building high-authority brands and reconnecting the modern generation with their roots through creative excellence.
+              </p>
+              
+              <div className="pt-4 flex justify-center md:justify-start">
+                <Link href="/sky-king-akash-jain">
+                  <motion.button
+                    whileHover={{ scale: 1.05, x: 8 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex items-center gap-4 text-base md:text-lg font-black uppercase tracking-[0.2em] text-[#FF5851] hover:text-[#e04843] transition-all group"
+                  >
+                    Know More About Akash
+                    <ArrowLeft size={24} className="rotate-180 transition-transform group-hover:translate-x-2" />
+                  </motion.button>
+                </Link>
               </div>
             </motion.div>
           </div>

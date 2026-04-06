@@ -70,12 +70,12 @@ export default function VisionaryShowcase() {
         {works.map((work, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: i * 0.1 }}
-            whileHover={{ scale: 1.05 }}
-            className="rounded-3xl p-8 text-center bg-gradient-to-br from-white via-pink-50 to-pink-100 shadow-lg hover:shadow-2xl transition relative overflow-hidden"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ y: -10 }}
+            className="rounded-3xl p-8 text-center bg-gradient-to-br from-white via-pink-50 to-pink-100 shadow-lg hover:shadow-2xl transition relative overflow-hidden will-change-transform"
           >
             {/* Glow effect */}
             <div className="absolute inset-0 bg-gradient-to-tr from-[#FF5851]/20 via-transparent to-transparent opacity-60 pointer-events-none" />
