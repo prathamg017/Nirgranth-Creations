@@ -24,7 +24,8 @@ export default function GraphicsVideoEditingPage() {
     muted
     loop
     playsInline
-    preload="auto"
+    preload="metadata"
+    poster="/vigraphic.png"
   >
     <source src="/vid.mp4" type="video/mp4" />
     Your browser does not support the video tag.

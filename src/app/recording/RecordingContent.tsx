@@ -20,6 +20,8 @@ export default function RecordingVoiceoverPage() {
       alt="Recording studio"
       fill
       priority
+      quality={50}
+      sizes="(max-width: 768px) 100vw, 33vw"
       className="object-cover"
     />
     <div className="absolute inset-0 bg-black/40" />
@@ -32,6 +34,8 @@ export default function RecordingVoiceoverPage() {
       alt="Podcast setup"
       fill
       priority
+      quality={50}
+      sizes="33vw"
       className="object-cover"
     />
     <div className="absolute inset-0 bg-black/40" />
@@ -44,6 +48,8 @@ export default function RecordingVoiceoverPage() {
       alt="Studio setup"
       fill
       priority
+      quality={50}
+      sizes="33vw"
       className="object-cover"
     />
     <div className="absolute inset-0 bg-black/40" />
@@ -128,6 +134,8 @@ export default function RecordingVoiceoverPage() {
                     alt={card.title}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    quality={60}
+                    sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
                 <div className="p-6">

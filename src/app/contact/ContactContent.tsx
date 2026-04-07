@@ -6,7 +6,7 @@ import { Suspense, useEffect, useState } from "react";
 
 function ContactForm() {
   const searchParams = useSearchParams();
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", phone: "", message: "" });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -42,23 +42,20 @@ function ContactForm() {
     setError("");
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, subject }),
-      });
+      const waNumber = "918109224176";
+      const leadInfo = `*New Lead from Website*\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Focus:* ${subject || 'General Inquiry'}\n\n*Message:*\n${formData.message}`;
+      
+      const encodedMsg = encodeURIComponent(leadInfo);
+      const waUrl = `https://wa.me/${waNumber}?text=${encodedMsg}`;
 
-      const data = await res.json();
+      // Open WhatsApp in a new tab
+      window.open(waUrl, "_blank");
 
-      if (res.ok && data.success) {
-        setSubmitted(true);
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setError(data.message || "Something went wrong. Please try again.");
-      }
+      setSubmitted(true);
+      setFormData({ name: "", phone: "", message: "" });
     } catch (err) {
-      console.error("❌ Error submitting form:", err);
-      setError("Failed to send message. Please try again.");
+      console.error("❌ Error redirecting to WhatsApp:", err);
+      setError("Failed to connect to WhatsApp. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -88,10 +85,10 @@ function ContactForm() {
             className="w-full p-4 rounded-lg border border-gray-300 bg-white text-black placeholder-black focus:ring-2 focus:ring-[#e7546b] focus:outline-none transition"
           />
           <input
-            type="email"
-            name="email"
-            placeholder="Email Address"
-            value={formData.email}
+            type="tel"
+            name="phone"
+            placeholder="Contact Number"
+            value={formData.phone}
             onChange={handleChange}
             required
             className="w-full p-4 rounded-lg border border-gray-300 bg-white text-black placeholder-black focus:ring-2 focus:ring-[#e7546b] focus:outline-none transition"
