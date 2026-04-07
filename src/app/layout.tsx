@@ -49,18 +49,18 @@ export const metadata: Metadata = {
     title: "Nirgranth Creations | Scale Your Brand to Dominance",
     description: "Expert Social Media Management, Recording, and Creative Execution.",
     siteName: "Nirgranth Creations",
-    images: [{ url: "/favicon-branded.png", width: 1200, height: 630 }],
+    images: [{ url: "/logo.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Nirgranth Creations | Agency of Future",
     description: "We manufacture authority and craft empires.",
-    images: ["/favicon-branded.png"],
+    images: ["/logo.png"],
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-32x32.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
   manifest: "/site.webmanifest",
 };
@@ -90,7 +90,7 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "Nirgranth Creations",
               "url": "https://nirgranthcreations.com",
-              "logo": "https://nirgranthcreations.com/icon-512.png",
+              "logo": "https://nirgranthcreations.com/logo.png",
               "sameAs": [
                 "https://www.instagram.com/nirgranth_creation/"
               ]

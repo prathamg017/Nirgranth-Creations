@@ -64,7 +64,7 @@ export default function SkyKingAkashJain() {
     image: "https://nirgranthcreations.com/akashjain.jpeg",
     datePublished: "2026-04-06", dateModified: new Date().toISOString().split("T")[0],
     author: { "@type": "Person", name: "Sky King Akash Jain", url: "https://nirgranthcreations.com/sky-king-akash-jain" },
-    publisher: { "@type": "Organization", name: "Nirgranth Creations", logo: { "@type": "ImageObject", url: "https://nirgranthcreations.com/icon-512.png" } },
+    publisher: { "@type": "Organization", name: "Nirgranth Creations", logo: { "@type": "ImageObject", url: "https://nirgranthcreations.com/logo.png" } },
     mainEntityOfPage: { "@type": "WebPage", "@id": "https://nirgranthcreations.com/sky-king-akash-jain" },
     keywords: "Sky King Akash Jain, Jainism influencer, Nirgranth Creation founder, Ratnatraya, Jain entrepreneur India",
     about: { "@type": "Person", name: "Sky King Akash Jain" },
