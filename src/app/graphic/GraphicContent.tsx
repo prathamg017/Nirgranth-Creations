@@ -145,43 +145,59 @@ export default function GraphicsVideoEditingPage() {
           <div className="grid md:grid-cols-3 gap-6 mt-14">
             {[
               {
-  title: "Brand Identity & Design",
-  desc: "Logos, business cards, social media posts, ads, and everything to make your brand look professional and consistent everywhere.",
-  img: "https://i.pinimg.com/1200x/4f/0c/fe/4f0cfea79c07b408ee426c449086a848.jpg",
-},
-{
-  title: "Documentaries & Video Shoots",
-  desc: "Professional shoots for events, interviews, and documentaries with editing that tells your story in the most engaging way.",
-  img: "https://i.pinimg.com/1200x/21/22/01/212201f4bb596518310e51d48f25cc65.jpg",
-},
-{
-  title: "Video Editing & Storytelling",
-  desc: "Reels, ads, YouTube videos, and product promos edited with music, effects, and polish to keep your audience hooked.",
-  img: "https://i.pinimg.com/736x/23/73/48/2373484585800d59387e8db783bc40b6.jpg",
-},
-
+                title: "Brand Identity & Design",
+                desc: "Logos, business cards, social media posts, ads, and everything to make your brand look professional and consistent everywhere.",
+                img: "https://i.pinimg.com/1200x/4f/0c/fe/4f0cfea79c07b408ee426c449086a848.jpg",
+                href: "/contact?service=Graphic-Design-and-Video-Editing"
+              },
+              {
+                title: "Documentaries & Video Shoots",
+                desc: "Professional shoots for events, interviews, and documentaries with editing that tells your story in the most engaging way.",
+                img: "https://i.pinimg.com/1200x/21/22/01/212201f4bb596518310e51d48f25cc65.jpg",
+                href: "https://drive.google.com/drive/folders/1KdMtYAiWmJtlLTlYpfpG92RIdrpzomvb"
+              },
+              {
+                title: "Video Editing & Storytelling",
+                desc: "Reels, ads, YouTube videos, and product promos edited with music, effects, and polish to keep your audience hooked.",
+                img: "https://i.pinimg.com/736x/23/73/48/2373484585800d59387e8db783bc40b6.jpg",
+                href: "https://drive.google.com/drive/folders/1KdMtYAiWmJtlLTlYpfpG92RIdrpzomvb"
+              },
             ].map((c, i) => (
-              <motion.article
+              <Link 
+                href={c.href} 
                 key={c.title}
-                {...fadeUp(0.1 + i * 0.1)}
-                className="group relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition"
+                target={c.href.startsWith('http') ? "_blank" : undefined}
+                rel={c.href.startsWith('http') ? "noopener noreferrer" : undefined}
+                className="block"
               >
-                <div className="relative h-56">
-                  <Image
-                    src={c.img}
-                    alt={c.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900">{c.title}</h3>
-                  <p className="mt-2 text-gray-600">{c.desc}</p>
-                </div>
-                <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition">
-                  <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-pink-500/20 to-transparent" />
-                </div>
-              </motion.article>
+                <motion.article
+                  {...fadeUp(0.1 + i * 0.1)}
+                  className="group relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition h-full cursor-pointer"
+                >
+                  <div className="relative h-56">
+                    <Image
+                      src={c.img}
+                      alt={c.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 flex items-center justify-between">
+                      {c.title}
+                      {c.href.startsWith('http') && (
+                        <svg className="w-4 h-4 text-pink-600 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      )}
+                    </h3>
+                    <p className="mt-2 text-gray-600">{c.desc}</p>
+                  </div>
+                  <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition">
+                    <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-pink-500/20 to-transparent" />
+                  </div>
+                </motion.article>
+              </Link>
             ))}
           </div>
         </div>
