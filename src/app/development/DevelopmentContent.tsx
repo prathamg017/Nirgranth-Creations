@@ -232,6 +232,111 @@ export default function DevelopmentClient() {
         </div>
       </section>
 
+      {/* HYPER-PREMIUM PORTFOLIO SHOWCASE */}
+      <section className="py-32 px-6 relative overflow-hidden bg-black">
+        {/* Cinematic Background Elements */}
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#FF5851]/10 rounded-full blur-[120px] animate-pulse"></div>
+          <div className="absolute top-0 left-0 w-full h-full opacity-30" style={{ 
+            backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,88,81,0.15) 1px, transparent 0)`,
+            backgroundSize: '40px 40px' 
+          }}></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-24"
+          >
+            <span className="text-[10px] font-black uppercase tracking-[0.8em] text-[#FF5851] mb-6 block">Production Excellence</span>
+            <h2 className="text-5xl md:text-8xl font-black text-white mb-8 tracking-tighter italic uppercase leading-[0.85]">
+              LIVE<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5851] to-orange-400">DEPLOYMENT</span>
+            </h2>
+            <p className="text-gray-500 text-lg md:text-xl font-bold max-w-2xl mx-auto uppercase tracking-widest leading-relaxed">
+              Real-time architectural validation. This is how we build the future.
+            </p>
+          </motion.div>
+
+          <div className="relative group">
+            {/* 3D Container */}
+            <motion.div
+              initial={{ opacity: 0, rotateY: -15, rotateX: 5, scale: 0.9 }}
+              whileInView={{ opacity: 1, rotateY: 0, rotateX: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+              className="relative z-10 w-full perspective-[2000px] preserve-3d"
+            >
+              {/* The "Monitor" Frame */}
+              <div className="relative rounded-[2rem] md:rounded-[3rem] p-2 bg-gradient-to-br from-gray-700 via-gray-900 to-black shadow-[0_50px_100px_-20px_rgba(0,0,0,1)] border border-white/10 overflow-hidden">
+                {/* Browser UI */}
+                <div className="absolute top-0 left-0 w-full h-16 bg-gray-900/90 backdrop-blur-xl border-b border-white/5 flex items-center px-8 gap-6 z-20">
+                  <div className="flex gap-2.5">
+                    <div className="w-3.5 h-3.5 rounded-full bg-[#FF5851] shadow-[0_0_15px_rgba(255,88,81,0.5)]"></div>
+                    <div className="w-3.5 h-3.5 rounded-full bg-orange-400/50"></div>
+                    <div className="w-3.5 h-3.5 rounded-full bg-green-500/50"></div>
+                  </div>
+                  <div className="flex-1 max-w-2xl bg-black/40 h-9 rounded-full border border-white/5 flex items-center px-6 gap-3 overflow-hidden">
+                    <svg className="w-3.5 h-3.5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                    <span className="text-gray-500 text-[10px] font-black uppercase tracking-[0.2em] truncate">https://portfolio-me-delta-ten.vercel.app</span>
+                  </div>
+                </div>
+
+                {/* The Iframe Section */}
+                <div className="relative mt-14 aspect-video md:aspect-[21/9] w-full overflow-hidden bg-white">
+                  <iframe 
+                    src="https://portfolio-me-delta-ten.vercel.app" 
+                    className="w-full h-full border-none"
+                    title="Live Portfolio Showcase"
+                    loading="lazy"
+                  ></iframe>
+                  
+                  {/* Interactive Glitch Overlay on Hover */}
+                  <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                </div>
+              </div>
+
+              {/* Floating Tech Specs - Side Label */}
+              <motion.div 
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.8 }}
+                className="absolute -right-10 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-4 z-30"
+              >
+                {[
+                  { l: "Performance", v: "100" },
+                  { l: "SEO", v: "100" },
+                  { l: "Security", v: "A+" }
+                ].map((s, i) => (
+                  <div key={i} className="bg-white/10 backdrop-blur-2xl border border-white/10 p-6 rounded-2xl w-40 shadow-2xl">
+                    <div className="text-[10px] font-black text-[#FF5851] uppercase tracking-widest mb-1">{s.l}</div>
+                    <div className="text-3xl font-black text-white italic">{s.v}</div>
+                  </div>
+                ))}
+              </motion.div>
+            </motion.div>
+
+            {/* Reflection / Glow below */}
+            <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-4/5 h-40 bg-[#FF5851]/20 blur-[100px] rounded-full -z-10"></div>
+          </div>
+
+          <div className="mt-20 flex flex-col items-center">
+             <Link 
+              href="https://portfolio-me-delta-ten.vercel.app" 
+              target="_blank" 
+              className="group flex items-center gap-6 px-10 py-5 bg-white text-black rounded-full font-black text-sm uppercase tracking-[0.3em] hover:bg-[#FF5851] hover:text-white transition-all duration-500 hover:scale-110 shadow-3xl"
+             >
+                Inspect Live Build
+                <div className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </div>
+             </Link>
+          </div>
+        </div>
+      </section>
+
       {/* VISIONARY SHOWCASE */}
       <VisionaryShowcase />
 
